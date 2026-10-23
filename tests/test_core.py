@@ -248,3 +248,17 @@ def test_syndication_token_and_parse():
             '{"props":{"pageProps":{"timeline":{"entries":[{"type":"tweet","content":{"tweet":{"id_str":"1"}}}]}}}}'
             '</script>')
     assert parse_timeline(html) == [{"id_str": "1"}]
+
+
+
+def test_excluded_topics_are_ignored():
+    tweets = [tweet("1"), tweet("2")]
+    result = {"ignored_tweet_ids": [], "items": [
+        {"kind": "objective", "source_type": "official", "title": "The Grounds: objetivos semanales", "summary": "",
+         "details": "", "key_facts": [], "tweet_ids": ["1"], "images": []},
+        {"kind": "sbc", "source_type": "official", "title": "SBC Woltemade", "summary": "", "details": "",
+         "key_facts": [], "tweet_ids": ["2"], "images": []},
+    ]}
+    items, ignored, missing = analyzer.validate(result, tweets, ["the grounds"])
+    assert [i.title for i in items] == ["SBC Woltemade"]
+    assert ignored == {"1"} and missing == set()

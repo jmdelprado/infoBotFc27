@@ -324,8 +324,9 @@ WELCOME = """👋 <b>Bienvenido a InfoBot FC 27</b>
 
 Todas las novedades de EA SPORTS FC 27 Ultimate Team, al momento y en español, ordenadas por secciones:
 
-🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos
-🕵️ Filtraciones (sin confirmar) · 📅 Calendario · 🗞️ Resumen diario
+✅ <b>📅 Calendario</b>: solo lo OFICIAL, con inicio y fin de las próximas 2 semanas
+🕵️ <b>Filtraciones</b> por secciones: 🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos
+🗞️ Resumen diario cada noche
 
 Se actualiza solo cada 4 horas. 📌 Arriba tienes fijado el estado actual."""
 
@@ -356,3 +357,39 @@ def setup(cfg: Config, *, dry_run: bool = False, db_path: Path = DB_PATH, state_
         if dry_run:
             pub.write_html("InfoBot FC 27 — preparación del grupo")
         db.close()
+
+
+def reset_group(cfg: Config, *, db_path: Path = DB_PATH, state_path: Path = STATE_PATH) -> dict:
+    """Deja el grupo y el bot como nuevos: borra las secciones del bot (con sus mensajes), borra los mensajes de
+    General, reinicia la base de datos y el estado, y vuelve a crear las secciones vacías con su introducción."""
+    from .telegram import Telegram
+
+    tg = Telegram(cfg.telegram_token, cfg.telegram_channel)
+    old = DB(db_path)
+    topics = json.loads(old.get_meta("topics") or "{}")
+    old.close()
+
+    deleted_topics = 0
+    for key, tid in topics.items():
+        try:
+            tg._call("deleteForumTopic", {"chat_id": tg.chat_id, "message_thread_id": tid})
+            deleted_topics += 1
+        except Exception as e:  # noqa: BLE001
+            log.warning("No se pudo borrar la sección %s: %s", key, e)
+
+    # General: se borran todos los mensajes hasta el último (se averigua con un mensaje de prueba)
+    probe = tg.send_message("🧹")
+    deleted_msgs = 0
+    ids = list(range(1, probe + 1))
+    for i in range(0, len(ids), 100):
+        chunk = ids[i : i + 100]
+        try:
+            tg._call("deleteMessages", {"chat_id": tg.chat_id, "message_ids": json.dumps(chunk)})
+            deleted_msgs += len(chunk)
+        except Exception as e:  # noqa: BLE001 - mensajes de servicio que no se pueden borrar
+            log.info("Bloque %s-%s: %s", chunk[0], chunk[-1], e)
+
+    Path(db_path).unlink(missing_ok=True)
+    Path(state_path).unlink(missing_ok=True)
+    result = setup(cfg, db_path=db_path, state_path=state_path)
+    return {"deleted_topics": deleted_topics, "deleted_up_to_message": probe, **result}

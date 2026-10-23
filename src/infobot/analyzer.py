@@ -34,7 +34,8 @@ REGLAS
    - "sbc": desafíos de creación de plantillas.
    - "evolution": evoluciones (requisitos para meter la carta, coste, niveles y mejoras).
    - "mode": MODOS DE JUEGO para jugar: torneos (p. ej. Torneo Eliminatorio Diario), Rivals/Champions con recompensas
-     especiales, Squad Battles especiales, The Grounds, Circuito Legado, drafts, eventos en directo jugables.
+     especiales, Squad Battles especiales, Circuito Legado, drafts, eventos en directo jugables.
+   - DESCARTA SIEMPRE todo lo relacionado con "The Grounds" (objetivos, modo, recompensas…): va a ignored_tweet_ids.
    - "event": el resto (mantenimientos, tienda/tokens, galería, packs, notas de parche relevantes para UT…).
    Lo demás (opiniones, encuestas, sorteos, bromas, quejas, autopromoción, otros juegos) va a ignored_tweet_ids.
 2. NUNCA inventes datos. Si un dato no está en el texto ni en la imagen, no lo pongas. Copia las cifras tal cual.
@@ -145,18 +146,32 @@ def parse_claude_output(stdout: str) -> dict[str, Any]:
     return json.loads(text[start : end + 1])
 
 
-def validate(result: dict[str, Any], tweets: list[Tweet]) -> tuple[list[Item], set[str], set[str]]:
+def _excluded(raw: dict[str, Any], keywords: list[str]) -> bool:
+    text = " ".join(str(raw.get(k, "")) for k in ("title", "summary", "details")).lower()
+    for key in ("objectives", "sbcs", "evolutions", "modes", "events"):
+        text += " " + " ".join(str(x.get("name", "")) for x in raw.get(key, []) or []).lower()
+    return any(k.lower() in text for k in keywords)
+
+
+def validate(result: dict[str, Any], tweets: list[Tweet],
+             exclude: list[str] | None = None) -> tuple[list[Item], set[str], set[str]]:
     """Devuelve (novedades, ids_ignorados, ids_sin_tratar)."""
     ids = {t.id for t in tweets}
     media_by_tweet = {t.id: set(t.local_media) for t in tweets}
     items: list[Item] = []
     covered: set[str] = set()
+    excluded_ids: set[str] = set()
     for raw in result.get("items", []):
         if raw.get("kind") not in KINDS or raw.get("source_type") not in ("official", "leak"):
             log.warning("Novedad descartada por tipo inválido: %s", raw.get("title"))
             continue
         raw["tweet_ids"] = [str(i) for i in raw.get("tweet_ids", []) if str(i) in ids]
         if not raw["tweet_ids"]:
+            continue
+        if exclude and _excluded(raw, exclude):
+            log.info("Novedad descartada por tema excluido: %s", raw.get("title"))
+            covered |= set(raw["tweet_ids"])
+            excluded_ids |= set(raw["tweet_ids"])
             continue
         allowed = set().union(*(media_by_tweet[i] for i in raw["tweet_ids"]))
         imgs = [Path(x).name for x in raw.get("images", [])]
@@ -168,9 +183,9 @@ def validate(result: dict[str, Any], tweets: list[Tweet]) -> tuple[list[Item], s
         item.urls = [t.url for t in tweets if t.id in item.tweet_ids]
         items.append(item)
         covered |= set(item.tweet_ids)
-    ignored = {str(i) for i in result.get("ignored_tweet_ids", [])} & ids
+    ignored = ({str(i) for i in result.get("ignored_tweet_ids", [])} & ids) | excluded_ids
     missing = ids - covered - ignored
-    return items, ignored - covered, missing
+    return items, ignored - (covered - excluded_ids), missing
 
 
 def analyze(cfg: Config, tweets: list[Tweet], state: dict[str, Any], recent_titles: list[str]):
@@ -181,7 +196,7 @@ def analyze(cfg: Config, tweets: list[Tweet], state: dict[str, Any], recent_titl
         prompt = _build_prompt(batch, state, recent_titles, cfg.timezone)
         try:
             result = call_claude(prompt, cfg.claude_model, schema)
-            items, ignored, missing = validate(result, batch)
+            items, ignored, missing = validate(result, batch, cfg.exclude_keywords)
             recent_titles = recent_titles + [it.title for it in items]
             yield batch, (items, ignored, missing), None
         except Exception as e:  # noqa: BLE001

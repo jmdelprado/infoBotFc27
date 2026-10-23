@@ -40,6 +40,8 @@ class Config:
     show_source_link: bool = True
     channel_title: str = "InfoBot FC 27"
     timezone: str = "Europe/Madrid"
+    # Temas que se descartan siempre (no se publican ni entran en el calendario)
+    exclude_keywords: list[str] = field(default_factory=lambda: ["the grounds"])
     # Orden en que se prueban las fuentes de X
     sources: list[str] = field(default_factory=lambda: ["syndication", "twscrape", "playwright"])
     # Secretos

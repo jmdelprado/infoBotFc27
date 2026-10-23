@@ -135,6 +135,8 @@ def main(argv: list[str] | None = None) -> int:
     pv = sub.add_parser("preview")
     pv.add_argument("--claude", action="store_true", help="analiza los ejemplos con Claude de verdad")
     sub.add_parser("check")
+    rs = sub.add_parser("reset", help="borra todo el contenido del grupo y empieza de cero")
+    rs.add_argument("--yes", action="store_true", help="confirmación obligatoria")
     st = sub.add_parser("setup")
     st.add_argument("--dry-run", action="store_true")
     sub.add_parser("channel-id")
@@ -149,7 +151,12 @@ def main(argv: list[str] | None = None) -> int:
             return cmd_channel_id(cfg)
         if args.cmd == "check":
             return cmd_check(cfg)
-        if args.cmd == "setup":
+        if args.cmd == "reset":
+            if not args.yes:
+                print("Esto borra TODO el contenido del grupo. Repite con --yes para confirmar.")
+                return 1
+            res = pipeline.reset_group(cfg)
+        elif args.cmd == "setup":
             res = pipeline.setup(cfg, dry_run=args.dry_run)
         elif args.cmd == "run":
             res = pipeline.run(cfg, dry_run=args.dry_run)

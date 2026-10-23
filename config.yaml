@@ -28,3 +28,7 @@ sources:
   - syndication
   - twscrape
   - playwright
+
+# Temas que se descartan siempre (no se publican ni entran en el calendario)
+exclude_keywords:
+  - the grounds
