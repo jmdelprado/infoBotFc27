@@ -13,9 +13,11 @@ log = logging.getLogger(__name__)
 
 def fetch_all(cfg: Config) -> list[Tweet]:
     from .playwright_source import PlaywrightSource
+    from .syndication_source import SyndicationSource
     from .twscrape_source import TwscrapeSource
 
-    sources: list[Source] = [TwscrapeSource(cfg), PlaywrightSource(cfg)]
+    available = {"syndication": SyndicationSource, "twscrape": TwscrapeSource, "playwright": PlaywrightSource}
+    sources: list[Source] = [available[n](cfg) for n in cfg.sources if n in available]
     errors = []
     for src in sources:
         try:

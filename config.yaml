@@ -22,3 +22,9 @@ show_source_link: true
 
 channel_title: "InfoBot FC 27"
 timezone: "Europe/Madrid"
+
+# Orden de las fuentes para leer X. "syndication" funciona también desde los servidores de GitHub.
+sources:
+  - syndication
+  - twscrape
+  - playwright

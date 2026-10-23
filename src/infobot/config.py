@@ -40,6 +40,8 @@ class Config:
     show_source_link: bool = True
     channel_title: str = "InfoBot FC 27"
     timezone: str = "Europe/Madrid"
+    # Orden en que se prueban las fuentes de X
+    sources: list[str] = field(default_factory=lambda: ["syndication", "twscrape", "playwright"])
     # Secretos
     x_cookies: str = field(default="", repr=False)
     telegram_token: str = field(default="", repr=False)

@@ -219,3 +219,13 @@ def test_sections_created_once_and_routed(tmp_path):
     assert s.thread("sbc") == a
     assert json.loads(db.get_meta("topics")) == {"sbc": a}
     assert pub.topics[a] == "🧩 SBC"
+
+
+def test_syndication_token_and_parse():
+    from infobot.sources.syndication_source import parse_timeline, tweet_token
+
+    assert tweet_token("2113239746994720972").isalnum()
+    html = ('<script id="__NEXT_DATA__" type="application/json">'
+            '{"props":{"pageProps":{"timeline":{"entries":[{"type":"tweet","content":{"tweet":{"id_str":"1"}}}]}}}}'
+            '</script>')
+    assert parse_timeline(html) == [{"id_str": "1"}]
