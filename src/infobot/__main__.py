@@ -135,6 +135,7 @@ def main(argv: list[str] | None = None) -> int:
     pv = sub.add_parser("preview")
     pv.add_argument("--claude", action="store_true", help="analiza los ejemplos con Claude de verdad")
     sub.add_parser("check")
+    sub.add_parser("evocal", help="publica ahora el calendario de evoluciones")
     rs = sub.add_parser("reset", help="borra todo el contenido del grupo y empieza de cero")
     rs.add_argument("--yes", action="store_true", help="confirmación obligatoria")
     st = sub.add_parser("setup")
@@ -151,7 +152,9 @@ def main(argv: list[str] | None = None) -> int:
             return cmd_channel_id(cfg)
         if args.cmd == "check":
             return cmd_check(cfg)
-        if args.cmd == "reset":
+        if args.cmd == "evocal":
+            res = pipeline.publish_evo_calendar(cfg)
+        elif args.cmd == "reset":
             if not args.yes:
                 print("Esto borra TODO el contenido del grupo. Repite con --yes para confirmar.")
                 return 1

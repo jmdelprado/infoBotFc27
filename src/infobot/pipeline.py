@@ -435,3 +435,19 @@ def reset_group(cfg: Config, *, db_path: Path = DB_PATH, state_path: Path = STAT
     Path(state_path).unlink(missing_ok=True)
     result = setup(cfg, db_path=db_path, state_path=state_path)
     return {"deleted_topics": deleted_topics, "deleted_up_to_message": probe, **result}
+
+
+def publish_evo_calendar(cfg: Config, *, db_path: Path = DB_PATH, state_path: Path = STATE_PATH) -> dict:
+    """Publica (o republica) solo el calendario de evoluciones."""
+    db = DB(db_path)
+    pub = make_publisher(cfg, False)
+    state = load_state(state_path)
+    try:
+        sections = Sections(db, pub, False)
+        db.set_meta("evocal_hash", "")  # fuerza la publicación
+        with CoverRenderer() as renderer:
+            done = update_evo_calendar(db, pub, renderer, sections, state, cfg, False)
+        save_state(state_path, state)
+        return {"evo_calendar_published": done, "evolutions": len(state.get("evolutions_feed") or [])}
+    finally:
+        db.close()

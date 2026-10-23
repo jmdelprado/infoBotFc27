@@ -7,5 +7,699 @@
   "events": [],
   "recent_cards": [],
   "recent_leaks": [],
-  "calendar": []
+  "calendar": [],
+  "evolutions_feed": [
+    {
+      "id": 2552,
+      "name": "Side Step",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-14 19:00",
+      "ends": "2026-10-24 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · LI/LD",
+      "upgrades": [
+        "Pierna mala +2 ⭐",
+        "PlayStyle Tiki Taka",
+        "Media +7",
+        "Velocidad +5"
+      ],
+      "url": "https://www.fut.gg/evolutions/2552-side-step/"
+    },
+    {
+      "id": 2556,
+      "name": "Centre Stage",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-15 19:00",
+      "ends": "2026-10-25 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · MCD/MC",
+      "upgrades": [
+        "Filigranas +2 ⭐",
+        "Pierna mala +2 ⭐",
+        "PlayStyle Incisive Pass",
+        "PlayStyle Jockey"
+      ],
+      "url": "https://www.fut.gg/evolutions/2556-centre-stage/"
+    },
+    {
+      "id": 2541,
+      "name": "Future Stars Academy I",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-09 19:00",
+      "ends": "2026-10-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · MCO/DC",
+      "upgrades": [
+        "Rareza Future Stars Academy",
+        "Filigranas +2 ⭐",
+        "Media +34",
+        "Fuerza +15"
+      ],
+      "url": "https://www.fut.gg/evolutions/2541-future-stars-academy-i/"
+    },
+    {
+      "id": 2549,
+      "name": "Future Stars Academy II",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-11 19:00",
+      "ends": "2026-10-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · Media ≥81",
+      "upgrades": [
+        "Media +1",
+        "Definición +1",
+        "Tiros lejanos +1",
+        "Regate +1"
+      ],
+      "url": "https://www.fut.gg/evolutions/2549-future-stars-academy-ii/"
+    },
+    {
+      "id": 2551,
+      "name": "Future Stars Academy III",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-13 19:05",
+      "ends": "2026-10-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤82 · Media ≥82",
+      "upgrades": [
+        "PlayStyle Rapid",
+        "Media +1",
+        "Velocidad +3",
+        "Aceleración +3"
+      ],
+      "url": "https://www.fut.gg/evolutions/2551-future-stars-academy-iii/"
+    },
+    {
+      "id": 2561,
+      "name": "Future Stars Academy IV",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-16 19:00",
+      "ends": "2026-10-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤83 · Media ≥83",
+      "upgrades": [
+        "PlayStyle Low Driven Shot",
+        "Media +2",
+        "Definición +1",
+        "Resistencia +3"
+      ],
+      "url": "https://www.fut.gg/evolutions/2561-future-stars-academy-iv/"
+    },
+    {
+      "id": 2557,
+      "name": "Speed Bump",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-16 19:00",
+      "ends": "2026-10-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · DFC",
+      "upgrades": [
+        "PlayStyle Jockey",
+        "PlayStyle Intercept",
+        "Media +10",
+        "Pase largo +4"
+      ],
+      "url": "https://www.fut.gg/evolutions/2557-speed-bump/"
+    },
+    {
+      "id": 2558,
+      "name": "Gamechanger",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-16 19:00",
+      "ends": "2026-10-27 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80",
+      "upgrades": [
+        "PlayStyle Gamechanger"
+      ],
+      "url": "https://www.fut.gg/evolutions/2558-gamechanger/"
+    },
+    {
+      "id": 2562,
+      "name": "Middle Management",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-17 19:00",
+      "ends": "2026-10-27 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤74 · MCD/MC",
+      "upgrades": [
+        "Pierna mala +2 ⭐",
+        "PlayStyle Power Shot",
+        "Media +40",
+        "Definición +40"
+      ],
+      "url": "https://www.fut.gg/evolutions/2562-middle-management/"
+    },
+    {
+      "id": 2602,
+      "name": "Zoomaestro",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-18 19:00",
+      "ends": "2026-10-28 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · MCO/MC",
+      "upgrades": [
+        "Filigranas +1 ⭐",
+        "PlayStyle Technical",
+        "PlayStyle Rapid",
+        "PlayStyle First Touch"
+      ],
+      "url": "https://www.fut.gg/evolutions/2602-zoomaestro/"
+    },
+    {
+      "id": 2503,
+      "name": "Ones to Watch Retro 18",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 27,
+      "starts": "2026-09-19 19:31",
+      "ends": "2026-10-29 08:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ones to Watch Retro 18"
+      ],
+      "url": "https://www.fut.gg/evolutions/2503-ones-to-watch-retro-18-sp-27/"
+    },
+    {
+      "id": 2504,
+      "name": "Ones to Watch Retro 19",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-09-19 19:32",
+      "ends": "2026-10-29 08:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ones to Watch Retro 19"
+      ],
+      "url": "https://www.fut.gg/evolutions/2504-ones-to-watch-retro-19-sp-26/"
+    },
+    {
+      "id": 2505,
+      "name": "Ones to Watch Retro 20",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-09-19 19:33",
+      "ends": "2026-10-29 08:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ones to Watch Retro 20"
+      ],
+      "url": "https://www.fut.gg/evolutions/2505-ones-to-watch-retro-20-sp-26/"
+    },
+    {
+      "id": 2526,
+      "name": "Season Ladder Excellence",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 27,
+      "starts": "2026-09-29 16:20",
+      "ends": "2026-10-29 08:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Season Ladder Excellence"
+      ],
+      "url": "https://www.fut.gg/evolutions/2526-season-ladder-excellence-sp-27/"
+    },
+    {
+      "id": 2498,
+      "name": "Creative or Composed?",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 27,
+      "starts": "2026-09-16 14:30",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤79",
+      "upgrades": [
+        "PlayStyle Incisive Pass",
+        "PlayStyle Press Proven"
+      ],
+      "url": "https://www.fut.gg/evolutions/2498-creative-or-composed-sp-27/"
+    },
+    {
+      "id": 2493,
+      "name": "Midfield Polish",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 1,
+      "starts": "2026-09-16 13:53",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤79 · MC/MCD",
+      "upgrades": [
+        "Media +1",
+        "Pase +1",
+        "Defensa +1"
+      ],
+      "url": "https://www.fut.gg/evolutions/2493-midfield-polish-sp-1/"
+    },
+    {
+      "id": 2501,
+      "name": "Pinged Pass",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-09-16 14:38",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤79",
+      "upgrades": [
+        "PlayStyle Pinged Pass"
+      ],
+      "url": "https://www.fut.gg/evolutions/2501-pinged-pass/"
+    },
+    {
+      "id": 2603,
+      "name": "Poor Sophia",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-19 19:00",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · POR",
+      "upgrades": [
+        "Filigranas +2 ⭐",
+        "PlayStyle Far Throw",
+        "PlayStyle Footwork",
+        "PlayStyle Cross Claimer"
+      ],
+      "url": "https://www.fut.gg/evolutions/2603-poor-sophia/"
+    },
+    {
+      "id": 2495,
+      "name": "Relentless",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 11,
+      "starts": "2026-09-16 13:58",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤79",
+      "upgrades": [
+        "PlayStyle Relentless"
+      ],
+      "url": "https://www.fut.gg/evolutions/2495-relentless-sp-11/"
+    },
+    {
+      "id": 2499,
+      "name": "Shooting Practice",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 28,
+      "starts": "2026-09-16 14:32",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · EI/ED/DC",
+      "upgrades": [
+        "PlayStyle Power Shot",
+        "PlayStyle Low Driven Shot"
+      ],
+      "url": "https://www.fut.gg/evolutions/2499-shooting-practice-sp-28/"
+    },
+    {
+      "id": 2494,
+      "name": "Striker Glow Up",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 7,
+      "starts": "2026-09-16 13:57",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤79 · DC",
+      "upgrades": [
+        "PlayStyle Gamechanger",
+        "Media +10",
+        "Pase largo +8",
+        "Vision +8"
+      ],
+      "url": "https://www.fut.gg/evolutions/2494-striker-glow-up-sp-7/"
+    },
+    {
+      "id": 2496,
+      "name": "Tactical Ascent",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 14,
+      "starts": "2026-09-16 14:24",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤79",
+      "upgrades": [
+        "PlayStyle Anticipate",
+        "PlayStyle Quick Step"
+      ],
+      "url": "https://www.fut.gg/evolutions/2496-tactical-ascent-sp-14/"
+    },
+    {
+      "id": 2497,
+      "name": "Winger Glow Up",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-09-16 14:29",
+      "ends": "2026-10-29 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · EI",
+      "upgrades": [
+        "Filigranas +1 ⭐",
+        "PlayStyle Rapid",
+        "Media +10",
+        "Positioning +10"
+      ],
+      "url": "https://www.fut.gg/evolutions/2497-winger-glow-up-sp-26/"
+    },
+    {
+      "id": 2604,
+      "name": "Side Stopper",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-21 19:00",
+      "ends": "2026-10-31 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · LI/LD",
+      "upgrades": [
+        "PlayStyle Intercept",
+        "PlayStyle Slide Tackle",
+        "Media +4",
+        "Balance +5"
+      ],
+      "url": "https://www.fut.gg/evolutions/2604-side-stopper/"
+    },
+    {
+      "id": 2610,
+      "name": "Channel Surfer",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 11,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · MI/EI",
+      "upgrades": [
+        "PlayStyle Rapid",
+        "PlayStyle Press Proven",
+        "Media +7",
+        "Pase corto +7"
+      ],
+      "url": "https://www.fut.gg/evolutions/2610-channel-surfer-sp-11/"
+    },
+    {
+      "id": 2620,
+      "name": "Clinical or Technical?",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 28,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤85",
+      "upgrades": [
+        "PlayStyle+ Technical"
+      ],
+      "url": "https://www.fut.gg/evolutions/2620-clinical-or-technical-sp-28/"
+    },
+    {
+      "id": 2606,
+      "name": "Composed Stopper",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤83 · DFC",
+      "upgrades": [
+        "PlayStyle Block",
+        "PlayStyle Bruiser",
+        "Media +10",
+        "Agility +5"
+      ],
+      "url": "https://www.fut.gg/evolutions/2606-composed-stopper/"
+    },
+    {
+      "id": 2615,
+      "name": "Corridor Control",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 5,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · LI/LD",
+      "upgrades": [
+        "Pierna mala +1 ⭐",
+        "PlayStyle Jockey",
+        "Media +10",
+        "Shot Power +10"
+      ],
+      "url": "https://www.fut.gg/evolutions/2615-corridor-control-sp-5/"
+    },
+    {
+      "id": 2616,
+      "name": "Dual Identity",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 14,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤82 · MCO/MC/MCD",
+      "upgrades": [
+        "Pierna mala +1 ⭐",
+        "PlayStyle Intercept",
+        "Media +10",
+        "Agility +6"
+      ],
+      "url": "https://www.fut.gg/evolutions/2616-dual-identity-sp-14/"
+    },
+    {
+      "id": 2607,
+      "name": "Flank Masterclass",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 22,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤82 · MD/ED",
+      "upgrades": [
+        "PlayStyle Finesse Shot",
+        "PlayStyle Quick Step",
+        "Media +10",
+        "Pase largo +5"
+      ],
+      "url": "https://www.fut.gg/evolutions/2607-flank-masterclass-sp-22/"
+    },
+    {
+      "id": 2611,
+      "name": "Glue or Genius",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 28,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤84",
+      "upgrades": [
+        "PlayStyle+ Press Proven"
+      ],
+      "url": "https://www.fut.gg/evolutions/2611-glue-or-genius-sp-28/"
+    },
+    {
+      "id": 2609,
+      "name": "Line of Sight",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 7,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · POR",
+      "upgrades": [
+        "PlayStyle Footwork",
+        "Media +40",
+        "Reacciones +35",
+        "Kicking +40"
+      ],
+      "url": "https://www.fut.gg/evolutions/2609-line-of-sight-sp-7/"
+    },
+    {
+      "id": 2605,
+      "name": "Midfield Roundabout",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤82 · MC",
+      "upgrades": [
+        "Filigranas +1 ⭐",
+        "Pierna mala +1 ⭐",
+        "Rol++ CM Holding++",
+        "PlayStyle Intercept"
+      ],
+      "url": "https://www.fut.gg/evolutions/2605-midfield-roundabout-sp-26/"
+    },
+    {
+      "id": 2608,
+      "name": "Pamplona Grit",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 16,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤82 · DFC",
+      "upgrades": [
+        "PlayStyle Long Ball Pass",
+        "PlayStyle Intercept",
+        "Media +8",
+        "Aceleración +7"
+      ],
+      "url": "https://www.fut.gg/evolutions/2608-pamplona-grit-sp-16/"
+    },
+    {
+      "id": 2614,
+      "name": "Season Ladder Excellence",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 27,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Season Ladder Excellence"
+      ],
+      "url": "https://www.fut.gg/evolutions/2614-season-ladder-excellence-sp-27/"
+    },
+    {
+      "id": 2612,
+      "name": "Ultimate Scream",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream"
+      ],
+      "url": "https://www.fut.gg/evolutions/2612-ultimate-scream-sp-26/"
+    },
+    {
+      "id": 2613,
+      "name": "Ultimate Scream Retro 17",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 17"
+      ],
+      "url": "https://www.fut.gg/evolutions/2613-ultimate-scream-retro-17-sp-26/"
+    },
+    {
+      "id": 2617,
+      "name": "Ultimate Scream Retro 19",
+      "premium": true,
+      "season_pass": true,
+      "sp_level": 26,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 19"
+      ],
+      "url": "https://www.fut.gg/evolutions/2617-ultimate-scream-retro-19-sp-26/"
+    },
+    {
+      "id": 2618,
+      "name": "Ultimate Scream Retro 20",
+      "premium": false,
+      "season_pass": true,
+      "sp_level": 27,
+      "starts": "2026-10-22 09:00",
+      "ends": "2026-12-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 20"
+      ],
+      "url": "https://www.fut.gg/evolutions/2618-ultimate-scream-retro-20-sp-27/"
+    }
+  ]
 }
