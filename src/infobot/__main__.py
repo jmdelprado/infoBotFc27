@@ -81,6 +81,31 @@ def cmd_check(cfg: Config) -> int:
     return 0 if ok else 1
 
 
+def cmd_channel_id(cfg: Config) -> int:
+    """Muestra los canales donde el bot ha visto mensajes (para canales privados: id -100...)."""
+    import httpx
+
+    if not cfg.telegram_token:
+        print("❌ Falta TELEGRAM_BOT_TOKEN en .env")
+        return 1
+    r = httpx.get(f"https://api.telegram.org/bot{cfg.telegram_token}/getUpdates", timeout=20).json()
+    if not r.get("ok"):
+        print(f"❌ Telegram: {r.get('description')}")
+        return 1
+    chats = {}
+    for u in r["result"]:
+        msg = u.get("channel_post") or u.get("my_chat_member") or u.get("message") or {}
+        chat = msg.get("chat") or {}
+        if chat.get("type") == "channel":
+            chats[chat["id"]] = chat.get("title")
+    if not chats:
+        print("No veo ningún canal todavía. Publica un mensaje cualquiera en el canal y vuelve a ejecutar esto.")
+        return 1
+    for cid, title in chats.items():
+        print(f"✅ Canal «{title}» → TELEGRAM_CHANNEL={cid}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     for noisy in ("httpx", "twscrape"):
@@ -98,12 +123,15 @@ def main(argv: list[str] | None = None) -> int:
     pv = sub.add_parser("preview")
     pv.add_argument("--claude", action="store_true", help="analiza los ejemplos con Claude de verdad")
     sub.add_parser("check")
+    sub.add_parser("channel-id")
     args = p.parse_args(argv)
 
     cfg = Config.load()
     from . import pipeline
 
     try:
+        if args.cmd == "channel-id":
+            return cmd_channel_id(cfg)
         if args.cmd == "check":
             return cmd_check(cfg)
         if args.cmd == "run":
