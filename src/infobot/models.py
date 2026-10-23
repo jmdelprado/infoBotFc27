@@ -30,6 +30,20 @@ TOPICS = {
 }
 
 
+TOPIC_INTROS = {
+    "promo": "Aquí aparecen las <b>promos y equipos</b> oficiales: cuándo salen, qué traen y hasta cuándo duran.",
+    "card": "Aquí aparecen las <b>cartas nuevas</b> confirmadas: media, posición, club y promo.",
+    "objective": "Aquí aparecen los <b>objetivos</b>: qué hay que hacer, la recompensa y la fecha de fin.",
+    "sbc": "Aquí aparecen los <b>SBC</b>: requisitos, coste aproximado, recompensa y fecha de fin.",
+    "evolution": "Aquí aparecen las <b>evoluciones</b>: requisitos para meter la carta, coste y mejoras.",
+    "event": "Aquí aparecen los <b>eventos</b>: mantenimientos, TOTW, torneos, recompensas y otras noticias.",
+    "leak": "Aquí aparecen las <b>filtraciones y rumores</b>. 🕵️ Nada de esto está confirmado por EA.",
+    "calendar": "Aquí está el <b>calendario</b> con todo lo que hay para hacer y jugar, ordenado por fecha de fin. "
+                "Se actualiza solo.",
+    "daily": "Aquí aparece cada noche el <b>resumen del día</b> con todas las novedades.",
+}
+
+
 def topic_for(kind: str, source_type: str) -> str:
     """Sección de una novedad: las filtraciones van siempre a Filtraciones."""
     if source_type == "leak":

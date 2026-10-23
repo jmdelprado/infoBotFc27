@@ -3,6 +3,7 @@
     python -m infobot run [--dry-run]         ciclo completo (cada 4 h en GitHub Actions)
     python -m infobot daily [--dry-run]       resumen de las últimas 24 h
     python -m infobot preview [--claude]      vista previa con tweets de ejemplo (out/preview.html)
+    python -m infobot setup [--dry-run]       crea las secciones del grupo y publica bienvenida, estado y calendario
     python -m infobot check                   comprueba la configuración y las credenciales
 """
 
@@ -134,6 +135,8 @@ def main(argv: list[str] | None = None) -> int:
     pv = sub.add_parser("preview")
     pv.add_argument("--claude", action="store_true", help="analiza los ejemplos con Claude de verdad")
     sub.add_parser("check")
+    st = sub.add_parser("setup")
+    st.add_argument("--dry-run", action="store_true")
     sub.add_parser("channel-id")
     sub.add_parser("chat-id")
     args = p.parse_args(argv)
@@ -146,7 +149,9 @@ def main(argv: list[str] | None = None) -> int:
             return cmd_channel_id(cfg)
         if args.cmd == "check":
             return cmd_check(cfg)
-        if args.cmd == "run":
+        if args.cmd == "setup":
+            res = pipeline.setup(cfg, dry_run=args.dry_run)
+        elif args.cmd == "run":
             res = pipeline.run(cfg, dry_run=args.dry_run)
         elif args.cmd == "daily":
             res = pipeline.daily(cfg, dry_run=args.dry_run, force=args.force)

@@ -14,7 +14,7 @@ from . import analyzer
 from .config import DATA_DIR, MEDIA_DIR, OUT_DIR, Config
 from .db import DB
 from .media import download_media
-from .models import TOPICS, Item, Tweet, topic_for
+from .models import TOPIC_INTROS, TOPICS, Item, Tweet, topic_for
 from .render import telegram_format as fmt
 from .render.calendar import calendar_html, calendar_text
 from .render.cover import CoverRenderer, daily_cover_html, item_cover_html
@@ -125,6 +125,12 @@ class Sections:
             meta = TOPICS[key]
             self.ids[key] = self.pub.create_topic(meta["name"], meta.get("icon_color"))
             log.info("Sección creada: %s", meta["name"])
+            intro = TOPIC_INTROS.get(key)
+            if intro:
+                try:
+                    self.pub.send_message(f"<b>{meta['name']}</b>\n\n{intro}", thread=self.ids[key])
+                except Exception as e:  # noqa: BLE001
+                    log.warning("No se pudo publicar la introducción de %s: %s", key, e)
             if not self.dry_run:
                 self.db.set_meta("topics", json.dumps(self.ids))
         return self.ids[key]
@@ -295,4 +301,42 @@ def daily(cfg: Config, *, dry_run: bool = False, db_path: Path = DB_PATH, force:
     finally:
         if dry_run:
             pub.write_html("InfoBot FC 27 — resumen diario")
+        db.close()
+
+
+WELCOME = """👋 <b>Bienvenido a InfoBot FC 27</b>
+
+Todas las novedades de EA SPORTS FC 27 Ultimate Team, al momento y en español, ordenadas por secciones:
+
+🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos
+🕵️ Filtraciones (sin confirmar) · 📅 Calendario · 🗞️ Resumen diario
+
+Se actualiza solo cada 4 horas. 📌 Arriba tienes fijado el estado actual."""
+
+
+def setup(cfg: Config, *, dry_run: bool = False, db_path: Path = DB_PATH, state_path: Path = STATE_PATH) -> dict:
+    """Prepara el grupo: crea todas las secciones en orden, da la bienvenida, fija el estado y el calendario."""
+    db = DB(db_path)
+    pub = make_publisher(cfg, dry_run)
+    state = expire(load_state(state_path), tz=cfg.timezone)
+    try:
+        sections = Sections(db, pub, dry_run)
+        if not sections.forum:
+            raise RuntimeError("El chat no tiene Temas activados: actívalos en los ajustes del grupo")
+        created = [k for k in TOPICS if k not in sections.ids]
+        for key in TOPICS:
+            sections.thread(key)
+        if not db.get_meta("welcome_sent"):
+            pub.send_message(WELCOME)
+            if not dry_run:
+                db.set_meta("welcome_sent", "1")
+        update_pinned(db, pub, state, cfg, dry_run)
+        with CoverRenderer() as renderer:
+            update_calendar(db, pub, renderer, sections, state, cfg, dry_run)
+        if not dry_run:
+            save_state(state_path, state)
+        return {"sections_created": created}
+    finally:
+        if dry_run:
+            pub.write_html("InfoBot FC 27 — preparación del grupo")
         db.close()
