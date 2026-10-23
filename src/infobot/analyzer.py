@@ -35,8 +35,13 @@ REGLAS
 2. NUNCA inventes datos. Si un dato no está en el texto ni en la imagen, no lo pongas. Copia las cifras tal cual.
 3. MIRA TODAS LAS IMÁGENES con la herramienta Read: muchas veces la información (media, posición, requisitos,
    recompensas, fechas) solo está en la imagen. Transcribe lo que veas.
-4. source_type: "official" solo si la cuenta es oficial de EA o el tweet reproduce un anuncio oficial confirmado.
-   Filtraciones, rumores, "según fuentes", "expected", "leaked" → "leak". Ante la duda → "leak".
+4. source_type significa CONFIRMADO o NO CONFIRMADO, sea cual sea la cuenta:
+   - "official": ya está disponible en el juego o lo ha anunciado EA (objetivos/SBC/evoluciones ya activos,
+     mantenimientos anunciados, guías de contenido que ya se puede jugar, cartas ya lanzadas, "ya disponible",
+     "live", "out now", stats oficiales publicadas por EA).
+   - "leak": aún no ha salido o no está confirmado: "expected", "leaked", "rumoured", "según fuentes",
+     "llegaría", diseños o cartas filtradas antes de su lanzamiento, predicciones.
+   Ante la duda sobre algo que todavía no ha salido → "leak".
 5. Agrupa en UNA sola novedad los tweets que hablen de lo mismo (p. ej. varios tweets de la misma promo).
 6. Si una novedad ya aparece en "YA PUBLICADO" y el tweet no aporta nada nuevo, ignóralo.
    Si aporta algo nuevo (p. ej. la confirmación oficial de una filtración), crea la novedad indicando qué cambia.

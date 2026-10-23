@@ -1,10 +1,254 @@
 {
-  "updated_at": null,
-  "active_promo": null,
-  "objectives": [],
-  "sbcs": [],
+  "updated_at": "2026-10-23 10:35",
+  "active_promo": {
+    "name": "Thunderstruck",
+    "source_type": "leak"
+  },
+  "objectives": [
+    {
+      "name": "The Grounds: objetivos diarios",
+      "reward": "25 PT de grupo",
+      "source_type": "official"
+    },
+    {
+      "name": "The Grounds: objetivos semanales",
+      "reward": "5 x 150 SP + 250 PT de grupo",
+      "source_type": "official"
+    },
+    {
+      "name": "Compra y vende 10 jugadores",
+      "source_type": "official"
+    },
+    {
+      "name": "Carrera de mánager: Juega 3 y Juega 5",
+      "reward": "700 SP",
+      "source_type": "official"
+    },
+    {
+      "name": "Carrera de futbolista: Completa 10",
+      "reward": "750 SP",
+      "source_type": "official"
+    },
+    {
+      "name": "1.030 SP jugando 12 partidos",
+      "reward": "1.030 SP",
+      "source_type": "official"
+    },
+    {
+      "name": "Olga Carmona + 5 sobres (torneo diario T2)",
+      "reward": "Olga Carmona 85 LI + 5 sobres",
+      "source_type": "official"
+    },
+    {
+      "name": "Torneo Circuito Legado FC (ganar 2 torneos)",
+      "source_type": "official"
+    },
+    {
+      "name": "Evento inicial Circuito Legado FC (ganar 1 y asistir 1 en 2 partidos)",
+      "source_type": "official"
+    },
+    {
+      "name": "Witsel: anota en 5 partidos del Torneo Eliminatorio Diario T2 por semana",
+      "reward": "Witsel 84 MCD + 26.500 monedas",
+      "source_type": "official"
+    }
+  ],
+  "sbcs": [
+    {
+      "name": "Woltemade Ultimate Scream",
+      "cost": "≈50.000 puntos / 60.300 monedas",
+      "starts": "2026-10-23",
+      "source_type": "leak"
+    }
+  ],
   "evolutions": [],
-  "events": [],
-  "recent_cards": [],
-  "recent_leaks": []
+  "events": [
+    {
+      "name": "Nuevos sobres de tienda Ultimate Scream",
+      "starts": "2026-10-23",
+      "source_type": "leak"
+    },
+    {
+      "name": "Mantenimiento programado FC 27",
+      "starts": "2026-10-23 08:00",
+      "ends": "2026-10-23 12:00",
+      "source_type": "official"
+    },
+    {
+      "name": "Galería FUT: nuevas ligas MLS, NWSL y Roshn",
+      "source_type": "official"
+    },
+    {
+      "name": "Galería MLS / NWSL / Roshn Saudí",
+      "source_type": "official"
+    },
+    {
+      "name": "Galería: ligas MLS, NWSL y Saudi",
+      "source_type": "official"
+    }
+  ],
+  "recent_cards": [
+    {
+      "player": "Carlos Augusto",
+      "rating": 83,
+      "position": "LB",
+      "promo": "Showdown",
+      "club": "Inter",
+      "nation": "Brasil",
+      "source_type": "leak",
+      "_key": "Carlos Augusto|Showdown|83"
+    },
+    {
+      "player": "Loftus-Cheek",
+      "rating": 83,
+      "position": "CAM",
+      "promo": "Showdown",
+      "club": "Milan",
+      "nation": "Inglaterra",
+      "source_type": "leak",
+      "_key": "Loftus-Cheek|Showdown|83"
+    },
+    {
+      "player": "Guzmán",
+      "rating": 82,
+      "position": "CB",
+      "promo": "Showdown",
+      "club": "Monterrey",
+      "nation": "México",
+      "source_type": "leak",
+      "_key": "Guzmán|Showdown|82"
+    },
+    {
+      "player": "Árciga",
+      "rating": 82,
+      "position": "RW",
+      "promo": "Showdown",
+      "club": "Tijuana",
+      "nation": "México",
+      "source_type": "leak",
+      "_key": "Árciga|Showdown|82"
+    },
+    {
+      "player": "Mor",
+      "rating": 85,
+      "position": "ST",
+      "promo": "Ultimate Scream",
+      "club": "NEC",
+      "nation": "Turquía",
+      "source_type": "leak",
+      "_key": "Mor|Ultimate Scream|85"
+    },
+    {
+      "player": "Héctor Bellerín",
+      "rating": 85,
+      "position": "RM",
+      "promo": "Ultimate Scream",
+      "club": "Real Betis",
+      "nation": "España",
+      "league": "LALIGA",
+      "source_type": "leak",
+      "_key": "Héctor Bellerín|Ultimate Scream|85"
+    },
+    {
+      "player": "Woltemade",
+      "rating": 85,
+      "position": "CAM",
+      "promo": "Ultimate Scream",
+      "club": "Juventus",
+      "nation": "Alemania",
+      "league": "Serie A",
+      "source_type": "leak",
+      "_key": "Woltemade|Ultimate Scream|85"
+    },
+    {
+      "player": "St. Juste",
+      "rating": 84,
+      "position": "CB",
+      "club": "Feyenoord",
+      "source_type": "official",
+      "_key": "St. Juste||84"
+    },
+    {
+      "player": "Mika Mármol",
+      "rating": 84,
+      "position": "CB",
+      "club": "Feyenoord",
+      "source_type": "official",
+      "_key": "Mika Mármol||84"
+    },
+    {
+      "player": "Quaresma",
+      "rating": 87,
+      "position": "RW",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Quaresma|Ultimate Scream|87"
+    },
+    {
+      "player": "McTominay",
+      "rating": 87,
+      "position": "CM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "McTominay|Ultimate Scream|87"
+    },
+    {
+      "player": "Valverde",
+      "rating": 88,
+      "position": "CM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Valverde|Ultimate Scream|88"
+    },
+    {
+      "player": "Laudehr",
+      "rating": 89,
+      "position": "CM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Laudehr|Ultimate Scream|89"
+    },
+    {
+      "player": "Messi",
+      "rating": 90,
+      "position": "CAM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Messi|Ultimate Scream|90"
+    },
+    {
+      "player": "Kvaratskhelia",
+      "rating": 90,
+      "position": "LW",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Kvaratskhelia|Ultimate Scream|90"
+    }
+  ],
+  "recent_leaks": [
+    {
+      "title": "Tienda de Tokens Scream: primeros detalles y SBC/objetivos",
+      "date": "2026-10-23 10:35"
+    },
+    {
+      "title": "Nuevos sobres de tienda de Ultimate Scream mañana",
+      "date": "2026-10-23 10:35"
+    },
+    {
+      "title": "Woltemade Ultimate Scream SBC, esperada hoy",
+      "date": "2026-10-23 10:34"
+    },
+    {
+      "title": "Diseño de Thunderstruck en FC 27 filtrado",
+      "date": "2026-10-23 10:34"
+    },
+    {
+      "title": "Ultimate Scream Equipo 2 filtrado: Olise 92 y Messi 90",
+      "date": "2026-10-23 10:33"
+    },
+    {
+      "title": "Ultimate Scream filtrado: Szoboszlai 88 y Stam Hero 88",
+      "date": "2026-10-23 10:32"
+    }
+  ]
 }
