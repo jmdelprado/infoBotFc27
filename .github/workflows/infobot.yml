@@ -1,0 +1,72 @@
+name: InfoBot
+
+on:
+  schedule:
+    - cron: "7 */4 * * *"   # cada 4 horas (minuto 7 para evitar la congestión de la hora en punto)
+    - cron: "0 20 * * *"    # resumen diario (22:00 en España en verano, 21:00 en invierno)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Qué ejecutar"
+        type: choice
+        options: [run, daily, check]
+        default: run
+
+concurrency:
+  group: infobot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      X_COOKIES: ${{ secrets.X_COOKIES }}
+      X_USERNAME: ${{ vars.X_USERNAME || 'infobotfc' }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+      TELEGRAM_OWNER_CHAT_ID: ${{ secrets.TELEGRAM_OWNER_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Instalar dependencias
+        run: |
+          uv sync --frozen
+          npm install -g @anthropic-ai/claude-code
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
+          uv run playwright install --with-deps chromium
+
+      - name: Elegir modo
+        id: mode
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            if [ "${{ github.event.schedule }}" = "0 20 * * *" ]; then MODE=daily; else MODE=run; fi
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+
+      - name: Ejecutar InfoBot (${{ steps.mode.outputs.mode }})
+        run: uv run python -m infobot ${{ steps.mode.outputs.mode }}
+
+      - name: Guardar estado
+        if: always() && steps.mode.outputs.mode != 'check'
+        run: |
+          git config user.name "infobot"
+          git config user.email "infobot@users.noreply.github.com"
+          git add data/infobot.db data/state.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "chore(data): estado $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push

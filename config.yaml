@@ -1,0 +1,24 @@
+# Cuentas de X a seguir (sin @). Para añadir una, basta con añadir una línea.
+accounts:
+  - JuniorSintress
+  - FutPoliceLeaks
+
+# Tweets máximos que se leen por cuenta en cada ejecución
+tweets_per_account: 40
+
+# En la primera ejecución solo se procesan los tweets de las últimas N horas
+first_run_hours: 24
+
+# Incluir respuestas de la propia cuenta en hilos
+include_self_replies: true
+
+# Modelo de Claude Code que analiza los tweets
+claude_model: sonnet
+# Tweets por llamada a Claude
+batch_size: 12
+
+# Mostrar enlace discreto a la fuente al final de cada mensaje
+show_source_link: true
+
+channel_title: "InfoBot FC 27"
+timezone: "Europe/Madrid"

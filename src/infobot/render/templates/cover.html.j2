@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Oswald"; src: url("{{ fonts }}/Oswald.ttf"); font-weight: 200 700; }
+  @font-face { font-family: "Inter"; src: url("{{ fonts }}/Inter.ttf"); font-weight: 100 900; }
+  :root { --a: {{ c1 }}; --b: {{ c2 }}; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 720px; }
+  body {
+    font-family: "Inter", sans-serif; color: #fff; overflow: hidden; position: relative;
+    background: radial-gradient(120% 140% at 100% 0%, var(--a) 0%, var(--b) 45%, #07080d 100%);
+  }
+  /* rejilla y destellos de fondo */
+  .grid { position: absolute; inset: 0; opacity: .10;
+    background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 48px 48px; mask-image: linear-gradient(90deg, transparent, #000 60%); }
+  .slash { position: absolute; top: -200px; right: 260px; width: 120px; height: 1200px; transform: rotate(28deg);
+    background: linear-gradient(180deg, rgba(255,255,255,.0), rgba(255,255,255,.18), rgba(255,255,255,0)); }
+  .slash.s2 { right: 120px; width: 40px; opacity: .7; }
+  .hero { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); width: 400px; height: 560px;
+    border-radius: 28px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 3px rgba(255,255,255,.15);
+    background: #0b0d14 center/cover no-repeat; }
+  .hero img { width: 100%; height: 100%; object-fit: contain; }
+  .hero.big-emoji { display: grid; place-items: center; font-size: 220px;
+    background: linear-gradient(160deg, rgba(255,255,255,.14), rgba(255,255,255,.02)); }
+  .content { position: absolute; left: 72px; top: 64px; bottom: 64px; width: {{ 680 if has_hero else 1100 }}px;
+    display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 14px; font: 600 22px "Oswald"; letter-spacing: .18em;
+    text-transform: uppercase; opacity: .9; }
+  .brand .dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 0 18px #fff; }
+  .chips { display: flex; gap: 12px; margin-top: 40px; }
+  .chip { font: 700 22px "Oswald"; letter-spacing: .08em; padding: 8px 18px; border-radius: 999px;
+    background: rgba(0,0,0,.35); border: 2px solid rgba(255,255,255,.35); text-transform: uppercase; }
+  .chip.kind { background: #fff; color: #0b0d14; border-color: #fff; }
+  .chip.leak { border-color: #ffd23f; color: #ffd23f; }
+  .chip.official { border-color: #3fff8f; color: #3fff8f; }
+  h1 { font: 700 {{ title_size }}px/1.02 "Oswald"; text-transform: uppercase; margin-top: 26px;
+    text-shadow: 0 6px 30px rgba(0,0,0,.45); letter-spacing: .01em; }
+  .facts { margin-top: auto; display: grid; grid-template-columns: repeat({{ fact_cols }}, minmax(0, 1fr)); gap: 14px; }
+  .fact { background: rgba(0,0,0,.38); border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 14px 18px;
+    backdrop-filter: blur(6px); }
+  .fact .l { font: 600 15px "Inter"; text-transform: uppercase; letter-spacing: .1em; opacity: .7; }
+  .fact .v { font: 700 30px/1.1 "Oswald"; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .footer { position: absolute; left: 72px; bottom: 24px; font: 500 16px "Inter"; opacity: .55; letter-spacing: .06em; }
+</style>
+</head>
+<body>
+  <div class="grid"></div><div class="slash"></div><div class="slash s2"></div>
+  {% if hero %}
+  <div class="hero"><img src="{{ hero }}"></div>
+  {% elif show_emoji %}
+  <div class="hero big-emoji">{{ emoji }}</div>
+  {% endif %}
+  <div class="content">
+    <div class="brand"><span class="dot"></span>{{ brand }}</div>
+    <div class="chips">
+      <span class="chip kind">{{ emoji }} {{ label }}</span>
+      {% if source_label %}<span class="chip {{ source_class }}">{{ source_label }}</span>{% endif %}
+    </div>
+    <h1>{{ title }}</h1>
+    {% if facts %}
+    <div class="facts">
+      {% for f in facts %}<div class="fact"><div class="l">{{ f.label }}</div><div class="v">{{ f.value }}</div></div>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="footer">{{ footer }}</div>
+</body>
+</html>
