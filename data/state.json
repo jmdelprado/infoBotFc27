@@ -1,13 +1,217 @@
 {
-  "updated_at": null,
-  "active_promo": null,
+  "updated_at": "2026-10-23 19:10",
+  "active_promo": {
+    "name": "Ultimate Scream",
+    "source_type": "leak"
+  },
   "objectives": [],
-  "sbcs": [],
-  "evolutions": [],
-  "events": [],
-  "recent_cards": [],
-  "recent_leaks": [],
-  "calendar": [],
+  "sbcs": [
+    {
+      "name": "Woltemade",
+      "cost": "~50.000 puntos (~60.000 monedas)",
+      "starts": "2026-10-23",
+      "source_type": "leak"
+    }
+  ],
+  "evolutions": [
+    {
+      "name": "Evolución RM/RW máx. 82 (Ultimate Scream)",
+      "requirements": "Varios requisitos de estadísticas; posición RM/RW",
+      "upgrades": "Estadísticas +10/12/15, +1 filigranas (máx. 4★), caminos Finesse Shot+ / Quick Step+ / Technical+",
+      "source_type": "leak"
+    }
+  ],
+  "events": [
+    {
+      "name": "Galería Ultimate Scream",
+      "starts": "2026-10-23",
+      "source_type": "official"
+    },
+    {
+      "name": "Mantenimiento de servidores",
+      "starts": "2026-10-23 08:00",
+      "ends": "2026-10-23 12:00",
+      "source_type": "official"
+    }
+  ],
+  "recent_cards": [
+    {
+      "player": "Szoboszlai",
+      "rating": 88,
+      "position": "RB",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Szoboszlai|Ultimate Scream|88"
+    },
+    {
+      "player": "Salma Paralluelo",
+      "rating": 88,
+      "position": "ST",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Salma Paralluelo|Ultimate Scream|88"
+    },
+    {
+      "player": "Stam",
+      "rating": 88,
+      "position": "CDM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Stam|Ultimate Scream|88"
+    },
+    {
+      "player": "Cristiano Ronaldo",
+      "rating": 89,
+      "position": "LW",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Cristiano Ronaldo|Ultimate Scream|89"
+    },
+    {
+      "player": "Zola",
+      "rating": 89,
+      "position": "ST",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Zola|Ultimate Scream|89"
+    },
+    {
+      "player": "Raphinha",
+      "rating": 90,
+      "position": "CAM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Raphinha|Ultimate Scream|90"
+    },
+    {
+      "player": "Mandžukić",
+      "rating": 87,
+      "position": "LW",
+      "source_type": "leak",
+      "_key": "Mandžukić||87"
+    },
+    {
+      "player": "Stam",
+      "rating": 88,
+      "position": "CDM",
+      "source_type": "leak",
+      "_key": "Stam||88"
+    },
+    {
+      "player": "Zola",
+      "rating": 89,
+      "position": "ST",
+      "source_type": "leak",
+      "_key": "Zola||89"
+    },
+    {
+      "player": "Fabinho",
+      "rating": 87,
+      "position": "CB",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Fabinho|Ultimate Scream|87"
+    },
+    {
+      "player": "Palmer",
+      "rating": 87,
+      "position": "RW",
+      "club": "Chelsea",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Palmer|Ultimate Scream|87"
+    },
+    {
+      "player": "Valverde",
+      "rating": 88,
+      "position": "MC",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Valverde|Ultimate Scream|88"
+    },
+    {
+      "player": "Laudehr",
+      "rating": 89,
+      "position": "MC",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Laudehr|Ultimate Scream|89"
+    },
+    {
+      "player": "Messi",
+      "rating": 90,
+      "position": "MCO",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Messi|Ultimate Scream|90"
+    },
+    {
+      "player": "Kvaratskhelia",
+      "rating": 90,
+      "position": "EI",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Kvaratskhelia|Ultimate Scream|90"
+    }
+  ],
+  "recent_leaks": [
+    {
+      "title": "Recompensas de pretemporada de FC 26 llegan a FC 27",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "Ultimate Scream: nuevo equipo en sobres",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "FC 27: filtrados cambios de interfaz y gestión de equipo",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "Filtrados nuevos packs de tienda: ligas y 2x máx. 85",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "Ultimate Scream Equipo 1: estadísticas de las cartas filtradas",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "Filtrada nueva evolución Ultimate Scream: RM/RW máx. 82",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "Scream Token Store: primeros detalles",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "Nuevos packs de tienda llegan mañana con elecciones de jugador",
+      "date": "2026-10-23 19:10"
+    },
+    {
+      "title": "SBC de Woltemade esperado hoy: 50.000 puntos",
+      "date": "2026-10-23 19:09"
+    },
+    {
+      "title": "Truco: 700 SP en Carrera de mánager en 5 partidos",
+      "date": "2026-10-23 19:09"
+    }
+  ],
+  "calendar": [
+    {
+      "type": "event",
+      "name": "Galería Ultimate Scream",
+      "starts": "2026-10-23",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Mantenimiento de servidores",
+      "starts": "2026-10-23 08:00",
+      "ends": "2026-10-23 12:00",
+      "detail": ""
+    }
+  ],
   "evolutions_feed": [
     {
       "id": 2552,
@@ -436,6 +640,127 @@
         "Equilibrio +5"
       ],
       "url": "https://www.fut.gg/evolutions/2604-side-stopper/"
+    },
+    {
+      "id": 2631,
+      "name": "Espectro Central",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-02 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · MC/MCD",
+      "upgrades": [
+        "PlayStyle Pase teledirigido",
+        "Media +5",
+        "Remate de cabeza +3",
+        "Salto +3"
+      ],
+      "url": "https://www.fut.gg/evolutions/2631-center-spectre/"
+    },
+    {
+      "id": 2626,
+      "name": "Ultimate Scream",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-17 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream"
+      ],
+      "url": "https://www.fut.gg/evolutions/2626-ultimate-scream/"
+    },
+    {
+      "id": 2628,
+      "name": "Ultimate Scream Retro 17",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-17 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 17"
+      ],
+      "url": "https://www.fut.gg/evolutions/2628-ultimate-scream-retro-17/"
+    },
+    {
+      "id": 2627,
+      "name": "Ultimate Scream Retro 19",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-17 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 19"
+      ],
+      "url": "https://www.fut.gg/evolutions/2627-ultimate-scream-retro-19/"
+    },
+    {
+      "id": 2625,
+      "name": "Ultimate Scream Retro 20",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-17 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 20"
+      ],
+      "url": "https://www.fut.gg/evolutions/2625-ultimate-scream-retro-20/"
+    },
+    {
+      "id": 2622,
+      "name": "El Muro Encantado",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-27 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81",
+      "upgrades": [
+        "Rareza Ultimate Scream",
+        "Pie malo +1 ⭐",
+        "PlayStyle Anticipación",
+        "Media +8"
+      ],
+      "url": "https://www.fut.gg/evolutions/2622-the-haunted-wall/"
+    },
+    {
+      "id": 2623,
+      "name": "Extremo Diabólico",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-23 19:00",
+      "ends": "2026-11-27 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤82 · MD/ED",
+      "upgrades": [
+        "Rareza Ultimate Scream",
+        "Filigranas +1 ⭐",
+        "PlayStyle+ Primer toque",
+        "Media +15"
+      ],
+      "url": "https://www.fut.gg/evolutions/2623-wicked-winger/"
     },
     {
       "id": 2610,
