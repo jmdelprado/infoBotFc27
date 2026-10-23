@@ -37,6 +37,7 @@
               "objective",
               "sbc",
               "evolution",
+              "mode",
               "event"
             ]
           },
@@ -234,6 +235,36 @@
               ],
               "properties": {
                 "name": {
+                  "type": "string"
+                },
+                "starts": {
+                  "type": "string"
+                },
+                "ends": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "starts": {
+            "type": "string"
+          },
+          "ends": {
+            "type": "string"
+          },
+          "modes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "reward": {
                   "type": "string"
                 },
                 "starts": {

@@ -69,6 +69,9 @@ class Outbox:
             if e["id"] == message_id:
                 e["imgs"], e["caption"] = [self._copy(path)], caption
 
+    def delete_message(self, message_id: int) -> None:
+        self.entries = [e for e in self.entries if e["id"] != message_id]
+
     def pin(self, message_id: int) -> None:
         self.pinned.add(message_id)
 

@@ -156,10 +156,13 @@ def _hydrate(db: DB, item: Item) -> None:
 
 
 def publish_item(pub, renderer: CoverRenderer, item: Item, cfg: Config, sections: Sections) -> list[int]:
-    """Portada + imágenes + texto, en la sección que le toca a la novedad."""
+    """Filtraciones: portada + imágenes + texto en la sección de su tipo.
+    Lo oficial no se publica como mensaje: solo entra en el calendario (devuelve [])."""
+    key = topic_for(item.kind, item.source_type)
+    if key is None:
+        return []
     cover = renderer.render(item_cover_html(item, cfg.channel_title), OUT_DIR / "covers" / f"item_{item.id}.png")
     photos = [cover] + [MEDIA_DIR / n for n in item.images if (MEDIA_DIR / n).exists()][:9]
-    key = topic_for(item.kind, item.source_type)
     ids = sections.send(key, pub.send_album, photos, fmt.caption(item))
     for chunk in fmt.split_html(fmt.item_message(item, cfg.show_source_link)):
         ids.append(sections.send(key, pub.send_message, chunk, reply_to=ids[0]))
@@ -194,25 +197,37 @@ def update_pinned(db: DB, pub, state: dict[str, Any], cfg: Config, dry_run: bool
 
 def update_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections, state: dict[str, Any],
                     cfg: Config, dry_run: bool) -> bool:
-    """Calendario (imagen + texto) en su sección. Solo se toca si su contenido cambia."""
+    """Calendario oficial de las próximas 2 semanas. Cuando su contenido cambia se publica de nuevo
+    (imagen + lista) en la sección Calendario, se fija y se borra la versión anterior."""
     text = calendar_text(state, cfg.timezone)
-    signature = hashlib.sha1("\n".join(text.split("\n")[2:]).encode()).hexdigest()  # sin la línea "Actualizado"
-    if not dry_run and db.get_meta("calendar_hash") == signature and db.get_meta("calendar_text_id"):
+    # Firma sin la línea "Actualizado" ni el día: cambia si cambia el contenido o al pasar de día (se mueve la ventana)
+    today = datetime.now(ZoneInfo(cfg.timezone)).strftime("%Y-%m-%d")
+    signature = hashlib.sha1((today + "\n".join(text.split("\n")[2:])).encode()).hexdigest()
+    if not dry_run and db.get_meta("calendar_hash") == signature and db.get_meta("calendar_photo_id"):
         return False
     html, _ = calendar_html(state, cfg.channel_title, cfg.timezone)
-    img = renderer.render(html, OUT_DIR / "covers" / "calendar.png", full_page=True)
-    caption = "📅 <b>Calendario FC 27</b> · todo lo que hay para hacer y jugar"
+    img = renderer.render(html, OUT_DIR / "covers" / "calendar.png", full_page=True, width=1600)
+    caption = "📅 <b>Calendario oficial FC 27</b> · próximas 2 semanas\n✅ Solo lo que ya está en el juego o ha confirmado EA"
 
-    def send_photo() -> int:
-        mid = sections.send("calendar", pub.send_photo, img, caption)
-        pub.pin(mid)
-        return mid
-
-    _edit_or_send(db, "calendar_photo_id", dry_run, lambda mid: pub.edit_photo(mid, img, caption), send_photo)
-    _edit_or_send(db, "calendar_text_id", dry_run, lambda mid: pub.edit_message(mid, text),
-                  lambda: sections.send("calendar", pub.send_message, text))
+    old_ids = [db.get_meta("calendar_photo_id"), db.get_meta("calendar_text_id")]
+    photo_id = sections.send("calendar", pub.send_photo, img, caption)
+    text_ids = [sections.send("calendar", pub.send_message, chunk, reply_to=photo_id)
+                for chunk in fmt.split_html(text)]
+    try:
+        pub.pin(photo_id)
+    except Exception as e:  # noqa: BLE001
+        log.warning("No se pudo fijar el calendario: %s", e)
     if not dry_run:
+        for mid in old_ids:
+            if mid:
+                try:
+                    pub.delete_message(int(mid))
+                except Exception as e:  # noqa: BLE001 - p. ej. ya borrado a mano
+                    log.info("No se pudo borrar el calendario anterior (%s): %s", mid, e)
+        db.set_meta("calendar_photo_id", str(photo_id))
+        db.set_meta("calendar_text_id", str(text_ids[0]))
         db.set_meta("calendar_hash", signature)
+        db.add_post("calendar", [photo_id, *text_ids])
     return True
 
 
@@ -260,8 +275,7 @@ def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None
                     db.mark_item_posted(item.id, ids)
                 state = merge(state, item, cfg.timezone)
                 summary["posted"] += 1
-            if to_post or db.get_meta("pinned_message_id") is None:
-                update_pinned(db, pub, state, cfg, dry_run)
+            update_pinned(db, pub, state, cfg, dry_run)  # guía de General (si no cambia, Telegram lo ignora)
             # El calendario se revisa siempre: también cambia cuando algo caduca o cambia el día
             summary["calendar_updated"] = update_calendar(db, pub, renderer, sections, state, cfg, dry_run)
         if not dry_run:
@@ -284,7 +298,9 @@ def daily(cfg: Config, *, dry_run: bool = False, db_path: Path = DB_PATH, force:
         last = db.get_meta("last_daily_at")
         if last and not force and now - datetime.fromisoformat(last) < timedelta(hours=20):
             return {"daily": "ya enviado"}
-        items = db.items_since((now - timedelta(hours=24)).isoformat(timespec="seconds"))
+        # El resumen diario recoge las filtraciones (lo oficial ya está en el calendario)
+        items = [i for i in db.items_since((now - timedelta(hours=24)).isoformat(timespec="seconds"))
+                 if i.source_type == "leak"]
         if not items:
             return {"daily": "sin novedades"}
         sections = Sections(db, pub, dry_run)

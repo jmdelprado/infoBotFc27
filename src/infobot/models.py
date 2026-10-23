@@ -12,6 +12,7 @@ KINDS = {
     "objective": {"emoji": "🎯", "label": "OBJETIVOS", "tag": "Objetivos"},
     "sbc": {"emoji": "🧩", "label": "SBC", "tag": "SBC"},
     "evolution": {"emoji": "🧬", "label": "EVOLUCIÓN", "tag": "Evolucion"},
+    "mode": {"emoji": "🎮", "label": "MODO DE JUEGO", "tag": "ModoDeJuego"},
     "event": {"emoji": "📢", "label": "EVENTO", "tag": "Evento"},
 }
 
@@ -24,31 +25,33 @@ TOPICS = {
     "sbc": {"name": "🧩 SBC", "icon_color": 7322096},
     "evolution": {"name": "🧬 Evoluciones", "icon_color": 13338331},
     "event": {"name": "📢 Eventos", "icon_color": 16749490},
-    "leak": {"name": "🕵️ Filtraciones", "icon_color": 16766590},
     "calendar": {"name": "📅 Calendario", "icon_color": 7322096},
     "daily": {"name": "🗞️ Resumen diario", "icon_color": 9367192},
 }
 
 
 TOPIC_INTROS = {
-    "promo": "Aquí aparecen las <b>promos y equipos</b> oficiales: cuándo salen, qué traen y hasta cuándo duran.",
-    "card": "Aquí aparecen las <b>cartas nuevas</b> confirmadas: media, posición, club y promo.",
-    "objective": "Aquí aparecen los <b>objetivos</b>: qué hay que hacer, la recompensa y la fecha de fin.",
-    "sbc": "Aquí aparecen los <b>SBC</b>: requisitos, coste aproximado, recompensa y fecha de fin.",
-    "evolution": "Aquí aparecen las <b>evoluciones</b>: requisitos para meter la carta, coste y mejoras.",
-    "event": "Aquí aparecen los <b>eventos</b>: mantenimientos, TOTW, torneos, recompensas y otras noticias.",
-    "leak": "Aquí aparecen las <b>filtraciones y rumores</b>. 🕵️ Nada de esto está confirmado por EA.",
-    "calendar": "Aquí está el <b>calendario</b> con todo lo que hay para hacer y jugar, ordenado por fecha de fin. "
-                "Se actualiza solo.",
-    "daily": "Aquí aparece cada noche el <b>resumen del día</b> con todas las novedades.",
+    "promo": "🕵️ Aquí aparecen las <b>filtraciones de promos y equipos</b>: qué se espera, cuándo y con qué cartas.",
+    "card": "🕵️ Aquí aparecen las <b>cartas filtradas</b>: media, posición, club y promo antes de que salgan.",
+    "objective": "🕵️ Aquí aparecen los <b>objetivos filtrados</b>: qué habrá que hacer y sus recompensas.",
+    "sbc": "🕵️ Aquí aparecen los <b>SBC filtrados</b>: requisitos, coste estimado y recompensa.",
+    "evolution": "🕵️ Aquí aparecen las <b>evoluciones filtradas</b>: requisitos, coste y mejoras.",
+    "event": "🕵️ Aquí aparecen otras <b>filtraciones y rumores</b>: modos, eventos, tienda, TOTW…",
+    "calendar": "✅ Aquí está el <b>calendario OFICIAL</b>: todo lo que ya está en el juego o ha confirmado EA, "
+                "con su inicio y su fin en las próximas dos semanas. Se actualiza solo.",
+    "daily": "Aquí aparece cada noche el <b>resumen del día</b> con todas las filtraciones.",
 }
 
 
-def topic_for(kind: str, source_type: str) -> str:
-    """Sección de una novedad: las filtraciones van siempre a Filtraciones."""
-    if source_type == "leak":
-        return "leak"
-    return kind if kind in TOPICS else "event"
+def topic_for(kind: str, source_type: str) -> str | None:
+    """Sección de una novedad.
+
+    - Filtraciones: a la sección de su tipo (Promos, Cartas, Objetivos, SBC, Evoluciones, Eventos).
+    - Oficial: None → no se publica como mensaje; solo alimenta el Calendario.
+    """
+    if source_type == "official":
+        return None
+    return kind if kind in TOPICS and kind not in ("calendar", "daily") else "event"
 
 SOURCE_TYPES = {
     "official": {"emoji": "✅", "label": "OFICIAL", "tag": "Oficial"},
@@ -94,7 +97,8 @@ class Item:
 
     @classmethod
     def from_analysis(cls, data: dict[str, Any]) -> "Item":
-        extra = {k: data[k] for k in ("promo", "cards", "objectives", "sbcs", "evolutions", "events") if data.get(k)}
+        extra = {k: data[k] for k in ("promo", "cards", "objectives", "sbcs", "evolutions", "events", "modes",
+                                       "starts", "ends") if data.get(k)}
         return cls(
             kind=data["kind"],
             source_type=data["source_type"],

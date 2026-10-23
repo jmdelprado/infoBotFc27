@@ -1,4 +1,7 @@
-"""Calendario: todo lo activo o por llegar, agrupado por plazo (hoy, mañana, esta semana…)."""
+"""Calendario OFICIAL: imagen de las próximas dos semanas (estilo diagrama de Gantt) + lista en texto.
+
+Solo usa state["calendar"], donde únicamente entra contenido oficial (ya disponible en el juego o anunciado por EA).
+"""
 
 from __future__ import annotations
 
@@ -13,23 +16,17 @@ from ..state import _parse_date
 from .cover import _env
 
 DAYS = ["lun", "mar", "mié", "jue", "vie", "sáb", "dom"]
+WINDOW_DAYS = 14
 
 TYPE_META = {
-    "promo": ("🔥", "Promo"),
-    "objective": ("🎯", "Objetivos"),
-    "sbc": ("🧩", "SBC"),
-    "evolution": ("🧬", "Evolución"),
-    "event": ("📢", "Evento"),
+    "promo": ("🔥", "Promo", "#ff7a18"),
+    "objective": ("🎯", "Objetivos", "#2bd67b"),
+    "sbc": ("🧩", "SBC", "#36a2ff"),
+    "evolution": ("🧬", "Evolución", "#b26bff"),
+    "mode": ("🎮", "Modo de juego", "#ff3d7f"),
+    "event": ("📢", "Evento", "#f7c948"),
+    "card": ("🃏", "Carta", "#f7d774"),
 }
-
-BUCKETS = [
-    ("today", "⏰ Termina hoy"),
-    ("tomorrow", "⌛ Termina mañana"),
-    ("week", "📆 Esta semana"),
-    ("later", "🗓️ Más adelante"),
-    ("nodate", "❔ Sin fecha de fin confirmada"),
-    ("soon", "🔜 Próximamente"),
-]
 
 
 @dataclass
@@ -39,15 +36,10 @@ class Entry:
     detail: str
     starts: datetime | None
     ends: datetime | None
-    leak: bool
 
     @property
-    def emoji(self) -> str:
-        return TYPE_META[self.type][0]
-
-    @property
-    def type_label(self) -> str:
-        return TYPE_META[self.type][1]
+    def meta(self) -> tuple[str, str, str]:
+        return TYPE_META.get(self.type, TYPE_META["event"])
 
 
 def fmt_date(d: datetime | None) -> str:
@@ -61,97 +53,106 @@ def _stamp(d: datetime) -> str:
     return f"{DAYS[d.weekday()]} {d:%d/%m %H:%M}"
 
 
-def entries_from_state(state: dict[str, Any]) -> list[Entry]:
-    out: list[Entry] = []
-
-    def add(type_: str, x: dict, detail: str = "") -> None:
-        out.append(Entry(
-            type=type_, name=x.get("name") or "", detail=detail,
-            starts=_parse_date(x.get("starts") or x.get("start")),
-            ends=_parse_date(x.get("ends") or x.get("end")),
-            leak=x.get("source_type") == "leak",
-        ))
-
-    if state.get("active_promo"):
-        add("promo", state["active_promo"])
-    for o in state.get("objectives", []):
-        add("objective", o, o.get("reward", ""))
-    for s in state.get("sbcs", []):
-        add("sbc", s, " · ".join(x for x in (s.get("reward"), s.get("cost")) if x))
-    for e in state.get("evolutions", []):
-        add("evolution", e, " · ".join(x for x in (e.get("cost"), e.get("requirements")) if x))
-    for e in state.get("events", []):
-        add("promo" if (e.get("name") or "").startswith("Promo ") else "event", e)
-    return [e for e in out if e.name]
-
-
-def bucketize(entries: list[Entry], now: datetime) -> dict[str, list[Entry]]:
-    today = now.date()
-    groups: dict[str, list[Entry]] = {k: [] for k, _ in BUCKETS}
-    for e in entries:
-        if e.ends and e.ends < now:
-            continue
-        if e.starts and e.starts > now:
-            groups["soon"].append(e)
-        elif not e.ends:
-            groups["nodate"].append(e)
-        elif e.ends.date() == today:
-            groups["today"].append(e)
-        elif e.ends.date() == today + timedelta(days=1):
-            groups["tomorrow"].append(e)
-        elif e.ends - now <= timedelta(days=7):
-            groups["week"].append(e)
-        else:
-            groups["later"].append(e)
-    far = datetime.max
-    for k, lst in groups.items():
-        lst.sort(key=lambda e: (e.starts or far) if k == "soon" else (e.ends or far))
-    return groups
-
-
 def _now(tz: str) -> datetime:
     return datetime.now(ZoneInfo(tz)).replace(tzinfo=None)
 
 
+def entries_from_state(state: dict[str, Any]) -> list[Entry]:
+    out = []
+    for c in state.get("calendar", []):
+        if not c.get("name"):
+            continue
+        out.append(Entry(
+            type=c.get("type", "event"), name=c["name"], detail=c.get("detail", ""),
+            starts=_parse_date(c.get("starts")), ends=_parse_date(c.get("ends")),
+        ))
+    return out
+
+
+def split(entries: list[Entry], now: datetime) -> tuple[list[Entry], list[Entry], list[Entry]]:
+    """(en vigor, empiezan en las próximas 2 semanas, empiezan más tarde). Lo caducado se descarta."""
+    window_end = now + timedelta(days=WINDOW_DAYS)
+    active, soon, later = [], [], []
+    for e in entries:
+        if e.ends and e.ends < now:
+            continue
+        if e.starts and e.starts > now:
+            (soon if e.starts < window_end else later).append(e)
+        else:
+            active.append(e)
+    far = datetime.max
+    active.sort(key=lambda e: (e.ends or far, e.name))
+    soon.sort(key=lambda e: (e.starts or far, e.name))
+    later.sort(key=lambda e: (e.starts or far, e.name))
+    return active, soon, later
+
+
 def calendar_text(state: dict[str, Any], tz: str = "Europe/Madrid", now: datetime | None = None) -> str:
     now = now or _now(tz)
-    groups = bucketize(entries_from_state(state), now)
-    out = ["📅 <b>CALENDARIO · FC 27</b>", f"<i>Actualizado: {_stamp(now)}</i>"]
-    if not any(groups.values()):
-        out += ["", "No hay nada activo ahora mismo. 💤"]
-    for key, label in BUCKETS:
-        if not groups[key]:
-            continue
-        out += ["", f"<b>{label}</b>"]
-        for e in groups[key]:
-            when = f"empieza {fmt_date(e.starts)}" if key == "soon" else (f"hasta {fmt_date(e.ends)}" if e.ends else "")
-            line = f"{e.emoji} <b>{escape(e.name)}</b>" + (" 🕵️" if e.leak else "")
-            if when:
-                line += f" — <i>{when}</i>"
-            if e.detail:
-                line += f"\n     {escape(e.detail)[:140]}"
-            out.append(line)
-    out += ["", "<i>🕵️ = filtración, sin confirmar por EA</i>"]
+    active, soon, later = split(entries_from_state(state), now)
+    out = ["📅 <b>CALENDARIO OFICIAL · FC 27</b>", f"<i>Actualizado: {_stamp(now)}</i>"]
+    if not (active or soon or later):
+        out += ["", "No hay nada oficial activo ahora mismo. 💤"]
+
+    def line(e: Entry, when: str) -> str:
+        emoji, label, _ = e.meta
+        s = f"{emoji} <b>{escape(e.name)}</b> <i>({label})</i>"
+        if when:
+            s += f" — {when}"
+        if e.detail:
+            s += f"\n     {escape(e.detail)[:140]}"
+        return s
+
+    if active:
+        out += ["", "<b>✅ En vigor</b>"]
+        out += [line(e, f"hasta {fmt_date(e.ends)}" if e.ends else "sin fecha de fin") for e in active]
+    if soon:
+        out += ["", "<b>🔜 Próximos 14 días</b>"]
+        out += [line(e, f"del {fmt_date(e.starts)}" + (f" al {fmt_date(e.ends)}" if e.ends else "")) for e in soon]
+    if later:
+        out += ["", "<b>🗓️ Más adelante</b>"]
+        out += [line(e, f"desde {fmt_date(e.starts)}") for e in later]
     return "\n".join(out)[:4096]
 
 
-def calendar_html(state: dict[str, Any], brand: str, tz: str = "Europe/Madrid", now: datetime | None = None) -> tuple[str, int]:
-    """Devuelve (html, alto_en_px)."""
+def calendar_html(state: dict[str, Any], brand: str, tz: str = "Europe/Madrid",
+                  now: datetime | None = None) -> tuple[str, int]:
+    """Diagrama de las próximas dos semanas. Devuelve (html, alto_en_px)."""
     now = now or _now(tz)
-    groups = bucketize(entries_from_state(state), now)
-    sections = []
-    rows = 0
-    for key, label in BUCKETS:
-        if groups[key]:
-            items = [{
-                "emoji": e.emoji, "type": e.type_label, "name": e.name, "detail": e.detail[:90], "leak": e.leak,
-                "when": (f"Empieza {fmt_date(e.starts)}" if key == "soon" else (fmt_date(e.ends) if e.ends else "—")),
-            } for e in groups[key][:10]]
-            sections.append({"key": key, "label": label, "rows": items})
-            rows += len(items)
-    height = max(720, 260 + len(sections) * 70 + rows * 86)
+    day0 = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    window_end = day0 + timedelta(days=WINDOW_DAYS)
+    total = (window_end - day0).total_seconds()
+    active, soon, later = split(entries_from_state(state), now)
+
+    days = []
+    for i in range(WINDOW_DAYS):
+        d = day0 + timedelta(days=i)
+        days.append({"dow": DAYS[d.weekday()], "num": d.day, "weekend": d.weekday() >= 5, "today": i == 0})
+
+    rows = []
+    for e in active + soon:
+        emoji, label, color = e.meta
+        start = max(e.starts or day0, day0)
+        end = min(e.ends or window_end, window_end)
+        left = max(0.0, (start - day0).total_seconds() / total * 100)
+        width = max(2.5, (end - start).total_seconds() / total * 100)
+        if e.ends:
+            when = f"hasta {fmt_date(e.ends)}" if not (e.starts and e.starts > now) else \
+                f"{fmt_date(e.starts)} → {fmt_date(e.ends)}"
+        else:
+            when = "sin fecha de fin" if not (e.starts and e.starts > now) else f"desde {fmt_date(e.starts)}"
+        rows.append({
+            "emoji": emoji, "label": label, "color": color, "name": e.name, "detail": e.detail[:70],
+            "left": round(left, 2), "width": round(min(width, 100 - left), 2), "when": when,
+            "open_end": e.ends is None or e.ends > window_end, "upcoming": bool(e.starts and e.starts > now),
+            "no_end": e.ends is None, "short": width < 22,
+        })
+    later_rows = [{"emoji": e.meta[0], "name": e.name, "when": fmt_date(e.starts)} for e in later[:6]]
+    now_pct = round((now - day0).total_seconds() / total * 100, 2)
+    height = 300 + max(len(rows), 1) * 78 + (90 + len(later_rows) * 40 if later_rows else 0)
     html = _env.get_template("calendar.html.j2").render(
-        fonts=(ASSETS_DIR / "fonts").resolve().as_uri(), brand=brand, sections=sections,
-        updated=_stamp(now), height=height,
+        fonts=(ASSETS_DIR / "fonts").resolve().as_uri(), brand=brand, days=days, rows=rows,
+        later=later_rows, now_pct=now_pct, updated=_stamp(now), height=height,
+        range_label=f"{day0:%d/%m} – {(window_end - timedelta(days=1)):%d/%m}",
     )
     return html, height

@@ -89,43 +89,23 @@ def _short_date(value: str | None) -> str:
 
 
 def pinned_message(state: dict[str, Any], title: str = "InfoBot FC 27") -> str:
+    """Mensaje fijado en General: guía del grupo + últimas filtraciones."""
     upd = _short_date(state.get("updated_at")) or "—"
-    out = [f"📌 <b>ESTADO ACTUAL · {e(title.upper())}</b>", f"<i>Actualizado: {upd}</i>", ""]
-
-    promo = state.get("active_promo")
-    out.append("🔥 <b>Promo activa</b>")
-    if promo:
-        dates = " → ".join(x for x in (_short_date(promo.get("start")), _short_date(promo.get("end"))) if x)
-        out.append(f"• {e(promo.get('name'))}{_src(promo)}" + (f" ({dates})" if dates else ""))
-    else:
-        out.append("• —")
-
-    def section(emoji: str, label: str, entries: list[dict], fmt) -> None:
-        out.extend(["", f"{emoji} <b>{label}</b>"])
-        out.extend(fmt(x) for x in entries) if entries else out.append("• —")
-
-    section("🎯", "Objetivos en vigor", state.get("objectives", [])[:8], lambda o: (
-        f"• {e(o.get('name'))}{_src(o)}"
-        + (f" — {e(o.get('reward'))}" if o.get("reward") else "")
-        + (f" (hasta {_short_date(o.get('ends'))})" if o.get("ends") else "")
-    ))
-    section("🧩", "SBCs", state.get("sbcs", [])[:8], lambda s: (
-        f"• {e(s.get('name'))}{_src(s)}"
-        + (f" — {e(s.get('cost'))}" if s.get("cost") else "")
-        + (f" (hasta {_short_date(s.get('ends'))})" if s.get("ends") else "")
-    ))
-    section("🧬", "Evoluciones", state.get("evolutions", [])[:8], lambda v: (
-        f"• {e(v.get('name'))}{_src(v)}"
-        + (f" — {e(v.get('cost'))}" if v.get("cost") else "")
-        + (f" (hasta {_short_date(v.get('ends'))})" if v.get("ends") else "")
-    ))
-    section("🃏", "Últimas cartas", state.get("recent_cards", [])[:10], lambda c: (
-        "• " + " ".join(x for x in (str(c.get("rating") or ""), e(c.get("player")),
-                                     f"({e(c.get('position'))})" if c.get("position") else "") if x)
-        + (f" — {e(c.get('promo'))}" if c.get("promo") else "") + _src(c)
-    ))
-    section("🕵️", "Últimas filtraciones", state.get("recent_leaks", [])[:6], lambda l: f"• {e(l.get('title'))}")
-    out += ["", "<i>🕵️ = filtración, sin confirmar por EA</i>"]
+    out = [
+        f"📌 <b>{e(title.upper())} · CÓMO FUNCIONA</b>",
+        "",
+        "✅ <b>📅 Calendario</b> → lo OFICIAL: todo lo que ya está en el juego o ha confirmado EA, con su inicio y "
+        "su fin en las próximas 2 semanas.",
+        "",
+        "🕵️ <b>Filtraciones</b>, cada una en su sección:",
+        "🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos",
+        "",
+        "🗞️ <b>Resumen diario</b> → cada noche, todas las filtraciones del día.",
+    ]
+    leaks = state.get("recent_leaks", [])[:6]
+    if leaks:
+        out += ["", "<b>Últimas filtraciones</b>"] + [f"• {e(l.get('title'))}" for l in leaks]
+    out += ["", f"<i>Actualizado: {upd} · Se actualiza solo cada 4 horas</i>"]
     return "\n".join(out)[:TEXT_LIMIT]
 
 

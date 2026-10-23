@@ -136,9 +136,9 @@ def test_split_html_respects_limit_and_blockquotes():
 
 
 def test_pinned_and_daily_render():
-    st = merge(empty_state(), _item(extra={"promo": {"name": "Heroes", "end": "2099-10-30 19:00"}}))
+    st = merge(empty_state(), _item(title="Heroes llegaría el viernes", extra={"promo": {"name": "Heroes"}}))
     html = fmt.pinned_message(st)
-    assert "Heroes" in html and "30/10 19:00" in html
+    assert "Calendario" in html and "Heroes llegaría el viernes" in html
     assert len(fmt.pinned_message(empty_state())) < 4096
     d = fmt.daily_message([_item(title="Uno"), _item(kind="sbc", title="Dos", source_type="official")], "23/10/2026")
     assert "Uno" in d and "Dos" in d and "#ResumenDiario" in d
@@ -156,7 +156,7 @@ def test_pipeline_fixture_dry_run(tmp_path, monkeypatch):
     class FakeRenderer:
         def __enter__(self): return self
         def __exit__(self, *a): pass
-        def render(self, html, dest, full_page=False):
+        def render(self, html, dest, full_page=False, width=1280):
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(b"png")
             return dest
@@ -167,7 +167,7 @@ def test_pipeline_fixture_dry_run(tmp_path, monkeypatch):
     analysis = load_fixture_analysis()
     res = pipeline.run(cfg(), dry_run=True, tweets=load_fixture_tweets(), analysis_override=analysis,
                        db_path=tmp_path / "x.db", state_path=tmp_path / "state.json")
-    assert res["posted"] == 5
+    assert res["posted"] == 5  # 1 filtración publicada + 4 oficiales que solo van al calendario
     assert not (tmp_path / "state.json").exists()  # en dry-run no se guarda el estado
 
 
@@ -175,10 +175,13 @@ def test_pipeline_fixture_dry_run(tmp_path, monkeypatch):
 def test_topic_routing():
     from infobot.models import topic_for
 
-    assert topic_for("sbc", "official") == "sbc"
-    assert topic_for("evolution", "official") == "evolution"
-    assert topic_for("sbc", "leak") == "leak"
-    assert topic_for("raro", "official") == "event"
+    # Filtraciones: a la sección de su tipo
+    assert topic_for("sbc", "leak") == "sbc"
+    assert topic_for("evolution", "leak") == "evolution"
+    assert topic_for("mode", "leak") == "event"
+    assert topic_for("raro", "leak") == "event"
+    # Oficial: no se publica como mensaje, solo va al calendario
+    assert topic_for("sbc", "official") is None
 
 
 def test_state_evolutions_and_future_promo():
@@ -190,22 +193,38 @@ def test_state_evolutions_and_future_promo():
     assert st["events"][0]["name"] == "Promo Futura"
 
 
-def test_calendar_buckets():
-    from infobot.render.calendar import bucketize, calendar_text, entries_from_state
+def test_calendar_only_official_and_split():
+    from infobot.render.calendar import calendar_html, calendar_text, entries_from_state, split
 
     now = datetime(2026, 10, 23, 12, 0)
-    st = empty_state()
-    st["sbcs"] = [{"name": "Hoy", "ends": "2026-10-23 19:00"}, {"name": "Mañana", "ends": "2026-10-24 19:00"},
-                  {"name": "Caducado", "ends": "2026-10-22 19:00"}]
-    st["evolutions"] = [{"name": "Semana", "ends": "2026-10-28"}, {"name": "Lejos", "ends": "2026-12-01"}]
-    st["objectives"] = [{"name": "SinFecha"}]
-    st["events"] = [{"name": "Futuro", "starts": "2026-10-25 09:00"}]
-    g = bucketize(entries_from_state(st), now)
-    names = {k: [e.name for e in v] for k, v in g.items()}
-    assert names == {"today": ["Hoy"], "tomorrow": ["Mañana"], "week": ["Semana"], "later": ["Lejos"],
-                     "nodate": ["SinFecha"], "soon": ["Futuro"]}
+    st = merge(empty_state(), _item(kind="sbc", source_type="official",
+                                    extra={"sbcs": [{"name": "Woltemade", "ends": "2026-10-24 19:00"}]}))
+    st = merge(st, _item(kind="sbc", source_type="leak", extra={"sbcs": [{"name": "Filtrado", "ends": "2026-10-30"}]}))
+    st = merge(st, _item(kind="mode", source_type="official",
+                         extra={"modes": [{"name": "Torneo", "starts": "2026-10-25 18:00", "ends": "2026-10-27"}]}))
+    st = merge(st, _item(kind="event", source_type="official",
+                         extra={"events": [{"name": "Lejano", "starts": "2026-12-01"}]}))
+    st["calendar"].append({"type": "sbc", "name": "Caducado", "starts": "", "ends": "2026-10-01", "detail": ""})
+    names = [e.name for e in entries_from_state(st)]
+    assert "Filtrado" not in names  # las filtraciones nunca entran en el calendario
+    active, soon, later = split(entries_from_state(st), now)
+    assert [e.name for e in active] == ["Woltemade"]
+    assert [e.name for e in soon] == ["Torneo"]
+    assert [e.name for e in later] == ["Lejano"]
     txt = calendar_text(st, now=now)
-    assert "Caducado" not in txt and "Termina hoy" in txt and "Próximamente" in txt
+    assert "Caducado" not in txt and "En vigor" in txt and "Próximos 14 días" in txt
+    html, h = calendar_html(st, "InfoBot", now=now)
+    assert "Woltemade" in html and h > 300
+
+
+def test_legacy_state_migrates_official_to_calendar(tmp_path):
+    from infobot.state import load_state
+
+    path = tmp_path / "state.json"
+    path.write_text(json.dumps({"sbcs": [{"name": "A", "source_type": "official"}, {"name": "B", "source_type": "leak"}]}),
+                    encoding="utf-8")
+    st = load_state(path)
+    assert [c["name"] for c in st["calendar"]] == ["A"]
 
 
 def test_sections_created_once_and_routed(tmp_path):

@@ -124,6 +124,9 @@ class Telegram:
                 if "message is not modified" not in str(e):
                     raise
 
+    def delete_message(self, message_id: int) -> None:
+        self._call("deleteMessage", {"chat_id": self.chat_id, "message_id": message_id})
+
     def pin(self, message_id: int) -> None:
         self._call("pinChatMessage", {"chat_id": self.chat_id, "message_id": message_id, "disable_notification": True})
 
