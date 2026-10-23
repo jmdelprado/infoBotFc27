@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Oswald"; src: url("{{ fonts }}/Oswald.ttf"); font-weight: 200 700; }
+  @font-face { font-family: "Inter"; src: url("{{ fonts }}/Inter.ttf"); font-weight: 100 900; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; min-height: {{ height }}px; }
+  body { font-family: "Inter", sans-serif; color: #fff; padding: 56px 64px 48px;
+    background: radial-gradient(90% 60% at 100% 0%, #1e5eff 0%, #10183a 45%, #07080d 100%); }
+  header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 34px; }
+  .brand { font: 600 22px "Oswald"; letter-spacing: .18em; text-transform: uppercase; opacity: .85; }
+  h1 { font: 700 84px/1 "Oswald"; text-transform: uppercase; margin-top: 8px; }
+  .upd { font: 500 20px "Inter"; opacity: .7; text-align: right; }
+  section { margin-top: 26px; }
+  h2 { font: 700 30px "Oswald"; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 12px; }
+  section.today h2 { color: #ff6b6b; } section.tomorrow h2 { color: #ffb347; }
+  section.week h2 { color: #ffe066; } section.soon h2 { color: #7cf2c4; }
+  .row { display: grid; grid-template-columns: 64px 1fr 300px; align-items: center; gap: 18px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); border-radius: 18px;
+    padding: 14px 20px; margin-bottom: 10px; min-height: 76px; }
+  section.today .row { border-color: rgba(255,107,107,.6); background: rgba(255,107,107,.10); }
+  .em { font-size: 40px; text-align: center; }
+  .name { font: 700 28px/1.15 "Oswald"; }
+  .name .t { font: 600 15px "Inter"; text-transform: uppercase; letter-spacing: .1em; opacity: .6; margin-right: 8px; }
+  .name .leak { font: 700 14px "Inter"; color: #ffd23f; border: 1.5px solid #ffd23f; border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+  .detail { font: 500 17px "Inter"; opacity: .72; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .when { font: 700 26px "Oswald"; text-align: right; }
+  .empty { font: 600 34px "Oswald"; opacity: .7; margin-top: 120px; text-align: center; }
+  footer { margin-top: 28px; font: 500 16px "Inter"; opacity: .5; }
+</style>
+</head>
+<body>
+  <header>
+    <div><div class="brand">{{ brand }}</div><h1>📅 Calendario</h1></div>
+    <div class="upd">Actualizado<br><b>{{ updated }}</b></div>
+  </header>
+  {% for s in sections %}
+  <section class="{{ s.key }}">
+    <h2>{{ s.label }}</h2>
+    {% for it in s.rows %}
+    <div class="row">
+      <div class="em">{{ it.emoji }}</div>
+      <div>
+        <div class="name"><span class="t">{{ it.type }}</span>{{ it.name }}{% if it.leak %}<span class="leak">FILTRACIÓN</span>{% endif %}</div>
+        {% if it.detail %}<div class="detail">{{ it.detail }}</div>{% endif %}
+      </div>
+      <div class="when">{{ it.when }}</div>
+    </div>
+    {% endfor %}
+  </section>
+  {% else %}
+  <div class="empty">No hay nada activo ahora mismo 💤</div>
+  {% endfor %}
+  <footer>{{ brand }} · Horas de España</footer>
+</body>
+</html>

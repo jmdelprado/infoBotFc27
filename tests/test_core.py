@@ -156,14 +156,66 @@ def test_pipeline_fixture_dry_run(tmp_path, monkeypatch):
     class FakeRenderer:
         def __enter__(self): return self
         def __exit__(self, *a): pass
-        def render(self, html, dest):
+        def render(self, html, dest, full_page=False):
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(b"png")
             return dest
 
     monkeypatch.setattr(pipeline, "CoverRenderer", FakeRenderer)
-    analysis = json.loads((FIX / "analysis.json").read_text(encoding="utf-8"))
+    from infobot.__main__ import load_fixture_analysis
+
+    analysis = load_fixture_analysis()
     res = pipeline.run(cfg(), dry_run=True, tweets=load_fixture_tweets(), analysis_override=analysis,
                        db_path=tmp_path / "x.db", state_path=tmp_path / "state.json")
-    assert res["posted"] == 3
+    assert res["posted"] == 5
     assert not (tmp_path / "state.json").exists()  # en dry-run no se guarda el estado
+
+
+# --- secciones y calendario ---
+def test_topic_routing():
+    from infobot.models import topic_for
+
+    assert topic_for("sbc", "official") == "sbc"
+    assert topic_for("evolution", "official") == "evolution"
+    assert topic_for("sbc", "leak") == "leak"
+    assert topic_for("raro", "official") == "event"
+
+
+def test_state_evolutions_and_future_promo():
+    st = merge(empty_state(), _item(kind="evolution", source_type="official",
+                                    extra={"evolutions": [{"name": "Speedster", "ends": "2099-01-01"}]}))
+    assert st["evolutions"][0]["name"] == "Speedster"
+    st = merge(st, _item(extra={"promo": {"name": "Futura", "start": "2099-05-01 19:00"}}))
+    assert st["active_promo"] is None  # aún no ha empezado
+    assert st["events"][0]["name"] == "Promo Futura"
+
+
+def test_calendar_buckets():
+    from infobot.render.calendar import bucketize, calendar_text, entries_from_state
+
+    now = datetime(2026, 10, 23, 12, 0)
+    st = empty_state()
+    st["sbcs"] = [{"name": "Hoy", "ends": "2026-10-23 19:00"}, {"name": "Mañana", "ends": "2026-10-24 19:00"},
+                  {"name": "Caducado", "ends": "2026-10-22 19:00"}]
+    st["evolutions"] = [{"name": "Semana", "ends": "2026-10-28"}, {"name": "Lejos", "ends": "2026-12-01"}]
+    st["objectives"] = [{"name": "SinFecha"}]
+    st["events"] = [{"name": "Futuro", "starts": "2026-10-25 09:00"}]
+    g = bucketize(entries_from_state(st), now)
+    names = {k: [e.name for e in v] for k, v in g.items()}
+    assert names == {"today": ["Hoy"], "tomorrow": ["Mañana"], "week": ["Semana"], "later": ["Lejos"],
+                     "nodate": ["SinFecha"], "soon": ["Futuro"]}
+    txt = calendar_text(st, now=now)
+    assert "Caducado" not in txt and "Termina hoy" in txt and "Próximamente" in txt
+
+
+def test_sections_created_once_and_routed(tmp_path):
+    from infobot.outbox import Outbox
+    from infobot.pipeline import Sections
+
+    db = DB(":memory:")
+    pub = Outbox(tmp_path)
+    s = Sections(db, pub, dry_run=False)
+    a = s.thread("sbc")
+    assert s.thread("sbc") == a
+    assert json.loads(db.get_meta("topics")) == {"sbc": a}
+    assert pub.topics[a] == "🧩 SBC"

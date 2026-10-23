@@ -114,6 +114,11 @@ def pinned_message(state: dict[str, Any], title: str = "InfoBot FC 27") -> str:
         + (f" — {e(s.get('cost'))}" if s.get("cost") else "")
         + (f" (hasta {_short_date(s.get('ends'))})" if s.get("ends") else "")
     ))
+    section("🧬", "Evoluciones", state.get("evolutions", [])[:8], lambda v: (
+        f"• {e(v.get('name'))}{_src(v)}"
+        + (f" — {e(v.get('cost'))}" if v.get("cost") else "")
+        + (f" (hasta {_short_date(v.get('ends'))})" if v.get("ends") else "")
+    ))
     section("🃏", "Últimas cartas", state.get("recent_cards", [])[:10], lambda c: (
         "• " + " ".join(x for x in (str(c.get("rating") or ""), e(c.get("player")),
                                      f"({e(c.get('position'))})" if c.get("position") else "") if x)

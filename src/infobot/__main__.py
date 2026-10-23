@@ -40,6 +40,16 @@ def load_fixture_tweets():
     return tweets
 
 
+def load_fixture_analysis() -> dict:
+    """analysis.json con fechas relativas: "{D+1} 19:00" → mañana a las 19:00."""
+    import re
+
+    base = datetime.now().date()
+    raw = (FIXTURES / "analysis.json").read_text(encoding="utf-8")
+    raw = re.sub(r"\{D\+(\d+)\}", lambda m: (base + timedelta(days=int(m.group(1)))).isoformat(), raw)
+    return json.loads(raw)
+
+
 def _notify_owner(cfg: Config, text: str) -> None:
     if not (cfg.telegram_token and cfg.telegram_owner_chat_id):
         return
@@ -82,7 +92,7 @@ def cmd_check(cfg: Config) -> int:
 
 
 def cmd_channel_id(cfg: Config) -> int:
-    """Muestra los canales donde el bot ha visto mensajes (para canales privados: id -100...)."""
+    """Muestra los canales/grupos donde el bot ha visto mensajes (id -100...)."""
     import httpx
 
     if not cfg.telegram_token:
@@ -96,13 +106,14 @@ def cmd_channel_id(cfg: Config) -> int:
     for u in r["result"]:
         msg = u.get("channel_post") or u.get("my_chat_member") or u.get("message") or {}
         chat = msg.get("chat") or {}
-        if chat.get("type") == "channel":
-            chats[chat["id"]] = chat.get("title")
+        if chat.get("type") in ("channel", "supergroup", "group"):
+            chats[chat["id"]] = (chat.get("title"), chat.get("type"), chat.get("is_forum"))
     if not chats:
-        print("No veo ningún canal todavía. Publica un mensaje cualquiera en el canal y vuelve a ejecutar esto.")
+        print("No veo ningún canal ni grupo todavía. Escribe un mensaje en él y vuelve a ejecutar esto.")
         return 1
-    for cid, title in chats.items():
-        print(f"✅ Canal «{title}» → TELEGRAM_CHANNEL={cid}")
+    for cid, (title, kind, forum) in chats.items():
+        tipo = "grupo con temas" if forum else ("canal" if kind == "channel" else "grupo SIN temas")
+        print(f"✅ {tipo} «{title}» → TELEGRAM_CHANNEL={cid}")
     return 0
 
 
@@ -124,13 +135,14 @@ def main(argv: list[str] | None = None) -> int:
     pv.add_argument("--claude", action="store_true", help="analiza los ejemplos con Claude de verdad")
     sub.add_parser("check")
     sub.add_parser("channel-id")
+    sub.add_parser("chat-id")
     args = p.parse_args(argv)
 
     cfg = Config.load()
     from . import pipeline
 
     try:
-        if args.cmd == "channel-id":
+        if args.cmd in ("channel-id", "chat-id"):
             return cmd_channel_id(cfg)
         if args.cmd == "check":
             return cmd_check(cfg)
@@ -139,7 +151,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.cmd == "daily":
             res = pipeline.daily(cfg, dry_run=args.dry_run, force=args.force)
         else:  # preview
-            override = None if args.claude else json.loads((FIXTURES / "analysis.json").read_text(encoding="utf-8"))
+            override = None if args.claude else load_fixture_analysis()
             res = pipeline.run(
                 cfg, dry_run=True, tweets=load_fixture_tweets(), analysis_override=override,
                 db_path=OUT_DIR / "_empty.db",

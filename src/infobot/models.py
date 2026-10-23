@@ -11,8 +11,30 @@ KINDS = {
     "card": {"emoji": "🃏", "label": "CARTA NUEVA", "tag": "Carta"},
     "objective": {"emoji": "🎯", "label": "OBJETIVOS", "tag": "Objetivos"},
     "sbc": {"emoji": "🧩", "label": "SBC", "tag": "SBC"},
+    "evolution": {"emoji": "🧬", "label": "EVOLUCIÓN", "tag": "Evolucion"},
     "event": {"emoji": "📢", "label": "EVENTO", "tag": "Evento"},
 }
+
+# Secciones (temas) del grupo de Telegram, en el orden en que se crean.
+# icon_color: uno de los colores admitidos por createForumTopic.
+TOPICS = {
+    "promo": {"name": "🔥 Promos", "icon_color": 16478047},
+    "card": {"name": "🃏 Cartas", "icon_color": 16766590},
+    "objective": {"name": "🎯 Objetivos", "icon_color": 9367192},
+    "sbc": {"name": "🧩 SBC", "icon_color": 7322096},
+    "evolution": {"name": "🧬 Evoluciones", "icon_color": 13338331},
+    "event": {"name": "📢 Eventos", "icon_color": 16749490},
+    "leak": {"name": "🕵️ Filtraciones", "icon_color": 16766590},
+    "calendar": {"name": "📅 Calendario", "icon_color": 7322096},
+    "daily": {"name": "🗞️ Resumen diario", "icon_color": 9367192},
+}
+
+
+def topic_for(kind: str, source_type: str) -> str:
+    """Sección de una novedad: las filtraciones van siempre a Filtraciones."""
+    if source_type == "leak":
+        return "leak"
+    return kind if kind in TOPICS else "event"
 
 SOURCE_TYPES = {
     "official": {"emoji": "✅", "label": "OFICIAL", "tag": "Oficial"},
@@ -58,7 +80,7 @@ class Item:
 
     @classmethod
     def from_analysis(cls, data: dict[str, Any]) -> "Item":
-        extra = {k: data[k] for k in ("promo", "cards", "objectives", "sbcs") if data.get(k)}
+        extra = {k: data[k] for k in ("promo", "cards", "objectives", "sbcs", "evolutions", "events") if data.get(k)}
         return cls(
             kind=data["kind"],
             source_type=data["source_type"],

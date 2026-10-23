@@ -85,13 +85,13 @@ class CoverRenderer:
         self._page = self._browser.new_page(viewport={"width": 1280, "height": 720}, device_scale_factor=1)
         return self
 
-    def render(self, html: str, dest: Path) -> Path:
+    def render(self, html: str, dest: Path, full_page: bool = False) -> Path:
         dest.parent.mkdir(parents=True, exist_ok=True)
         tmp = dest.with_suffix(".html")
         tmp.write_text(html, encoding="utf-8")  # file:// para poder cargar fuentes e imágenes locales
         self._page.goto(tmp.resolve().as_uri(), wait_until="networkidle")
         self._page.evaluate("document.fonts.ready")
-        self._page.screenshot(path=str(dest), type="png")
+        self._page.screenshot(path=str(dest), type="png", full_page=full_page)
         tmp.unlink(missing_ok=True)
         return dest
 

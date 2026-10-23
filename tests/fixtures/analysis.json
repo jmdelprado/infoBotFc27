@@ -1,5 +1,7 @@
 {
-  "ignored_tweet_ids": ["9000000000000000003"],
+  "ignored_tweet_ids": [
+    "9000000000000000003"
+  ],
   "items": [
     {
       "kind": "promo",
@@ -8,14 +10,37 @@
       "summary": "Según la filtración, la promo de ejemplo 'Sample Heroes' saldría el próximo viernes a las 19:00 (hora de España) y el primer equipo incluiría un delantero centro de 91.",
       "details": "• Promo: Sample Heroes (ejemplo)\n• Salida prevista: viernes a las 19:00 (18:00 hora de Reino Unido)\n• Equipo 1: incluiría un DC de media 91\n• La carta filtrada muestra 93 de ritmo, 94 de regate y 90 de tiro\n• Aún sin confirmar por EA",
       "key_facts": [
-        {"label": "Promo", "value": "Sample Heroes"},
-        {"label": "Salida", "value": "Viernes 19:00"},
-        {"label": "Carta", "value": "91 DC"}
+        {
+          "label": "Promo",
+          "value": "Sample Heroes"
+        },
+        {
+          "label": "Salida",
+          "value": "Viernes 19:00"
+        },
+        {
+          "label": "Carta",
+          "value": "91 DC"
+        }
       ],
-      "tweet_ids": ["9000000000000000001"],
-      "images": ["ex_card.png"],
-      "promo": {"name": "Sample Heroes", "start": ""},
-      "cards": [{"player": "Jugador de ejemplo", "rating": 91, "position": "DC", "promo": "Sample Heroes"}]
+      "tweet_ids": [
+        "9000000000000000001"
+      ],
+      "images": [
+        "ex_card.png"
+      ],
+      "promo": {
+        "name": "Sample Heroes",
+        "start": "{D+3} 19:00"
+      },
+      "cards": [
+        {
+          "player": "Jugador de ejemplo",
+          "rating": 91,
+          "position": "DC",
+          "promo": "Sample Heroes"
+        }
+      ]
     },
     {
       "kind": "sbc",
@@ -24,14 +49,37 @@
       "summary": "Ya está disponible un SBC de ejemplo que da un sobre de 10 jugadores de 83+. Termina el 30/10 a las 19:00.",
       "details": "• Requisitos:\n• Media mínima del equipo: 84\n• Química mínima: 25\n• Jugadores de la Premier League: mín. 2\n• Recompensa: sobre de jugadores 83+ x10",
       "key_facts": [
-        {"label": "Media", "value": "84"},
-        {"label": "Química", "value": "25"},
-        {"label": "Recompensa", "value": "83+ x10"},
-        {"label": "Termina", "value": "30/10 19:00"}
+        {
+          "label": "Media",
+          "value": "84"
+        },
+        {
+          "label": "Química",
+          "value": "25"
+        },
+        {
+          "label": "Recompensa",
+          "value": "83+ x10"
+        },
+        {
+          "label": "Termina",
+          "value": "Mañana 19:00"
+        }
       ],
-      "tweet_ids": ["9000000000000000002"],
-      "images": ["ex_sbc.png"],
-      "sbcs": [{"name": "SBC de ejemplo 83+ x10", "reward": "Sobre 83+ x10", "ends": "2099-10-30 19:00", "cost": "~25k"}]
+      "tweet_ids": [
+        "9000000000000000002"
+      ],
+      "images": [
+        "ex_sbc.png"
+      ],
+      "sbcs": [
+        {
+          "name": "SBC de ejemplo 83+ x10",
+          "reward": "Sobre 83+ x10",
+          "ends": "{D+1} 19:00",
+          "cost": "~25k"
+        }
+      ]
     },
     {
       "kind": "objective",
@@ -40,12 +88,84 @@
       "summary": "Nuevos objetivos de ejemplo con monedas y un sobre de oro raro. Terminan el lunes 27 a las 19:00.",
       "details": "• Marca 10 goles con delanteros en Rivals → 5.000 monedas\n• Gana 3 partidos en Squad Battles → sobre de oro raro\n• Terminan el lunes 27 a las 19:00",
       "key_facts": [
-        {"label": "Recompensas", "value": "5.000 monedas + sobre"},
-        {"label": "Termina", "value": "Lunes 27 19:00"}
+        {
+          "label": "Recompensas",
+          "value": "5.000 monedas + sobre"
+        },
+        {
+          "label": "Termina",
+          "value": "Hoy 23:00"
+        }
       ],
-      "tweet_ids": ["9000000000000000004"],
+      "tweet_ids": [
+        "9000000000000000004"
+      ],
       "images": [],
-      "objectives": [{"name": "Camino a la gloria", "reward": "5.000 monedas + sobre de oro raro", "ends": "2099-10-27 19:00"}]
+      "objectives": [
+        {
+          "name": "Camino a la gloria",
+          "reward": "5.000 monedas + sobre de oro raro",
+          "ends": "{D+0} 23:00"
+        }
+      ]
+    },
+    {
+      "kind": "evolution",
+      "source_type": "official",
+      "title": "Nueva evolución: Sample Speedster",
+      "summary": "Evolución de ejemplo para cartas oro raras de hasta 84 de media y 80 de ritmo. Cuesta 50.000 monedas y dura 7 días.",
+      "details": "• Requisitos: media máx. 84, ritmo máx. 80, oro raro\n• Mejoras: +6 ritmo, +3 regate y PlayStyle Rapid+\n• Coste: 50.000 monedas\n• Termina en 7 días",
+      "key_facts": [
+        {
+          "label": "Coste",
+          "value": "50.000"
+        },
+        {
+          "label": "Mejoras",
+          "value": "+6 RIT · +3 REG · Rapid+"
+        },
+        {
+          "label": "Termina",
+          "value": "En 7 días"
+        }
+      ],
+      "tweet_ids": [
+        "9000000000000000005"
+      ],
+      "images": [],
+      "evolutions": [
+        {
+          "name": "Sample Speedster",
+          "cost": "50.000 monedas",
+          "requirements": "Media ≤84 · Ritmo ≤80 · Oro raro",
+          "upgrades": "+6 RIT, +3 REG, Rapid+",
+          "ends": "{D+7} 19:00"
+        }
+      ]
+    },
+    {
+      "kind": "event",
+      "source_type": "official",
+      "title": "Mantenimiento de servidores el jueves",
+      "summary": "Ejemplo: mantenimiento programado; Ultimate Team no estará disponible durante unas horas.",
+      "details": "• Inicio: jueves a las 9:00\n• Duración estimada: 3 horas",
+      "key_facts": [
+        {
+          "label": "Inicio",
+          "value": "Jueves 9:00"
+        }
+      ],
+      "tweet_ids": [
+        "9000000000000000006"
+      ],
+      "images": [],
+      "events": [
+        {
+          "name": "Mantenimiento de servidores",
+          "starts": "{D+2} 09:00",
+          "ends": "{D+2} 12:00"
+        }
+      ]
     }
   ]
 }

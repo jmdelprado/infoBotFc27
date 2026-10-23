@@ -21,6 +21,8 @@ def empty_state() -> dict[str, Any]:
         "active_promo": None,
         "objectives": [],
         "sbcs": [],
+        "evolutions": [],
+        "events": [],
         "recent_cards": [],
         "recent_leaks": [],
     }
@@ -68,7 +70,13 @@ def merge(state: dict[str, Any], item: Item, tz: str = "Europe/Madrid") -> dict[
     ex = item.extra
 
     promo = ex.get("promo")
-    if promo and promo.get("name"):
+    start = _parse_date((promo or {}).get("start"))
+    if promo and promo.get("name") and start and start > datetime.now(ZoneInfo(tz)).replace(tzinfo=None):
+        # Promo que aún no ha empezado: va al calendario como "próximamente", no como activa
+        entry = {"name": f"Promo {promo['name']}", "starts": promo.get("start"), "ends": promo.get("end", ""),
+                 "source_type": src}
+        st["events"] = _upsert(st["events"], entry, "name", MAX_LIST)
+    elif promo and promo.get("name"):
         current = st.get("active_promo") or {}
         same = (current.get("name") or "").lower() == promo["name"].lower()
         if not (same and current.get("source_type") == "official" and src == "leak"):
@@ -84,6 +92,10 @@ def merge(state: dict[str, Any], item: Item, tz: str = "Europe/Madrid") -> dict[
         st["objectives"] = _upsert(st["objectives"], {**obj, "source_type": src}, "name", MAX_LIST)
     for sbc in ex.get("sbcs", []):
         st["sbcs"] = _upsert(st["sbcs"], {**sbc, "source_type": src}, "name", MAX_LIST)
+    for evo in ex.get("evolutions", []):
+        st["evolutions"] = _upsert(st["evolutions"], {**evo, "source_type": src}, "name", MAX_LIST)
+    for ev in ex.get("events", []):
+        st["events"] = _upsert(st["events"], {**ev, "source_type": src}, "name", MAX_LIST)
 
     if src == "leak":
         now = datetime.now(ZoneInfo(tz)).strftime("%Y-%m-%d %H:%M")
@@ -102,8 +114,8 @@ def expire(state: dict[str, Any], now: datetime | None = None, tz: str = "Europe
         end = _parse_date(entry.get("ends") or entry.get("end"))
         return end is None or end > now
 
-    st["objectives"] = [o for o in st.get("objectives", []) if alive(o)]
-    st["sbcs"] = [s for s in st.get("sbcs", []) if alive(s)]
+    for key in ("objectives", "sbcs", "evolutions", "events"):
+        st[key] = [x for x in st.get(key, []) if alive(x)]
     if st.get("active_promo") and not alive(st["active_promo"]):
         st["active_promo"] = None
     return st

@@ -35,6 +35,7 @@
               "card",
               "objective",
               "sbc",
+              "evolution",
               "event"
             ]
           },
@@ -158,6 +159,9 @@
                 },
                 "ends": {
                   "type": "string"
+                },
+                "starts": {
+                  "type": "string"
                 }
               }
             }
@@ -181,6 +185,60 @@
                   "type": "string"
                 },
                 "cost": {
+                  "type": "string"
+                },
+                "starts": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "evolutions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "cost": {
+                  "type": "string"
+                },
+                "requirements": {
+                  "type": "string"
+                },
+                "upgrades": {
+                  "type": "string"
+                },
+                "starts": {
+                  "type": "string"
+                },
+                "ends": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "starts": {
+                  "type": "string"
+                },
+                "ends": {
                   "type": "string"
                 }
               }

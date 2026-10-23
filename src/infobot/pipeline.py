@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 from datetime import datetime, timedelta, timezone
@@ -13,8 +14,9 @@ from . import analyzer
 from .config import DATA_DIR, MEDIA_DIR, OUT_DIR, Config
 from .db import DB
 from .media import download_media
-from .models import Item, Tweet
+from .models import TOPICS, Item, Tweet, topic_for
 from .render import telegram_format as fmt
+from .render.calendar import calendar_html, calendar_text
 from .render.cover import CoverRenderer, daily_cover_html, item_cover_html
 from .state import expire, load_state, merge, save_state
 
@@ -103,6 +105,42 @@ def analyze_pending(db: DB, cfg: Config, state: dict[str, Any]) -> list[Item]:
 
 # ---------- 3. Publicar ----------
 
+class Sections:
+    """Secciones (temas) del grupo. Se crean la primera vez y sus ids se guardan en la base.
+    Si el chat no tiene temas (canal normal), todo va al hilo principal."""
+
+    def __init__(self, db: DB, pub, dry_run: bool):
+        self.db, self.pub, self.dry_run = db, pub, dry_run
+        self.ids: dict[str, int] = json.loads(db.get_meta("topics") or "{}")
+        try:
+            self.forum = pub.is_forum()
+        except Exception as e:  # noqa: BLE001
+            log.warning("No se pudo saber si el chat tiene temas: %s", e)
+            self.forum = False
+
+    def thread(self, key: str) -> int | None:
+        if not self.forum:
+            return None
+        if key not in self.ids:
+            meta = TOPICS[key]
+            self.ids[key] = self.pub.create_topic(meta["name"], meta.get("icon_color"))
+            log.info("Sección creada: %s", meta["name"])
+            if not self.dry_run:
+                self.db.set_meta("topics", json.dumps(self.ids))
+        return self.ids[key]
+
+    def send(self, key: str, fn, *args, **kwargs):
+        """Envía en la sección `key`; si alguien borró la sección, la vuelve a crear y reintenta."""
+        try:
+            return fn(*args, thread=self.thread(key), **kwargs)
+        except Exception as e:  # noqa: BLE001
+            if "thread not found" not in str(e).lower():
+                raise
+            log.warning("La sección %s ya no existe; se vuelve a crear", key)
+            self.ids.pop(key, None)
+            return fn(*args, thread=self.thread(key), **kwargs)
+
+
 def _hydrate(db: DB, item: Item) -> None:
     tweets = db.get_tweets(item.tweet_ids)
     item.urls = [t.url for t in tweets]
@@ -111,30 +149,65 @@ def _hydrate(db: DB, item: Item) -> None:
         download_media(tweets)
 
 
-def publish_item(pub, renderer: CoverRenderer, item: Item, cfg: Config) -> list[int]:
+def publish_item(pub, renderer: CoverRenderer, item: Item, cfg: Config, sections: Sections) -> list[int]:
+    """Portada + imágenes + texto, en la sección que le toca a la novedad."""
     cover = renderer.render(item_cover_html(item, cfg.channel_title), OUT_DIR / "covers" / f"item_{item.id}.png")
     photos = [cover] + [MEDIA_DIR / n for n in item.images if (MEDIA_DIR / n).exists()][:9]
-    text = fmt.item_message(item, cfg.show_source_link)
-    ids = pub.send_album(photos, fmt.caption(item))
-    for chunk in fmt.split_html(text):
-        ids.append(pub.send_message(chunk, reply_to=ids[0]))
+    key = topic_for(item.kind, item.source_type)
+    ids = sections.send(key, pub.send_album, photos, fmt.caption(item))
+    for chunk in fmt.split_html(fmt.item_message(item, cfg.show_source_link)):
+        ids.append(sections.send(key, pub.send_message, chunk, reply_to=ids[0]))
     return ids
 
 
-def update_pinned(db: DB, pub, state: dict[str, Any], cfg: Config, dry_run: bool) -> None:
-    html = fmt.pinned_message(state, cfg.channel_title)
-    mid = db.get_meta("pinned_message_id")
+def _edit_or_send(db: DB, meta_key: str, dry_run: bool, edit, send) -> None:
+    """Edita el mensaje guardado en `meta_key`; si no existe o falla, envía uno nuevo."""
+    mid = db.get_meta(meta_key)
     if mid and not dry_run:
         try:
-            pub.edit_message(int(mid), html)
+            edit(int(mid))
             return
         except Exception as e:  # noqa: BLE001 - p. ej. si alguien borró el mensaje
-            log.warning("No se pudo editar el fijado (%s); se crea otro", e)
-    new_id = pub.send_message(html)
-    pub.pin(new_id)
+            log.warning("No se pudo editar %s (%s); se crea otro", meta_key, e)
+    new_id = send()
     if not dry_run:
-        db.set_meta("pinned_message_id", str(new_id))
-        db.add_post("pinned", [new_id])
+        db.set_meta(meta_key, str(new_id))
+
+
+def update_pinned(db: DB, pub, state: dict[str, Any], cfg: Config, dry_run: bool) -> None:
+    """Estado actual, fijado en la sección General."""
+    html = fmt.pinned_message(state, cfg.channel_title)
+
+    def send() -> int:
+        mid = pub.send_message(html)
+        pub.pin(mid)
+        return mid
+
+    _edit_or_send(db, "pinned_message_id", dry_run, lambda mid: pub.edit_message(mid, html), send)
+
+
+def update_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections, state: dict[str, Any],
+                    cfg: Config, dry_run: bool) -> bool:
+    """Calendario (imagen + texto) en su sección. Solo se toca si su contenido cambia."""
+    text = calendar_text(state, cfg.timezone)
+    signature = hashlib.sha1("\n".join(text.split("\n")[2:]).encode()).hexdigest()  # sin la línea "Actualizado"
+    if not dry_run and db.get_meta("calendar_hash") == signature and db.get_meta("calendar_text_id"):
+        return False
+    html, _ = calendar_html(state, cfg.channel_title, cfg.timezone)
+    img = renderer.render(html, OUT_DIR / "covers" / "calendar.png", full_page=True)
+    caption = "📅 <b>Calendario FC 27</b> · todo lo que hay para hacer y jugar"
+
+    def send_photo() -> int:
+        mid = sections.send("calendar", pub.send_photo, img, caption)
+        pub.pin(mid)
+        return mid
+
+    _edit_or_send(db, "calendar_photo_id", dry_run, lambda mid: pub.edit_photo(mid, img, caption), send_photo)
+    _edit_or_send(db, "calendar_text_id", dry_run, lambda mid: pub.edit_message(mid, text),
+                  lambda: sections.send("calendar", pub.send_message, text))
+    if not dry_run:
+        db.set_meta("calendar_hash", signature)
+    return True
 
 
 def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None,
@@ -155,7 +228,7 @@ def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None
     db = DB(db_path)
     state = expire(load_state(state_path), tz=cfg.timezone)
     pub = make_publisher(cfg, dry_run)
-    summary = {"fetched": 0, "new": 0, "items": 0, "posted": 0}
+    summary: dict[str, Any] = {"fetched": 0, "new": 0, "items": 0, "posted": 0}
     try:
         fetched = tweets if tweets is not None else fetch_all(cfg)
         summary["fetched"] = len(fetched)
@@ -172,19 +245,20 @@ def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None
             summary["items"] = len(analyze_pending(db, cfg, state))
 
         to_post = db.unposted_items()
-        if to_post:
-            with CoverRenderer() as renderer:
-                for item in to_post:
-                    _hydrate(db, item)
-                    ids = publish_item(pub, renderer, item, cfg)
-                    if not dry_run:
-                        db.mark_item_posted(item.id, ids)
-                    state = merge(state, item, cfg.timezone)
-                    summary["posted"] += 1
-            if not dry_run:
-                save_state(state_path, state)
-            update_pinned(db, pub, state, cfg, dry_run)
-        elif not dry_run and not state_path.exists():
+        sections = Sections(db, pub, dry_run)
+        with CoverRenderer() as renderer:
+            for item in to_post:
+                _hydrate(db, item)
+                ids = publish_item(pub, renderer, item, cfg, sections)
+                if not dry_run:
+                    db.mark_item_posted(item.id, ids)
+                state = merge(state, item, cfg.timezone)
+                summary["posted"] += 1
+            if to_post or db.get_meta("pinned_message_id") is None:
+                update_pinned(db, pub, state, cfg, dry_run)
+            # El calendario se revisa siempre: también cambia cuando algo caduca o cambia el día
+            summary["calendar_updated"] = update_calendar(db, pub, renderer, sections, state, cfg, dry_run)
+        if not dry_run:
             save_state(state_path, state)
     finally:
         if dry_run:
@@ -207,12 +281,13 @@ def daily(cfg: Config, *, dry_run: bool = False, db_path: Path = DB_PATH, force:
         items = db.items_since((now - timedelta(hours=24)).isoformat(timespec="seconds"))
         if not items:
             return {"daily": "sin novedades"}
+        sections = Sections(db, pub, dry_run)
         label = datetime.now(ZoneInfo(cfg.timezone)).strftime("%d/%m/%Y")
         with CoverRenderer() as r:
             cover = r.render(daily_cover_html(items, cfg.channel_title, label), OUT_DIR / "covers" / "daily.png")
-        ids = [pub.send_photo(cover, f"🗞️ <b>Resumen del día · {label}</b>")]
+        ids = [sections.send("daily", pub.send_photo, cover, f"🗞️ <b>Resumen del día · {label}</b>")]
         for chunk in fmt.split_html(fmt.daily_message(items, label)):
-            ids.append(pub.send_message(chunk, reply_to=ids[0]))
+            ids.append(sections.send("daily", pub.send_message, chunk, reply_to=ids[0]))
         if not dry_run:
             db.set_meta("last_daily_at", now.isoformat(timespec="seconds"))
             db.add_post("daily", ids)

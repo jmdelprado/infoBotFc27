@@ -1,7 +1,11 @@
 # InfoBot FC 27
 
 Bot que lee las cuentas de X sobre EA SPORTS FC 27 Ultimate Team, las analiza con Claude (texto **e imágenes**)
-y publica en un **canal de Telegram** las novedades: promos, cartas nuevas, objetivos, SBCs y filtraciones.
+y publica en un **grupo de Telegram con secciones (Temas)** las novedades: promos, cartas nuevas, objetivos, SBCs,
+evoluciones, eventos y filtraciones, además de un **calendario** con todo lo que hay para hacer y jugar.
+
+Secciones: 📌 General (estado actual fijado) · 🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones ·
+📢 Eventos · 🕵️ Filtraciones · 📅 Calendario · 🗞️ Resumen diario. El bot las crea solo la primera vez.
 
 - Se ejecuta solo **cada 4 horas** en GitHub Actions (el PC puede estar apagado) y publica un **resumen diario**.
 - Cada novedad lleva una **portada propia**, las imágenes originales y el texto completo en español.
@@ -14,12 +18,14 @@ Cuentas que sigue: `config.yaml` → `accounts` (ahora `@JuniorSintress` y `@Fut
 
 ## Puesta en marcha (una sola vez, unos 15 minutos)
 
-### 1. Crear el bot y el canal de Telegram
-1. En Telegram, abre **@BotFather** → `/newbot` → nombre `InfoBot FC 27` → usuario, p. ej. `infobotfc27_bot`.
+### 1. Crear el bot y el grupo de Telegram
+1. En Telegram, abre **@BotFather** → `/newbot` → nombre `InfoBot FC 27` → usuario terminado en `bot`.
    Copia el **token** que te da (algo como `123456:ABC...`).
-2. Crea un **canal** → Público → enlace, p. ej. `@infobotfc27`. Ponle como foto `assets/avatar.png`.
-   Descripción sugerida: *"Promos, cartas, objetivos, SBCs y filtraciones de FC 27 Ultimate Team, al momento y en español. 🔥🃏🎯🧩"*
-3. En el canal → Administradores → Añadir administrador → busca tu bot → permisos para **publicar, editar y fijar mensajes**.
+2. Crea un **grupo** → en su configuración activa **Temas** (Topics). Ponle como foto `assets/avatar.png`.
+   Descripción sugerida: *"Promos, cartas, objetivos, SBCs, evoluciones y filtraciones de FC 27 Ultimate Team, al momento y en español. 🔥🃏🎯🧩🧬"*
+3. Añade el bot como **administrador** con permisos para **gestionar temas, enviar, editar y fijar mensajes**.
+4. Permisos del grupo → desactiva "Enviar mensajes" para los miembros, así solo publica el bot.
+5. Escribe un mensaje en el grupo y ejecuta `uv run python -m infobot chat-id`: te da el número para `TELEGRAM_CHANNEL`.
 4. (Opcional, para recibir avisos si algo falla) Escribe a tu bot por privado y abre
    `https://api.telegram.org/bot<TOKEN>/getUpdates`: tu número de chat aparece en `"chat":{"id": ...}`.
 
@@ -41,7 +47,7 @@ Repositorio → **Settings → Secrets and variables → Actions → New reposit
 | `X_COOKIES` | `auth_token=...; ct0=...` |
 | `CLAUDE_CODE_OAUTH_TOKEN` | el token del paso 3 |
 | `TELEGRAM_BOT_TOKEN` | el token de BotFather |
-| `TELEGRAM_CHANNEL` | `@infobotfc27` (el enlace de tu canal) |
+| `TELEGRAM_CHANNEL` | número del grupo (`-100...`, sale con `chat-id`) |
 | `TELEGRAM_OWNER_CHAT_ID` | (opcional) tu número de chat |
 
 ### 5. Probar
@@ -80,7 +86,8 @@ Si un paso falla, los tweets no se pierden: se reintentan en la siguiente ejecuc
 - **"Todas las fuentes han fallado"**: las cookies de X han caducado o X ha bloqueado la IP de GitHub.
   Repite el paso 2 y actualiza `X_COOKIES`.
 - **Error de Claude**: el token ha caducado → repite el paso 3.
-- **"chat not found" en Telegram**: el bot no es administrador del canal o `TELEGRAM_CHANNEL` está mal escrito.
+- **"chat not found" en Telegram**: el bot no es administrador del grupo o `TELEGRAM_CHANNEL` está mal escrito.
+- **No se crean las secciones**: activa Temas en el grupo y da al bot el permiso "Gestionar temas".
 
 ## Desarrollo
 Proyecto creado con [spec-kit](https://github.com/github/spec-kit): las reglas del proyecto están en
