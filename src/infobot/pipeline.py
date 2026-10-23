@@ -234,11 +234,13 @@ def update_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections, st
 def update_evo_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections, state: dict[str, Any],
                         cfg: Config, dry_run: bool) -> bool:
     """Calendario de evoluciones (FUT.GG). Se republica cuando cambian las evoluciones o el día."""
-    from .render.evo_calendar import evo_calendar_html, evo_calendar_text, evo_signature
+    from .render.evo_calendar import evo_calendar_html, evo_signature
     from .sources.futgg_evolutions import fetch_evolutions
 
+    from .translate import translate_evolutions
+
     try:
-        evos = fetch_evolutions(cfg.timezone)
+        evos = translate_evolutions(fetch_evolutions(cfg.timezone), cfg.claude_model)
         state["evolutions_feed"] = evos
     except Exception as e:  # noqa: BLE001 - si FUT.GG falla, se mantiene lo último conocido
         log.warning("No se pudieron leer las evoluciones de FUT.GG: %s", e)
@@ -253,8 +255,7 @@ def update_evo_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections
     caption = "📆 <b>Calendario de evoluciones</b> · próximos 30 días\n⭐ VIP = pase premium"
     old_ids = json.loads(db.get_meta("evocal_message_ids") or "[]")
     photo_id = sections.send("evocal", pub.send_photo, img, caption)
-    text_ids = [sections.send("evocal", pub.send_message, chunk, reply_to=photo_id)
-                for chunk in fmt.split_html(evo_calendar_text(evos, cfg.timezone))]
+    text_ids: list[int] = []  # solo la imagen, sin lista en texto
     try:
         pub.pin(photo_id)
     except Exception as e:  # noqa: BLE001

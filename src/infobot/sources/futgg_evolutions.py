@@ -90,7 +90,8 @@ def is_season_pass(e: dict) -> bool:
 
 
 def _upgrade_text(u: dict) -> str:
-    label = LABELS_ES.get(u.get("label", ""), u.get("label", ""))
+    # Se deja en inglés: translate.py lo traduce con los nombres oficiales del juego en español
+    label = u.get("label", "")
     value = (u.get("value") or "").replace("★", "⭐")
     return f"{label} {value}".strip()
 

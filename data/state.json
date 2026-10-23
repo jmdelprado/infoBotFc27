@@ -11,7 +11,7 @@
   "evolutions_feed": [
     {
       "id": 2552,
-      "name": "Side Step",
+      "name": "Paso lateral",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -21,16 +21,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤80 · LI/LD",
       "upgrades": [
-        "Pierna mala +2 ⭐",
-        "PlayStyle Tiki Taka",
+        "Pie malo +2 ⭐",
+        "PlayStyle Tiki-taka",
         "Media +7",
-        "Velocidad +5"
+        "Velocidad de sprint +5"
       ],
       "url": "https://www.fut.gg/evolutions/2552-side-step/"
     },
     {
       "id": 2556,
-      "name": "Centre Stage",
+      "name": "Foco central",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -41,9 +41,9 @@
       "requirements": "Media ≤81 · MCD/MC",
       "upgrades": [
         "Filigranas +2 ⭐",
-        "Pierna mala +2 ⭐",
-        "PlayStyle Incisive Pass",
-        "PlayStyle Jockey"
+        "Pie malo +2 ⭐",
+        "PlayStyle Pase incisivo",
+        "PlayStyle Contención"
       ],
       "url": "https://www.fut.gg/evolutions/2556-centre-stage/"
     },
@@ -97,9 +97,9 @@
       "cost": "Gratis",
       "requirements": "Media ≤82 · Media ≥82",
       "upgrades": [
-        "PlayStyle Rapid",
+        "PlayStyle Rapidez",
         "Media +1",
-        "Velocidad +3",
+        "Velocidad de sprint +3",
         "Aceleración +3"
       ],
       "url": "https://www.fut.gg/evolutions/2551-future-stars-academy-iii/"
@@ -116,7 +116,7 @@
       "cost": "Gratis",
       "requirements": "Media ≤83 · Media ≥83",
       "upgrades": [
-        "PlayStyle Low Driven Shot",
+        "PlayStyle Tiro raso",
         "Media +2",
         "Definición +1",
         "Resistencia +3"
@@ -125,7 +125,7 @@
     },
     {
       "id": 2557,
-      "name": "Speed Bump",
+      "name": "Resalto de velocidad",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -135,8 +135,8 @@
       "cost": "Gratis",
       "requirements": "Media ≤80 · DFC",
       "upgrades": [
-        "PlayStyle Jockey",
-        "PlayStyle Intercept",
+        "PlayStyle Contención",
+        "PlayStyle Interceptación",
         "Media +10",
         "Pase largo +4"
       ],
@@ -144,7 +144,7 @@
     },
     {
       "id": 2558,
-      "name": "Gamechanger",
+      "name": "Desequilibrante",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -154,13 +154,13 @@
       "cost": "Gratis",
       "requirements": "Media ≤80",
       "upgrades": [
-        "PlayStyle Gamechanger"
+        "PlayStyle Desequilibrante"
       ],
       "url": "https://www.fut.gg/evolutions/2558-gamechanger/"
     },
     {
       "id": 2562,
-      "name": "Middle Management",
+      "name": "Mandos intermedios",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -170,8 +170,8 @@
       "cost": "Gratis",
       "requirements": "Media ≤74 · MCD/MC",
       "upgrades": [
-        "Pierna mala +2 ⭐",
-        "PlayStyle Power Shot",
+        "Pie malo +2 ⭐",
+        "PlayStyle Tiro potente",
         "Media +40",
         "Definición +40"
       ],
@@ -190,9 +190,9 @@
       "requirements": "Media ≤80 · MCO/MC",
       "upgrades": [
         "Filigranas +1 ⭐",
-        "PlayStyle Technical",
-        "PlayStyle Rapid",
-        "PlayStyle First Touch"
+        "PlayStyle Técnico",
+        "PlayStyle Rapidez",
+        "PlayStyle Primer toque"
       ],
       "url": "https://www.fut.gg/evolutions/2602-zoomaestro/"
     },
@@ -262,7 +262,7 @@
     },
     {
       "id": 2498,
-      "name": "Creative or Composed?",
+      "name": "¿Creativo o sereno?",
       "premium": false,
       "season_pass": true,
       "sp_level": 27,
@@ -272,14 +272,14 @@
       "cost": "Gratis",
       "requirements": "Media ≤79",
       "upgrades": [
-        "PlayStyle Incisive Pass",
-        "PlayStyle Press Proven"
+        "PlayStyle Pase incisivo",
+        "PlayStyle Resistencia a la presión"
       ],
       "url": "https://www.fut.gg/evolutions/2498-creative-or-composed-sp-27/"
     },
     {
       "id": 2493,
-      "name": "Midfield Polish",
+      "name": "Pulido de mediocampo",
       "premium": true,
       "season_pass": true,
       "sp_level": 1,
@@ -297,7 +297,7 @@
     },
     {
       "id": 2501,
-      "name": "Pinged Pass",
+      "name": "Pase teledirigido",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -307,13 +307,13 @@
       "cost": "Gratis",
       "requirements": "Media ≤79",
       "upgrades": [
-        "PlayStyle Pinged Pass"
+        "PlayStyle Pase teledirigido"
       ],
       "url": "https://www.fut.gg/evolutions/2501-pinged-pass/"
     },
     {
       "id": 2603,
-      "name": "Poor Sophia",
+      "name": "Pobre Sophia",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -324,15 +324,15 @@
       "requirements": "Media ≤81 · POR",
       "upgrades": [
         "Filigranas +2 ⭐",
-        "PlayStyle Far Throw",
-        "PlayStyle Footwork",
-        "PlayStyle Cross Claimer"
+        "PlayStyle Saque largo",
+        "PlayStyle Juego de pies",
+        "PlayStyle Atrapacentros"
       ],
       "url": "https://www.fut.gg/evolutions/2603-poor-sophia/"
     },
     {
       "id": 2495,
-      "name": "Relentless",
+      "name": "Incansable",
       "premium": false,
       "season_pass": true,
       "sp_level": 11,
@@ -342,13 +342,13 @@
       "cost": "Gratis",
       "requirements": "Media ≤79",
       "upgrades": [
-        "PlayStyle Relentless"
+        "PlayStyle Incansable"
       ],
       "url": "https://www.fut.gg/evolutions/2495-relentless-sp-11/"
     },
     {
       "id": 2499,
-      "name": "Shooting Practice",
+      "name": "Práctica de tiro",
       "premium": true,
       "season_pass": true,
       "sp_level": 28,
@@ -358,14 +358,14 @@
       "cost": "Gratis",
       "requirements": "Media ≤81 · EI/ED/DC",
       "upgrades": [
-        "PlayStyle Power Shot",
-        "PlayStyle Low Driven Shot"
+        "PlayStyle Tiro potente",
+        "PlayStyle Tiro raso"
       ],
       "url": "https://www.fut.gg/evolutions/2499-shooting-practice-sp-28/"
     },
     {
       "id": 2494,
-      "name": "Striker Glow Up",
+      "name": "Evolución del delantero",
       "premium": false,
       "season_pass": true,
       "sp_level": 7,
@@ -375,16 +375,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤79 · DC",
       "upgrades": [
-        "PlayStyle Gamechanger",
+        "PlayStyle Desequilibrante",
         "Media +10",
         "Pase largo +8",
-        "Vision +8"
+        "Visión +8"
       ],
       "url": "https://www.fut.gg/evolutions/2494-striker-glow-up-sp-7/"
     },
     {
       "id": 2496,
-      "name": "Tactical Ascent",
+      "name": "Ascenso táctico",
       "premium": true,
       "season_pass": true,
       "sp_level": 14,
@@ -394,14 +394,14 @@
       "cost": "Gratis",
       "requirements": "Media ≤79",
       "upgrades": [
-        "PlayStyle Anticipate",
-        "PlayStyle Quick Step"
+        "PlayStyle Anticipación",
+        "PlayStyle Paso rápido"
       ],
       "url": "https://www.fut.gg/evolutions/2496-tactical-ascent-sp-14/"
     },
     {
       "id": 2497,
-      "name": "Winger Glow Up",
+      "name": "Evolución del extremo",
       "premium": true,
       "season_pass": true,
       "sp_level": 26,
@@ -412,15 +412,15 @@
       "requirements": "Media ≤81 · EI",
       "upgrades": [
         "Filigranas +1 ⭐",
-        "PlayStyle Rapid",
+        "PlayStyle Rapidez",
         "Media +10",
-        "Positioning +10"
+        "Posicionamiento +10"
       ],
       "url": "https://www.fut.gg/evolutions/2497-winger-glow-up-sp-26/"
     },
     {
       "id": 2604,
-      "name": "Side Stopper",
+      "name": "Cierre lateral",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -430,16 +430,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤81 · LI/LD",
       "upgrades": [
-        "PlayStyle Intercept",
-        "PlayStyle Slide Tackle",
+        "PlayStyle Interceptación",
+        "PlayStyle Entrada deslizante",
         "Media +4",
-        "Balance +5"
+        "Equilibrio +5"
       ],
       "url": "https://www.fut.gg/evolutions/2604-side-stopper/"
     },
     {
       "id": 2610,
-      "name": "Channel Surfer",
+      "name": "Surfista de bandas",
       "premium": false,
       "season_pass": true,
       "sp_level": 11,
@@ -449,8 +449,8 @@
       "cost": "Gratis",
       "requirements": "Media ≤80 · MI/EI",
       "upgrades": [
-        "PlayStyle Rapid",
-        "PlayStyle Press Proven",
+        "PlayStyle Rapidez",
+        "PlayStyle Resistencia a la presión",
         "Media +7",
         "Pase corto +7"
       ],
@@ -458,7 +458,7 @@
     },
     {
       "id": 2620,
-      "name": "Clinical or Technical?",
+      "name": "¿Clínico o técnico?",
       "premium": true,
       "season_pass": true,
       "sp_level": 28,
@@ -468,13 +468,13 @@
       "cost": "Gratis",
       "requirements": "Media ≤85",
       "upgrades": [
-        "PlayStyle+ Technical"
+        "PlayStyle+ Técnico"
       ],
       "url": "https://www.fut.gg/evolutions/2620-clinical-or-technical-sp-28/"
     },
     {
       "id": 2606,
-      "name": "Composed Stopper",
+      "name": "Central sereno",
       "premium": false,
       "season_pass": false,
       "sp_level": null,
@@ -484,16 +484,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤83 · DFC",
       "upgrades": [
-        "PlayStyle Block",
-        "PlayStyle Bruiser",
+        "PlayStyle Bloqueo",
+        "PlayStyle Aguerrido",
         "Media +10",
-        "Agility +5"
+        "Agilidad +5"
       ],
       "url": "https://www.fut.gg/evolutions/2606-composed-stopper/"
     },
     {
       "id": 2615,
-      "name": "Corridor Control",
+      "name": "Control del pasillo",
       "premium": true,
       "season_pass": true,
       "sp_level": 5,
@@ -503,16 +503,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤80 · LI/LD",
       "upgrades": [
-        "Pierna mala +1 ⭐",
-        "PlayStyle Jockey",
+        "Pie malo +1 ⭐",
+        "PlayStyle Contención",
         "Media +10",
-        "Shot Power +10"
+        "Potencia de tiro +10"
       ],
       "url": "https://www.fut.gg/evolutions/2615-corridor-control-sp-5/"
     },
     {
       "id": 2616,
-      "name": "Dual Identity",
+      "name": "Doble identidad",
       "premium": true,
       "season_pass": true,
       "sp_level": 14,
@@ -522,16 +522,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤82 · MCO/MC/MCD",
       "upgrades": [
-        "Pierna mala +1 ⭐",
-        "PlayStyle Intercept",
+        "Pie malo +1 ⭐",
+        "PlayStyle Interceptación",
         "Media +10",
-        "Agility +6"
+        "Agilidad +6"
       ],
       "url": "https://www.fut.gg/evolutions/2616-dual-identity-sp-14/"
     },
     {
       "id": 2607,
-      "name": "Flank Masterclass",
+      "name": "Máster de banda",
       "premium": true,
       "season_pass": true,
       "sp_level": 22,
@@ -541,8 +541,8 @@
       "cost": "Gratis",
       "requirements": "Media ≤82 · MD/ED",
       "upgrades": [
-        "PlayStyle Finesse Shot",
-        "PlayStyle Quick Step",
+        "PlayStyle Tiro colocado",
+        "PlayStyle Paso rápido",
         "Media +10",
         "Pase largo +5"
       ],
@@ -550,7 +550,7 @@
     },
     {
       "id": 2611,
-      "name": "Glue or Genius",
+      "name": "¿Pegamento o genio?",
       "premium": false,
       "season_pass": true,
       "sp_level": 28,
@@ -560,13 +560,13 @@
       "cost": "Gratis",
       "requirements": "Media ≤84",
       "upgrades": [
-        "PlayStyle+ Press Proven"
+        "PlayStyle+ Resistencia a la presión"
       ],
       "url": "https://www.fut.gg/evolutions/2611-glue-or-genius-sp-28/"
     },
     {
       "id": 2609,
-      "name": "Line of Sight",
+      "name": "Línea de visión",
       "premium": false,
       "season_pass": true,
       "sp_level": 7,
@@ -576,16 +576,16 @@
       "cost": "Gratis",
       "requirements": "Media ≤80 · POR",
       "upgrades": [
-        "PlayStyle Footwork",
+        "PlayStyle Juego de pies",
         "Media +40",
         "Reacciones +35",
-        "Kicking +40"
+        "Saque +40"
       ],
       "url": "https://www.fut.gg/evolutions/2609-line-of-sight-sp-7/"
     },
     {
       "id": 2605,
-      "name": "Midfield Roundabout",
+      "name": "Rotonda del mediocampo",
       "premium": true,
       "season_pass": true,
       "sp_level": 26,
@@ -596,15 +596,15 @@
       "requirements": "Media ≤82 · MC",
       "upgrades": [
         "Filigranas +1 ⭐",
-        "Pierna mala +1 ⭐",
-        "Rol++ CM Holding++",
-        "PlayStyle Intercept"
+        "Pie malo +1 ⭐",
+        "Rol++ MC Pivote++",
+        "PlayStyle Interceptación"
       ],
       "url": "https://www.fut.gg/evolutions/2605-midfield-roundabout-sp-26/"
     },
     {
       "id": 2608,
-      "name": "Pamplona Grit",
+      "name": "Garra de Pamplona",
       "premium": false,
       "season_pass": true,
       "sp_level": 16,
@@ -614,8 +614,8 @@
       "cost": "Gratis",
       "requirements": "Media ≤82 · DFC",
       "upgrades": [
-        "PlayStyle Long Ball Pass",
-        "PlayStyle Intercept",
+        "PlayStyle Pase en largo",
+        "PlayStyle Interceptación",
         "Media +8",
         "Aceleración +7"
       ],

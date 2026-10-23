@@ -282,5 +282,5 @@ def test_futgg_normalize_filters_and_marks_premium():
     ]
     evos = normalize(raw, now=now)
     assert [e["name"] for e in evos] == ["Speed Bump", "Dual Identity"]
-    assert evos[0]["requirements"] == "Media ≤80 · DFC" and evos[0]["upgrades"] == ["Media +10"]
+    assert evos[0]["requirements"] == "Media ≤80 · DFC" and evos[0]["upgrades"] == ["Overall +10"]
     assert evos[1]["premium"] and evos[1]["sp_level"] == 14
