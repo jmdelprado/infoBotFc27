@@ -23,6 +23,7 @@ permissions:
 jobs:
   bot:
     runs-on: ubuntu-latest
+    environment: Infobot
     timeout-minutes: 25
     env:
       X_COOKIES: ${{ secrets.X_COOKIES || vars.X_COOKIES }}
