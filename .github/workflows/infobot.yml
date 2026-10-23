@@ -1,10 +1,9 @@
 name: InfoBot
 
 on:
-  # Ejecución automática desactivada hasta validar las primeras ejecuciones manuales.
-  # schedule:
-  #   - cron: "7 */4 * * *"   # cada 4 horas (minuto 7 para evitar la congestión de la hora en punto)
-  #   - cron: "0 20 * * *"    # resumen diario (22:00 en España en verano, 21:00 en invierno)
+  schedule:
+    - cron: "7 */4 * * *"   # cada 4 horas (minuto 7 para evitar la congestión de la hora en punto)
+    - cron: "0 20 * * *"    # resumen diario (22:00 en España en verano, 21:00 en invierno)
   workflow_dispatch:
     inputs:
       mode:
