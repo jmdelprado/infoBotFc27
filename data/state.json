@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 10:35",
+  "updated_at": "2026-10-23 12:16",
   "active_promo": {
     "name": "Thunderstruck",
     "source_type": "leak"
@@ -61,18 +61,24 @@
       "source_type": "leak"
     }
   ],
-  "evolutions": [],
+  "evolutions": [
+    {
+      "name": "Evo RM/RW máx. 82",
+      "requirements": "Varios requisitos de stats (sin detallar); jugadores RM/RW con media máx. 82",
+      "upgrades": "Stats +10/+12/+15, +1 filigrana; rutas Finesse Shot+, Quick Step+ y Technical+",
+      "source_type": "leak"
+    },
+    {
+      "name": "Ultimate Scream: evo máx. 82 RM/RW",
+      "upgrades": "Media máx. 82; Filtros +1 (máx. 4★); Camino 1: Finesse Shot+",
+      "source_type": "leak"
+    }
+  ],
   "events": [
     {
       "name": "Nuevos sobres de tienda Ultimate Scream",
       "starts": "2026-10-23",
       "source_type": "leak"
-    },
-    {
-      "name": "Mantenimiento programado FC 27",
-      "starts": "2026-10-23 08:00",
-      "ends": "2026-10-23 12:00",
-      "source_type": "official"
     },
     {
       "name": "Galería FUT: nuevas ligas MLS, NWSL y Roshn",
@@ -226,6 +232,14 @@
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Evo filtrada RM/RW máx. 82: rutas y mejores jugadores",
+      "date": "2026-10-23 12:16"
+    },
+    {
+      "title": "Evo filtrada Ultimate Scream: máx. 82 para RM/RW",
+      "date": "2026-10-23 12:16"
+    },
     {
       "title": "Tienda de Tokens Scream: primeros detalles y SBC/objetivos",
       "date": "2026-10-23 10:35"
