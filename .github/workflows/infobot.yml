@@ -58,6 +58,13 @@ jobs:
           fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
 
+      - name: Comprobar secretos (solo dice si existen, nunca su valor)
+        run: |
+          for v in X_COOKIES CLAUDE_CODE_OAUTH_TOKEN TELEGRAM_BOT_TOKEN TELEGRAM_CHANNEL; do
+            val="${!v}"
+            if [ -n "$val" ]; then echo "✅ $v definido (${#val} caracteres)"; else echo "❌ $v VACÍO o no existe"; fi
+          done
+
       - name: Ejecutar InfoBot (${{ steps.mode.outputs.mode }})
         run: uv run python -m infobot ${{ steps.mode.outputs.mode }}
 
