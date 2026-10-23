@@ -57,8 +57,9 @@ class Config:
         return cls(
             accounts=accounts,
             **known,
-            x_cookies=os.environ.get("X_COOKIES", ""),
-            telegram_token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
-            telegram_channel=os.environ.get("TELEGRAM_CHANNEL", ""),
-            telegram_owner_chat_id=os.environ.get("TELEGRAM_OWNER_CHAT_ID", ""),
+            # .strip(): al pegar los secretos en GitHub es fácil que se cuele un salto de línea
+            x_cookies=os.environ.get("X_COOKIES", "").strip(),
+            telegram_token=os.environ.get("TELEGRAM_BOT_TOKEN", "").strip(),
+            telegram_channel=os.environ.get("TELEGRAM_CHANNEL", "").strip(),
+            telegram_owner_chat_id=os.environ.get("TELEGRAM_OWNER_CHAT_ID", "").strip(),
         )

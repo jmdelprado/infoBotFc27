@@ -67,7 +67,10 @@ jobs:
           done
 
       - name: Ejecutar InfoBot (${{ steps.mode.outputs.mode }})
-        run: uv run python -m infobot ${{ steps.mode.outputs.mode }}
+        run: |
+          # El token de Claude también puede llevar un salto de línea al pegarlo
+          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
+          uv run python -m infobot ${{ steps.mode.outputs.mode }}
 
       - name: Guardar estado
         if: always() && steps.mode.outputs.mode != 'check'
