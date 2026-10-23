@@ -26,6 +26,7 @@ TOPICS = {
     "evolution": {"name": "🧬 Evoluciones", "icon_color": 13338331},
     "event": {"name": "📢 Eventos", "icon_color": 16749490},
     "calendar": {"name": "📅 Calendario", "icon_color": 7322096},
+    "evocal": {"name": "📆 Calendario de evoluciones", "icon_color": 13338331},
     "daily": {"name": "🗞️ Resumen diario", "icon_color": 9367192},
 }
 
@@ -39,6 +40,8 @@ TOPIC_INTROS = {
     "event": "🕵️ Aquí aparecen otras <b>filtraciones y rumores</b>: modos, eventos, tienda, TOTW…",
     "calendar": "✅ Aquí está el <b>calendario OFICIAL</b>: todo lo que ya está en el juego o ha confirmado EA, "
                 "con su inicio y su fin en las próximas dos semanas. Se actualiza solo.",
+    "evocal": "✅ Aquí está el <b>calendario de evoluciones</b>: todas las evoluciones activas de los próximos 30 días "
+              "con su plazo y cuándo terminan. ⭐ <b>VIP</b> = pase premium. Datos oficiales del juego vía FUT.GG.",
     "daily": "Aquí aparece cada noche el <b>resumen del día</b> con todas las filtraciones.",
 }
 
@@ -51,7 +54,7 @@ def topic_for(kind: str, source_type: str) -> str | None:
     """
     if source_type == "official":
         return None
-    return kind if kind in TOPICS and kind not in ("calendar", "daily") else "event"
+    return kind if kind in TOPICS and kind not in ("calendar", "evocal", "daily") else "event"
 
 SOURCE_TYPES = {
     "official": {"emoji": "✅", "label": "OFICIAL", "tag": "Oficial"},

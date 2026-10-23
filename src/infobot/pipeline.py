@@ -231,6 +231,47 @@ def update_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections, st
     return True
 
 
+def update_evo_calendar(db: DB, pub, renderer: CoverRenderer, sections: Sections, state: dict[str, Any],
+                        cfg: Config, dry_run: bool) -> bool:
+    """Calendario de evoluciones (FUT.GG). Se republica cuando cambian las evoluciones o el día."""
+    from .render.evo_calendar import evo_calendar_html, evo_calendar_text, evo_signature
+    from .sources.futgg_evolutions import fetch_evolutions
+
+    try:
+        evos = fetch_evolutions(cfg.timezone)
+        state["evolutions_feed"] = evos
+    except Exception as e:  # noqa: BLE001 - si FUT.GG falla, se mantiene lo último conocido
+        log.warning("No se pudieron leer las evoluciones de FUT.GG: %s", e)
+        evos = state.get("evolutions_feed") or []
+        if not evos:
+            return False
+    signature = evo_signature(evos, cfg.timezone)
+    if not dry_run and db.get_meta("evocal_hash") == signature and db.get_meta("evocal_photo_id"):
+        return False
+    html, _ = evo_calendar_html(evos, cfg.channel_title, cfg.timezone)
+    img = renderer.render(html, OUT_DIR / "covers" / "evo_calendar.png", full_page=True, width=1900)
+    caption = "📆 <b>Calendario de evoluciones</b> · próximos 30 días\n⭐ VIP = pase premium"
+    old_ids = json.loads(db.get_meta("evocal_message_ids") or "[]")
+    photo_id = sections.send("evocal", pub.send_photo, img, caption)
+    text_ids = [sections.send("evocal", pub.send_message, chunk, reply_to=photo_id)
+                for chunk in fmt.split_html(evo_calendar_text(evos, cfg.timezone))]
+    try:
+        pub.pin(photo_id)
+    except Exception as e:  # noqa: BLE001
+        log.warning("No se pudo fijar el calendario de evoluciones: %s", e)
+    if not dry_run:
+        for mid in old_ids:
+            try:
+                pub.delete_message(int(mid))
+            except Exception as e:  # noqa: BLE001
+                log.info("No se pudo borrar el calendario de evoluciones anterior (%s): %s", mid, e)
+        db.set_meta("evocal_photo_id", str(photo_id))
+        db.set_meta("evocal_message_ids", json.dumps([photo_id, *text_ids]))
+        db.set_meta("evocal_hash", signature)
+        db.add_post("evocal", [photo_id, *text_ids])
+    return True
+
+
 def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None,
         analysis_override: dict | None = None, db_path: Path = DB_PATH, state_path: Path = STATE_PATH) -> dict:
     """Ciclo completo. `tweets` y `analysis_override` permiten ejecutarlo con datos de ejemplo."""
@@ -278,6 +319,7 @@ def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None
             update_pinned(db, pub, state, cfg, dry_run)  # guía de General (si no cambia, Telegram lo ignora)
             # El calendario se revisa siempre: también cambia cuando algo caduca o cambia el día
             summary["calendar_updated"] = update_calendar(db, pub, renderer, sections, state, cfg, dry_run)
+            summary["evo_calendar_updated"] = update_evo_calendar(db, pub, renderer, sections, state, cfg, dry_run)
         if not dry_run:
             save_state(state_path, state)
     finally:

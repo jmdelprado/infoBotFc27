@@ -60,7 +60,8 @@ def _now(tz: str) -> datetime:
 def entries_from_state(state: dict[str, Any]) -> list[Entry]:
     out = []
     for c in state.get("calendar", []):
-        if not c.get("name"):
+        # Las evoluciones tienen su propio calendario (sección Calendario de evoluciones)
+        if not c.get("name") or c.get("type") == "evolution":
             continue
         out.append(Entry(
             type=c.get("type", "event"), name=c["name"], detail=c.get("detail", ""),

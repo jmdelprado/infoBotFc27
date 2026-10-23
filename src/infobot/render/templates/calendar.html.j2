@@ -6,7 +6,7 @@
   @font-face { font-family: "Oswald"; src: url("{{ fonts }}/Oswald.ttf"); font-weight: 200 700; }
   @font-face { font-family: "Inter"; src: url("{{ fonts }}/Inter.ttf"); font-weight: 100 900; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 1600px; min-height: {{ height }}px; }
+  html, body { width: {{ width|default(1600) }}px; min-height: {{ height }}px; }
   body { font-family: "Inter", sans-serif; color: #fff; padding: 48px 56px 40px;
     background: radial-gradient(80% 50% at 100% 0%, #1e5eff 0%, #10183a 45%, #07080d 100%); }
   header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; }
@@ -16,7 +16,7 @@
   .badge { display: inline-block; font: 700 18px "Oswald"; letter-spacing: .1em; color: #3fff8f;
     border: 2px solid #3fff8f; border-radius: 999px; padding: 4px 14px; margin-top: 10px; }
   .upd { font: 500 19px "Inter"; opacity: .7; text-align: right; }
-  .grid { display: grid; grid-template-columns: 420px 1fr; }
+  .grid { display: grid; grid-template-columns: {{ label_width|default(420) }}px 1fr; }
   .days { display: grid; grid-template-columns: repeat({{ days|length }}, 1fr); }
   .day { text-align: center; padding: 8px 0 10px; border-left: 1px solid rgba(255,255,255,.08); }
   .day .dow { font: 600 14px "Inter"; text-transform: uppercase; letter-spacing: .1em; opacity: .6; }
@@ -39,6 +39,8 @@
     box-shadow: 0 6px 20px rgba(0,0,0,.35); overflow: visible; }
   .bar.open { border-top-right-radius: 0; border-bottom-right-radius: 0; }
   .bar { z-index: 2; }
+  .vip { display: inline-block; font: 700 14px "Oswald"; letter-spacing: .08em; color: #0b0d14; background: linear-gradient(90deg,#ffd76a,#f5a623);
+    border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
   .bar.noend { opacity: .55; }
   .bar.short { color: transparent; }
   .outside { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; padding-left: 12px;
@@ -56,8 +58,8 @@
   <header>
     <div>
       <div class="brand">{{ brand }}</div>
-      <h1>📅 Calendario<small>{{ range_label }}</small></h1>
-      <div class="badge">✅ SOLO CONTENIDO OFICIAL</div>
+      <h1>{{ title|default("📅 Calendario") }}<small>{{ range_label }}</small></h1>
+      <div class="badge">{{ badge|default("✅ SOLO CONTENIDO OFICIAL") }}</div>
     </div>
     <div class="upd">Actualizado<br><b>{{ updated }}</b></div>
   </header>
@@ -70,7 +72,7 @@
     {% for r in rows %}
     <div class="label">
       <div class="em">{{ r.emoji }}</div>
-      <div><div class="t">{{ r.label }}</div><div class="n">{{ r.name }}</div>{% if r.detail %}<div class="d">{{ r.detail }}</div>{% endif %}</div>
+      <div><div class="t">{{ r.label }}</div><div class="n">{{ r.name }}{% if r.vip %}<span class="vip">⭐ VIP</span>{% endif %}</div>{% if r.detail %}<div class="d">{{ r.detail }}</div>{% endif %}</div>
     </div>
     <div class="track">
       <div class="bar{% if r.open_end %} open{% endif %}{% if r.upcoming %} upcoming{% endif %}{% if r.no_end %} noend{% endif %}{% if r.short %} short{% endif %}"
@@ -90,6 +92,6 @@
   </div>
   {% endif %}
 
-  <footer><span>{{ brand }} · Horas de España</span><span>Rayada = aún no ha empezado · Clara = sin fecha de fin · Línea verde = ahora</span></footer>
+  <footer><span>{{ brand }} · Horas de España{% if source %} · {{ source }}{% endif %}</span><span>Rayada = aún no ha empezado · Clara = sin fecha de fin · Línea verde = ahora</span></footer>
 </body>
 </html>

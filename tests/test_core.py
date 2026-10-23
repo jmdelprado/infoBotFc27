@@ -262,3 +262,25 @@ def test_excluded_topics_are_ignored():
     items, ignored, missing = analyzer.validate(result, tweets, ["the grounds"])
     assert [i.title for i in items] == ["SBC Woltemade"]
     assert ignored == {"1"} and missing == set()
+
+
+def test_futgg_normalize_filters_and_marks_premium():
+    from infobot.sources.futgg_evolutions import normalize
+
+    now = datetime(2026, 10, 23, 12, 0)
+    raw = [
+        {"id": 1, "name": "Speed Bump", "createdAt": "2026-10-16T17:00:00Z", "endTime": "2026-10-26T17:00:00Z",
+         "maxOverall": 80, "positions": [5], "coinsCost": 0, "pointsCost": 0,
+         "upgrades": [{"label": "Overall", "value": "+10"}]},
+        {"id": 2, "name": "Dual Identity [SP+ 14]", "description": "Premium Season Pass",
+         "createdAt": "2026-10-22T07:00:00Z", "endTime": "2026-12-10T18:00:00Z", "upgrades": []},
+        {"id": 3, "name": "Badge", "createdAt": "2026-10-20T07:00:00Z", "endTime": "2026-10-30T18:00:00Z",
+         "upgrades": [{"label": "Cosmetic", "value": "x"}]},
+        {"id": 4, "name": "Rapid+", "createdAt": "2026-09-16T07:00:00Z", "endTime": "2027-09-30T18:00:00Z",
+         "coinsCost": 25000, "upgrades": [{"label": "PlayStyle+", "value": "Rapid"}]},
+        {"id": 5, "name": "Old", "createdAt": "2026-10-01T07:00:00Z", "endTime": "2026-10-20T18:00:00Z", "upgrades": []},
+    ]
+    evos = normalize(raw, now=now)
+    assert [e["name"] for e in evos] == ["Speed Bump", "Dual Identity"]
+    assert evos[0]["requirements"] == "Media ≤80 · DFC" and evos[0]["upgrades"] == ["Media +10"]
+    assert evos[1]["premium"] and evos[1]["sp_level"] == 14

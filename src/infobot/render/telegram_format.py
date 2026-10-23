@@ -96,6 +96,8 @@ def pinned_message(state: dict[str, Any], title: str = "InfoBot FC 27") -> str:
         "",
         "✅ <b>📅 Calendario</b> → lo OFICIAL: todo lo que ya está en el juego o ha confirmado EA, con su inicio y "
         "su fin en las próximas 2 semanas.",
+        "✅ <b>📆 Calendario de evoluciones</b> → todas las evoluciones activas de los próximos 30 días y cuándo "
+        "terminan. ⭐ VIP = pase premium.",
         "",
         "🕵️ <b>Filtraciones</b>, cada una en su sección:",
         "🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos",
