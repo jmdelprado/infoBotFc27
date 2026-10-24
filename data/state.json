@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-10-24 14:38",
+  "updated_at": "2026-10-24 20:46",
   "active_promo": {
     "name": "Star Performers",
-    "source_type": "leak"
+    "source_type": "official",
+    "start": "2026-10-24",
+    "end": "2026-10-27"
   },
   "objectives": [
+    {
+      "name": "Fuerza Bruta (Rush): ganar 3, asistir 3, 2 goles con defensa",
+      "reward": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)",
+      "starts": "2026-10-24",
+      "source_type": "official"
+    },
     {
       "name": "Jeremiah St. Juste Legado FC: objetivo Completista",
       "reward": "St. Juste 84 DFC Legado FC (intransferible)",
@@ -35,6 +43,14 @@
   ],
   "sbcs": [
     {
+      "name": "Emre Mor",
+      "cost": "~24K",
+      "reward": "Mor 85 DC Ultimate Scream (intransferible)",
+      "starts": "2026-10-24",
+      "ends": "2026-10-31",
+      "source_type": "official"
+    },
+    {
       "name": "Noches espeluznantes",
       "reward": "30 Scream Tokens + sobre pequeño de futbolistas de oro",
       "starts": "2026-10-23",
@@ -54,6 +70,17 @@
     }
   ],
   "evolutions": [
+    {
+      "name": "Diseño Scream para cartas",
+      "cost": "20K",
+      "source_type": "leak"
+    },
+    {
+      "name": "Evolución RB/LB máx. 80",
+      "requirements": "Posición RB/LB; media general máx. 80",
+      "upgrades": "Mejora de estadísticas",
+      "source_type": "leak"
+    },
     {
       "name": "Evolución LI/LD máx. 80",
       "requirements": "Posición LI/LD; media general máx. 80; máx. 7 estilos de juego",
@@ -95,6 +122,109 @@
   ],
   "recent_cards": [
     {
+      "player": "Emre Mor",
+      "rating": 85,
+      "position": "DC",
+      "nation": "Turquía",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Emre Mor|Ultimate Scream|85"
+    },
+    {
+      "player": "Chong",
+      "rating": 85,
+      "position": "MD",
+      "club": "Sheffield United",
+      "nation": "Curazao",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Chong|Ultimate Scream|85"
+    },
+    {
+      "player": "Lukeba",
+      "rating": 85,
+      "position": "LI",
+      "club": "RB Leipzig",
+      "nation": "Francia",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Lukeba|Ultimate Scream|85"
+    },
+    {
+      "player": "Nusa",
+      "rating": 86,
+      "position": "LW",
+      "club": "RB Leipzig",
+      "nation": "Noruega",
+      "source_type": "leak",
+      "_key": "Nusa||86"
+    },
+    {
+      "player": "Konsa",
+      "rating": 86,
+      "position": "CB",
+      "club": "Arsenal",
+      "nation": "Inglaterra",
+      "source_type": "leak",
+      "_key": "Konsa||86"
+    },
+    {
+      "player": "Tzolis",
+      "rating": 84,
+      "position": "LW",
+      "club": "Arsenal",
+      "nation": "Grecia",
+      "source_type": "leak",
+      "_key": "Tzolis||84"
+    },
+    {
+      "player": "Seys",
+      "rating": 85,
+      "position": "LB",
+      "club": "Club Brugge",
+      "nation": "Bélgica",
+      "promo": "Star Performers",
+      "source_type": "official",
+      "_key": "Seys|Star Performers|85"
+    },
+    {
+      "player": "Mac Allister",
+      "rating": 86,
+      "position": "CM",
+      "club": "Liverpool",
+      "nation": "Argentina",
+      "promo": "Star Performers",
+      "source_type": "official",
+      "_key": "Mac Allister|Star Performers|86"
+    },
+    {
+      "player": "Guirassy",
+      "rating": 86,
+      "position": "ST",
+      "club": "Borussia Dortmund",
+      "promo": "Star Performers",
+      "source_type": "official",
+      "_key": "Guirassy|Star Performers|86"
+    },
+    {
+      "player": "Foden",
+      "rating": 87,
+      "position": "RW",
+      "club": "Manchester City",
+      "nation": "Inglaterra",
+      "promo": "Star Performers",
+      "source_type": "official",
+      "_key": "Foden|Star Performers|87"
+    },
+    {
+      "player": "Nico Paz",
+      "rating": 88,
+      "position": "CAM",
+      "promo": "Star Performers",
+      "source_type": "official",
+      "_key": "Nico Paz|Star Performers|88"
+    },
+    {
       "player": "Alexis Sánchez",
       "rating": 85,
       "position": "DC",
@@ -129,98 +259,21 @@
       "promo": "Legado FC",
       "source_type": "official",
       "_key": "Olga Carmona|Legado FC|85"
-    },
-    {
-      "player": "Nico Paz",
-      "rating": 86,
-      "position": "CAM",
-      "club": "Como",
-      "promo": "Star Performers",
-      "source_type": "leak",
-      "_key": "Nico Paz|Star Performers|86"
-    },
-    {
-      "player": "Mac Allister",
-      "rating": 87,
-      "position": "CM",
-      "club": "Liverpool",
-      "promo": "Star Performers",
-      "source_type": "leak",
-      "_key": "Mac Allister|Star Performers|87"
-    },
-    {
-      "player": "Foden",
-      "rating": 87,
-      "position": "CAM",
-      "club": "Manchester City",
-      "promo": "Star Performers",
-      "source_type": "leak",
-      "_key": "Foden|Star Performers|87"
-    },
-    {
-      "player": "Cristiano Ronaldo",
-      "rating": 89,
-      "position": "LW",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Cristiano Ronaldo|Ultimate Scream|89"
-    },
-    {
-      "player": "Szoboszlai",
-      "rating": 88,
-      "position": "RB",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Szoboszlai|Ultimate Scream|88"
-    },
-    {
-      "player": "Salma Paralluelo",
-      "rating": 88,
-      "position": "ST",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Salma Paralluelo|Ultimate Scream|88"
-    },
-    {
-      "player": "Stam",
-      "rating": 88,
-      "position": "CDM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Stam|Ultimate Scream|88"
-    },
-    {
-      "player": "Zola",
-      "rating": 89,
-      "position": "ST",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Zola|Ultimate Scream|89"
-    },
-    {
-      "player": "Raphinha",
-      "rating": 90,
-      "position": "CAM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Raphinha|Ultimate Scream|90"
-    },
-    {
-      "player": "Mandžukić",
-      "rating": 87,
-      "position": "LW",
-      "source_type": "leak",
-      "_key": "Mandžukić||87"
-    },
-    {
-      "player": "Stam",
-      "rating": 88,
-      "position": "CDM",
-      "source_type": "leak",
-      "_key": "Stam||88"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Evolución de diseño Scream para cartas por 20K",
+      "date": "2026-10-24 20:46"
+    },
+    {
+      "title": "Mejoras +1 de Tzolis, Konsa y Nusa",
+      "date": "2026-10-24 20:46"
+    },
+    {
+      "title": "Nueva evolución filtrada: RB/LB máx. 80",
+      "date": "2026-10-24 20:46"
+    },
     {
       "title": "Filtrada la Tienda de fichas con Champions Token",
       "date": "2026-10-24 14:38"
@@ -248,21 +301,30 @@
     {
       "title": "FC 27: filtrados cambios de interfaz y gestión de equipo",
       "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "Filtrados nuevos packs de tienda: ligas y 2x máx. 85",
-      "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "Ultimate Scream Equipo 1: estadísticas de las cartas filtradas",
-      "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "Filtrada nueva evolución Ultimate Scream: RM/RW máx. 82",
-      "date": "2026-10-23 19:10"
     }
   ],
   "calendar": [
+    {
+      "type": "sbc",
+      "name": "Emre Mor",
+      "starts": "2026-10-24",
+      "ends": "2026-10-31",
+      "detail": "Mor 85 DC Ultimate Scream (intransferible) · ~24K"
+    },
+    {
+      "type": "objective",
+      "name": "Fuerza Bruta (Rush): ganar 3, asistir 3, 2 goles con defensa",
+      "starts": "2026-10-24",
+      "ends": "",
+      "detail": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)"
+    },
+    {
+      "type": "promo",
+      "name": "Star Performers",
+      "starts": "2026-10-24",
+      "ends": "2026-10-27",
+      "detail": ""
+    },
     {
       "type": "objective",
       "name": "Jeremiah St. Juste Legado FC: objetivo Completista",
@@ -342,25 +404,6 @@
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2552,
-      "name": "Paso lateral",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-14 19:00",
-      "ends": "2026-10-24 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · LI/LD",
-      "upgrades": [
-        "Pie malo +2 ⭐",
-        "PlayStyle Tiki-taka",
-        "Media +7",
-        "Velocidad de sprint +5"
-      ],
-      "url": "https://www.fut.gg/evolutions/2552-side-step/"
-    },
     {
       "id": 2556,
       "name": "Foco central",
@@ -788,6 +831,73 @@
         "Salto +3"
       ],
       "url": "https://www.fut.gg/evolutions/2631-center-spectre/"
+    },
+    {
+      "id": 2632,
+      "name": "Infiltración",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-24 19:00",
+      "ends": "2026-11-03 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · LI/LD",
+      "upgrades": [
+        "PlayStyle Anticipación",
+        "PlayStyle Resistencia a la presión",
+        "Media +4",
+        "Agresividad +4"
+      ],
+      "url": "https://www.fut.gg/evolutions/2632-creep-inside/"
+    },
+    {
+      "id": 2634,
+      "name": "Ultimate Scream Retro 17",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-24 19:00",
+      "ends": "2026-11-07 19:00",
+      "free": false,
+      "cost": "20.000 monedas + 150 FC Points",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 17"
+      ],
+      "url": "https://www.fut.gg/evolutions/2634-ultimate-scream-retro-17/"
+    },
+    {
+      "id": 2635,
+      "name": "Ultimate Scream Retro 19",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-24 19:00",
+      "ends": "2026-11-07 19:00",
+      "free": false,
+      "cost": "20.000 monedas + 150 FC Points",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 19"
+      ],
+      "url": "https://www.fut.gg/evolutions/2635-ultimate-scream-retro-19/"
+    },
+    {
+      "id": 2633,
+      "name": "Ultimate Scream Retro 20",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-24 19:00",
+      "ends": "2026-11-07 19:00",
+      "free": false,
+      "cost": "20.000 monedas + 150 FC Points",
+      "requirements": "",
+      "upgrades": [
+        "Rareza Ultimate Scream Retro 20"
+      ],
+      "url": "https://www.fut.gg/evolutions/2633-ultimate-scream-retro-20/"
     },
     {
       "id": 2626,
