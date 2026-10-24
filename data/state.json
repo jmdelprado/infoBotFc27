@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24 06:27",
+  "updated_at": "2026-10-24 14:38",
   "active_promo": {
     "name": "Star Performers",
     "source_type": "leak"
@@ -55,6 +55,12 @@
   ],
   "evolutions": [
     {
+      "name": "Evolución LI/LD máx. 80",
+      "requirements": "Posición LI/LD; media general máx. 80; máx. 7 estilos de juego",
+      "upgrades": "Mejora de estadísticas; estilos de juego Press Proven y Anticipate",
+      "source_type": "leak"
+    },
+    {
       "name": "Extremo Siniestro",
       "cost": "900 fichas Scream",
       "upgrades": "Nivel 5: Paradela 85 ED a elegir entre tres versiones",
@@ -88,6 +94,15 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Alexis Sánchez",
+      "rating": 85,
+      "position": "DC",
+      "club": "Montreal",
+      "nation": "Chile",
+      "source_type": "official",
+      "_key": "Alexis Sánchez||85"
+    },
     {
       "player": "Jeremiah St. Juste",
       "rating": 84,
@@ -203,16 +218,17 @@
       "position": "CDM",
       "source_type": "leak",
       "_key": "Stam||88"
-    },
-    {
-      "player": "Zola",
-      "rating": 89,
-      "position": "ST",
-      "source_type": "leak",
-      "_key": "Zola||89"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Filtrada la Tienda de fichas con Champions Token",
+      "date": "2026-10-24 14:38"
+    },
+    {
+      "title": "Nueva evolución filtrada: LI/LD máx. 80",
+      "date": "2026-10-24 14:38"
+    },
     {
       "title": "Star Performers: Foden, Mac Allister y Nico Paz",
       "date": "2026-10-24 01:06"
@@ -243,14 +259,6 @@
     },
     {
       "title": "Filtrada nueva evolución Ultimate Scream: RM/RW máx. 82",
-      "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "Scream Token Store: primeros detalles",
-      "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "Nuevos packs de tienda llegan mañana con elecciones de jugador",
       "date": "2026-10-23 19:10"
     }
   ],
