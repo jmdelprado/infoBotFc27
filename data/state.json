@@ -1,10 +1,31 @@
 {
-  "updated_at": "2026-10-24 01:06",
+  "updated_at": "2026-10-24 06:27",
   "active_promo": {
     "name": "Star Performers",
     "source_type": "leak"
   },
   "objectives": [
+    {
+      "name": "Jeremiah St. Juste Legado FC: objetivo Completista",
+      "reward": "St. Juste 84 DFC Legado FC (intransferible)",
+      "starts": "2026-10-24",
+      "ends": "2026-12-03",
+      "source_type": "official"
+    },
+    {
+      "name": "Axel Witsel Legado FC: completista de Eliminatoria diaria",
+      "reward": "Witsel 84 MCD Legado FC (intransferible)",
+      "starts": "2026-10-24",
+      "ends": "2026-12-03",
+      "source_type": "official"
+    },
+    {
+      "name": "Olga Carmona Legado FC: 7 de 8 desafíos del Torneo eliminatorio",
+      "reward": "Olga Carmona 85 LI Legado FC (intransferible)",
+      "starts": "2026-10-24",
+      "ends": "2026-12-03",
+      "source_type": "official"
+    },
     {
       "name": "Scream Tokens: 15 partidos (5 grupos)",
       "reward": "450 Scream Tokens en total",
@@ -67,6 +88,33 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Jeremiah St. Juste",
+      "rating": 84,
+      "position": "DFC",
+      "club": "Feyenoord",
+      "promo": "Legado FC",
+      "source_type": "official",
+      "_key": "Jeremiah St. Juste|Legado FC|84"
+    },
+    {
+      "player": "Axel Witsel",
+      "rating": 84,
+      "position": "MCD",
+      "club": "Niza",
+      "promo": "Legado FC",
+      "source_type": "official",
+      "_key": "Axel Witsel|Legado FC|84"
+    },
+    {
+      "player": "Olga Carmona",
+      "rating": 85,
+      "position": "LI",
+      "club": "PSG",
+      "promo": "Legado FC",
+      "source_type": "official",
+      "_key": "Olga Carmona|Legado FC|85"
+    },
     {
       "player": "Nico Paz",
       "rating": 86,
@@ -162,31 +210,6 @@
       "position": "ST",
       "source_type": "leak",
       "_key": "Zola||89"
-    },
-    {
-      "player": "Fabinho",
-      "rating": 87,
-      "position": "CB",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Fabinho|Ultimate Scream|87"
-    },
-    {
-      "player": "Palmer",
-      "rating": 87,
-      "position": "RW",
-      "club": "Chelsea",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Palmer|Ultimate Scream|87"
-    },
-    {
-      "player": "Valverde",
-      "rating": 88,
-      "position": "MC",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Valverde|Ultimate Scream|88"
     }
   ],
   "recent_leaks": [
@@ -232,6 +255,27 @@
     }
   ],
   "calendar": [
+    {
+      "type": "objective",
+      "name": "Jeremiah St. Juste Legado FC: objetivo Completista",
+      "starts": "2026-10-24",
+      "ends": "2026-12-03",
+      "detail": "St. Juste 84 DFC Legado FC (intransferible)"
+    },
+    {
+      "type": "objective",
+      "name": "Axel Witsel Legado FC: completista de Eliminatoria diaria",
+      "starts": "2026-10-24",
+      "ends": "2026-12-03",
+      "detail": "Witsel 84 MCD Legado FC (intransferible)"
+    },
+    {
+      "type": "objective",
+      "name": "Olga Carmona Legado FC: 7 de 8 desafíos del Torneo eliminatorio",
+      "starts": "2026-10-24",
+      "ends": "2026-12-03",
+      "detail": "Olga Carmona 85 LI Legado FC (intransferible)"
+    },
     {
       "type": "event",
       "name": "Tienda de fichas Scream",
