@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25 05:31",
+  "updated_at": "2026-10-25 14:10",
   "active_promo": {
     "name": "Star Performers",
     "source_type": "official",
@@ -71,6 +71,12 @@
   ],
   "evolutions": [
     {
+      "name": "Evolución MC/MCO máx. 80",
+      "requirements": "Media general máx. 80; posición MC/MCO; máx. 7 estilos de juego; máx. 0 estilos de juego+",
+      "upgrades": "Mejora de estadísticas; camino 1: tiro + Gamechanger + pie malo +1 (máx. 4)",
+      "source_type": "leak"
+    },
+    {
       "name": "Diseño Scream para cartas",
       "cost": "20K",
       "source_type": "leak"
@@ -104,6 +110,11 @@
   ],
   "events": [
     {
+      "name": "Recompensas de Squad Battles",
+      "starts": "2026-10-25",
+      "source_type": "official"
+    },
+    {
       "name": "Tienda de fichas Scream: ficha Héroe Jill Scott",
       "starts": "2026-10-23",
       "ends": "2026-11-13",
@@ -127,6 +138,16 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Rangel",
+      "rating": 80,
+      "position": "POR",
+      "nation": "México",
+      "club": "Chivas",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Rangel|TOTW|80"
+    },
     {
       "player": "Le Fée",
       "rating": 86,
@@ -257,18 +278,21 @@
       "promo": "Star Performers",
       "source_type": "official",
       "_key": "Nico Paz|Star Performers|88"
-    },
-    {
-      "player": "Alexis Sánchez",
-      "rating": 85,
-      "position": "DC",
-      "club": "Montreal",
-      "nation": "Chile",
-      "source_type": "official",
-      "_key": "Alexis Sánchez||85"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Galería: 38 tokens con Rango S de Rayo Vallecano",
+      "date": "2026-10-25 14:10"
+    },
+    {
+      "title": "Posible TOTW: Rangel 80 POR",
+      "date": "2026-10-25 14:09"
+    },
+    {
+      "title": "Nueva evolución filtrada: MC/MCO máx. 80",
+      "date": "2026-10-25 14:09"
+    },
     {
       "title": "Evolución de diseño Scream para cartas por 20K",
       "date": "2026-10-24 20:46"
@@ -296,21 +320,16 @@
     {
       "title": "Ultimate Scream: Luna de Castor dará 99 en una stat",
       "date": "2026-10-24 01:06"
-    },
-    {
-      "title": "Recompensas de pretemporada de FC 26 llegan a FC 27",
-      "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "Ultimate Scream: nuevo equipo en sobres",
-      "date": "2026-10-23 19:10"
-    },
-    {
-      "title": "FC 27: filtrados cambios de interfaz y gestión de equipo",
-      "date": "2026-10-23 19:10"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Recompensas de Squad Battles",
+      "starts": "2026-10-25",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "event",
       "name": "Tienda de fichas Scream: ficha Héroe Jill Scott",
