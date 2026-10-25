@@ -1,10 +1,8 @@
 {
-  "updated_at": "2026-10-25 19:58",
+  "updated_at": "2026-10-25 23:30",
   "active_promo": {
-    "name": "Star Performers",
-    "source_type": "official",
-    "start": "2026-10-24",
-    "end": "2026-10-27"
+    "name": "Ultimate Scream Equipo 2",
+    "source_type": "leak"
   },
   "objectives": [
     {
@@ -70,14 +68,6 @@
       "cost": "~200K",
       "reward": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung",
       "starts": "2026-10-25",
-      "source_type": "official"
-    },
-    {
-      "name": "Max. 87 Base Hero Upgrade",
-      "cost": "115.000 puntos",
-      "reward": "Sobre con 1 Héroe base máx. 87 (intransferible)",
-      "starts": "2026-10-25 19:00",
-      "ends": "2026-10-25 21:00",
       "source_type": "official"
     },
     {
@@ -177,6 +167,83 @@
   ],
   "recent_cards": [
     {
+      "player": "Mbappé",
+      "rating": 91,
+      "position": "DC",
+      "source_type": "official",
+      "_key": "Mbappé||91"
+    },
+    {
+      "player": "Diomande",
+      "rating": 86,
+      "position": "ED",
+      "source_type": "official",
+      "_key": "Diomande||86"
+    },
+    {
+      "player": "Delgado",
+      "rating": 86,
+      "position": "MC",
+      "source_type": "official",
+      "_key": "Delgado||86"
+    },
+    {
+      "player": "Spence",
+      "rating": 84,
+      "position": "LI",
+      "source_type": "official",
+      "_key": "Spence||84"
+    },
+    {
+      "player": "Ampadu",
+      "rating": 85,
+      "position": "MCD",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Ampadu|Ultimate Scream|85"
+    },
+    {
+      "player": "Hannibal",
+      "rating": 85,
+      "position": "MC",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Hannibal|Ultimate Scream|85"
+    },
+    {
+      "player": "Jonny",
+      "rating": 85,
+      "position": "LD",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Jonny|Ultimate Scream|85"
+    },
+    {
+      "player": "Ojeda",
+      "rating": 85,
+      "position": "MCO",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Ojeda|Ultimate Scream|85"
+    },
+    {
+      "player": "Reijnders",
+      "rating": 86,
+      "position": "MC",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Reijnders|Ultimate Scream|86"
+    },
+    {
+      "player": "Schüller",
+      "rating": 86,
+      "position": "DC",
+      "club": "Manchester United",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Schüller|Ultimate Scream|86"
+    },
+    {
       "player": "Park Ji Sung",
       "rating": 86,
       "position": "MI",
@@ -221,103 +288,13 @@
       "promo": "TOTW",
       "source_type": "leak",
       "_key": "Rangel|TOTW|80"
-    },
-    {
-      "player": "Le Fée",
-      "rating": 86,
-      "position": "MI",
-      "nation": "Francia",
-      "club": "Sunderland",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Le Fée|Ultimate Scream|86"
-    },
-    {
-      "player": "Verón",
-      "rating": 87,
-      "position": "MCO",
-      "nation": "Argentina",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Verón|Ultimate Scream|87"
-    },
-    {
-      "player": "Scott",
-      "rating": 87,
-      "position": "DFC",
-      "nation": "Inglaterra",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Scott|Ultimate Scream|87"
-    },
-    {
-      "player": "Emre Mor",
-      "rating": 85,
-      "position": "DC",
-      "nation": "Turquía",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Emre Mor|Ultimate Scream|85"
-    },
-    {
-      "player": "Chong",
-      "rating": 85,
-      "position": "MD",
-      "club": "Sheffield United",
-      "nation": "Curazao",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Chong|Ultimate Scream|85"
-    },
-    {
-      "player": "Lukeba",
-      "rating": 85,
-      "position": "LI",
-      "club": "RB Leipzig",
-      "nation": "Francia",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Lukeba|Ultimate Scream|85"
-    },
-    {
-      "player": "Nusa",
-      "rating": 86,
-      "position": "LW",
-      "club": "RB Leipzig",
-      "nation": "Noruega",
-      "source_type": "leak",
-      "_key": "Nusa||86"
-    },
-    {
-      "player": "Konsa",
-      "rating": 86,
-      "position": "CB",
-      "club": "Arsenal",
-      "nation": "Inglaterra",
-      "source_type": "leak",
-      "_key": "Konsa||86"
-    },
-    {
-      "player": "Tzolis",
-      "rating": 84,
-      "position": "LW",
-      "club": "Arsenal",
-      "nation": "Grecia",
-      "source_type": "leak",
-      "_key": "Tzolis||84"
-    },
-    {
-      "player": "Seys",
-      "rating": 85,
-      "position": "LB",
-      "club": "Club Brugge",
-      "nation": "Bélgica",
-      "promo": "Star Performers",
-      "source_type": "official",
-      "_key": "Seys|Star Performers|85"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Ultimate Scream Equipo 2 filtrado: Schüller y Reijnders 86",
+      "date": "2026-10-25 23:30"
+    },
     {
       "title": "Galería: 38 tokens con Rango S de Rayo Vallecano",
       "date": "2026-10-25 14:10"
@@ -353,13 +330,16 @@
     {
       "title": "Star Performers: Foden, Mac Allister y Nico Paz",
       "date": "2026-10-24 01:06"
-    },
-    {
-      "title": "Ultimate Scream: Luna de Castor dará 99 en una stat",
-      "date": "2026-10-24 01:06"
     }
   ],
   "calendar": [
+    {
+      "type": "card",
+      "name": "Mejoras: Spence +1, Delgado +2, Diomande +1 y Mbappé +1/+1",
+      "starts": "2026-10-25",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "sbc",
       "name": "Caramelos escalofriantes",
@@ -387,13 +367,6 @@
       "starts": "2026-10-25",
       "ends": "",
       "detail": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung · ~200K"
-    },
-    {
-      "type": "sbc",
-      "name": "Max. 87 Base Hero Upgrade",
-      "starts": "2026-10-25 19:00",
-      "ends": "2026-10-25 21:00",
-      "detail": "Sobre con 1 Héroe base máx. 87 (intransferible) · 115.000 puntos"
     },
     {
       "type": "event",
