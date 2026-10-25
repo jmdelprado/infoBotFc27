@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24 20:46",
+  "updated_at": "2026-10-25 05:31",
   "active_promo": {
     "name": "Star Performers",
     "source_type": "official",
@@ -104,6 +104,12 @@
   ],
   "events": [
     {
+      "name": "Tienda de fichas Scream: ficha Héroe Jill Scott",
+      "starts": "2026-10-23",
+      "ends": "2026-11-13",
+      "source_type": "official"
+    },
+    {
       "name": "Tienda de fichas Scream",
       "starts": "2026-10-23",
       "ends": "2026-11-13",
@@ -121,6 +127,34 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Le Fée",
+      "rating": 86,
+      "position": "MI",
+      "nation": "Francia",
+      "club": "Sunderland",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Le Fée|Ultimate Scream|86"
+    },
+    {
+      "player": "Verón",
+      "rating": 87,
+      "position": "MCO",
+      "nation": "Argentina",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Verón|Ultimate Scream|87"
+    },
+    {
+      "player": "Scott",
+      "rating": 87,
+      "position": "DFC",
+      "nation": "Inglaterra",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Scott|Ultimate Scream|87"
+    },
     {
       "player": "Emre Mor",
       "rating": 85,
@@ -232,33 +266,6 @@
       "nation": "Chile",
       "source_type": "official",
       "_key": "Alexis Sánchez||85"
-    },
-    {
-      "player": "Jeremiah St. Juste",
-      "rating": 84,
-      "position": "DFC",
-      "club": "Feyenoord",
-      "promo": "Legado FC",
-      "source_type": "official",
-      "_key": "Jeremiah St. Juste|Legado FC|84"
-    },
-    {
-      "player": "Axel Witsel",
-      "rating": 84,
-      "position": "MCD",
-      "club": "Niza",
-      "promo": "Legado FC",
-      "source_type": "official",
-      "_key": "Axel Witsel|Legado FC|84"
-    },
-    {
-      "player": "Olga Carmona",
-      "rating": 85,
-      "position": "LI",
-      "club": "PSG",
-      "promo": "Legado FC",
-      "source_type": "official",
-      "_key": "Olga Carmona|Legado FC|85"
     }
   ],
   "recent_leaks": [
@@ -304,6 +311,20 @@
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Tienda de fichas Scream: ficha Héroe Jill Scott",
+      "starts": "2026-10-23",
+      "ends": "2026-11-13",
+      "detail": ""
+    },
+    {
+      "type": "mode",
+      "name": "Torneo Eliminatorio Diario Temporada 2",
+      "starts": "2026-10-25",
+      "ends": "2026-12-03",
+      "detail": ""
+    },
     {
       "type": "sbc",
       "name": "Emre Mor",
