@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25 14:10",
+  "updated_at": "2026-10-25 19:58",
   "active_promo": {
     "name": "Star Performers",
     "source_type": "official",
@@ -42,6 +42,44 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Caramelos escalofriantes",
+      "cost": "30 tokens de Galería",
+      "reward": "Sobre de mezcla de futbolistas",
+      "starts": "2026-10-25",
+      "source_type": "official"
+    },
+    {
+      "name": "LALIGA y Liga F",
+      "cost": "2 x 4.500 puntos",
+      "reward": "Sobres bronce+plata LaLiga y Liga F + sobre 2 oros máx. 85",
+      "starts": "2026-10-25",
+      "ends": "2026-10-31",
+      "source_type": "official"
+    },
+    {
+      "name": "Premier League y Barclays WSL",
+      "cost": "2 x 6.000 puntos",
+      "reward": "Sobres bronce+plata Premier y BWSL + sobre 2 oros máx. 85",
+      "starts": "2026-10-25",
+      "ends": "2026-10-31",
+      "source_type": "official"
+    },
+    {
+      "name": "Elección de 4 Héroes",
+      "cost": "~200K",
+      "reward": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung",
+      "starts": "2026-10-25",
+      "source_type": "official"
+    },
+    {
+      "name": "Max. 87 Base Hero Upgrade",
+      "cost": "115.000 puntos",
+      "reward": "Sobre con 1 Héroe base máx. 87 (intransferible)",
+      "starts": "2026-10-25 19:00",
+      "ends": "2026-10-25 21:00",
+      "source_type": "official"
+    },
     {
       "name": "Emre Mor",
       "cost": "~24K",
@@ -138,6 +176,42 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Park Ji Sung",
+      "rating": 86,
+      "position": "MI",
+      "nation": "Corea del Sur",
+      "promo": "Héroe",
+      "source_type": "official",
+      "_key": "Park Ji Sung|Héroe|86"
+    },
+    {
+      "player": "Larsson",
+      "rating": 86,
+      "position": "DC",
+      "nation": "Suecia",
+      "promo": "Héroe",
+      "source_type": "official",
+      "_key": "Larsson|Héroe|86"
+    },
+    {
+      "player": "Hernández",
+      "rating": 86,
+      "position": "DC",
+      "nation": "México",
+      "promo": "Héroe",
+      "source_type": "official",
+      "_key": "Hernández|Héroe|86"
+    },
+    {
+      "player": "Rui Costa",
+      "rating": 87,
+      "position": "MCO",
+      "nation": "Portugal",
+      "promo": "Héroe",
+      "source_type": "official",
+      "_key": "Rui Costa|Héroe|87"
+    },
     {
       "player": "Rangel",
       "rating": 80,
@@ -241,43 +315,6 @@
       "promo": "Star Performers",
       "source_type": "official",
       "_key": "Seys|Star Performers|85"
-    },
-    {
-      "player": "Mac Allister",
-      "rating": 86,
-      "position": "CM",
-      "club": "Liverpool",
-      "nation": "Argentina",
-      "promo": "Star Performers",
-      "source_type": "official",
-      "_key": "Mac Allister|Star Performers|86"
-    },
-    {
-      "player": "Guirassy",
-      "rating": 86,
-      "position": "ST",
-      "club": "Borussia Dortmund",
-      "promo": "Star Performers",
-      "source_type": "official",
-      "_key": "Guirassy|Star Performers|86"
-    },
-    {
-      "player": "Foden",
-      "rating": 87,
-      "position": "RW",
-      "club": "Manchester City",
-      "nation": "Inglaterra",
-      "promo": "Star Performers",
-      "source_type": "official",
-      "_key": "Foden|Star Performers|87"
-    },
-    {
-      "player": "Nico Paz",
-      "rating": 88,
-      "position": "CAM",
-      "promo": "Star Performers",
-      "source_type": "official",
-      "_key": "Nico Paz|Star Performers|88"
     }
   ],
   "recent_leaks": [
@@ -323,6 +360,41 @@
     }
   ],
   "calendar": [
+    {
+      "type": "sbc",
+      "name": "Caramelos escalofriantes",
+      "starts": "2026-10-25",
+      "ends": "",
+      "detail": "Sobre de mezcla de futbolistas · 30 tokens de Galería"
+    },
+    {
+      "type": "sbc",
+      "name": "LALIGA y Liga F",
+      "starts": "2026-10-25",
+      "ends": "2026-10-31",
+      "detail": "Sobres bronce+plata LaLiga y Liga F + sobre 2 oros máx. 85 · 2 x 4.500 puntos"
+    },
+    {
+      "type": "sbc",
+      "name": "Premier League y Barclays WSL",
+      "starts": "2026-10-25",
+      "ends": "2026-10-31",
+      "detail": "Sobres bronce+plata Premier y BWSL + sobre 2 oros máx. 85 · 2 x 6.000 puntos"
+    },
+    {
+      "type": "sbc",
+      "name": "Elección de 4 Héroes",
+      "starts": "2026-10-25",
+      "ends": "",
+      "detail": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung · ~200K"
+    },
+    {
+      "type": "sbc",
+      "name": "Max. 87 Base Hero Upgrade",
+      "starts": "2026-10-25 19:00",
+      "ends": "2026-10-25 21:00",
+      "detail": "Sobre con 1 Héroe base máx. 87 (intransferible) · 115.000 puntos"
+    },
     {
       "type": "event",
       "name": "Recompensas de Squad Battles",
@@ -444,25 +516,6 @@
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2556,
-      "name": "Foco central",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-15 19:00",
-      "ends": "2026-10-25 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤81 · MCD/MC",
-      "upgrades": [
-        "Filigranas +2 ⭐",
-        "Pie malo +2 ⭐",
-        "PlayStyle Pase incisivo",
-        "PlayStyle Contención"
-      ],
-      "url": "https://www.fut.gg/evolutions/2556-centre-stage/"
-    },
     {
       "id": 2541,
       "name": "Future Stars Academy I",
@@ -890,6 +943,25 @@
         "Agresividad +4"
       ],
       "url": "https://www.fut.gg/evolutions/2632-creep-inside/"
+    },
+    {
+      "id": 2636,
+      "name": "Witching Hour",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-25 19:00",
+      "ends": "2026-11-04 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · MC/MCO",
+      "upgrades": [
+        "Pie malo +1 ⭐",
+        "PlayStyle Desequilibrante",
+        "Media +4",
+        "Agilidad +4"
+      ],
+      "url": "https://www.fut.gg/evolutions/2636-witching-hour/"
     },
     {
       "id": 2634,
