@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25 23:30",
+  "updated_at": "2026-10-26 16:17",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
@@ -167,6 +167,62 @@
   ],
   "recent_cards": [
     {
+      "player": "Berenguer",
+      "rating": 82,
+      "position": "ED",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Berenguer|TOTW 07|82"
+    },
+    {
+      "player": "Jackson",
+      "rating": 82,
+      "position": "DC",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Jackson|TOTW 07|82"
+    },
+    {
+      "player": "Sonis",
+      "rating": 82,
+      "position": "LI",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Sonis|TOTW 07|82"
+    },
+    {
+      "player": "Toney",
+      "rating": 85,
+      "position": "DC",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Toney|TOTW 07|85"
+    },
+    {
+      "player": "Dumornay",
+      "rating": 90,
+      "position": "EI",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Dumornay|TOTW 07|90"
+    },
+    {
+      "player": "Gabriel",
+      "rating": 90,
+      "position": "DFC",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Gabriel|TOTW 07|90"
+    },
+    {
+      "player": "Mbappé",
+      "rating": 92,
+      "position": "DC",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Mbappé|TOTW 07|92"
+    },
+    {
       "player": "Mbappé",
       "rating": 91,
       "position": "DC",
@@ -225,72 +281,13 @@
       "promo": "Ultimate Scream",
       "source_type": "leak",
       "_key": "Ojeda|Ultimate Scream|85"
-    },
-    {
-      "player": "Reijnders",
-      "rating": 86,
-      "position": "MC",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Reijnders|Ultimate Scream|86"
-    },
-    {
-      "player": "Schüller",
-      "rating": 86,
-      "position": "DC",
-      "club": "Manchester United",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Schüller|Ultimate Scream|86"
-    },
-    {
-      "player": "Park Ji Sung",
-      "rating": 86,
-      "position": "MI",
-      "nation": "Corea del Sur",
-      "promo": "Héroe",
-      "source_type": "official",
-      "_key": "Park Ji Sung|Héroe|86"
-    },
-    {
-      "player": "Larsson",
-      "rating": 86,
-      "position": "DC",
-      "nation": "Suecia",
-      "promo": "Héroe",
-      "source_type": "official",
-      "_key": "Larsson|Héroe|86"
-    },
-    {
-      "player": "Hernández",
-      "rating": 86,
-      "position": "DC",
-      "nation": "México",
-      "promo": "Héroe",
-      "source_type": "official",
-      "_key": "Hernández|Héroe|86"
-    },
-    {
-      "player": "Rui Costa",
-      "rating": 87,
-      "position": "MCO",
-      "nation": "Portugal",
-      "promo": "Héroe",
-      "source_type": "official",
-      "_key": "Rui Costa|Héroe|87"
-    },
-    {
-      "player": "Rangel",
-      "rating": 80,
-      "position": "POR",
-      "nation": "México",
-      "club": "Chivas",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Rangel|TOTW|80"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Predicción TOTW 07: Mbappé 92, Gabriel 90 y Dumornay 90",
+      "date": "2026-10-26 16:17"
+    },
     {
       "title": "Ultimate Scream Equipo 2 filtrado: Schüller y Reijnders 86",
       "date": "2026-10-25 23:30"
@@ -326,10 +323,6 @@
     {
       "title": "Nueva evolución filtrada: LI/LD máx. 80",
       "date": "2026-10-24 14:38"
-    },
-    {
-      "title": "Star Performers: Foden, Mac Allister y Nico Paz",
-      "date": "2026-10-24 01:06"
     }
   ],
   "calendar": [
