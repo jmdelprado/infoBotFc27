@@ -1,10 +1,16 @@
 {
-  "updated_at": "2026-10-26 16:17",
+  "updated_at": "2026-10-26 22:00",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
   },
   "objectives": [
+    {
+      "name": "Carrera en vivo: La Experiencia Manda",
+      "reward": "1000 SP adicionales para el Pase (total de desafíos)",
+      "starts": "2026-10-26",
+      "source_type": "official"
+    },
     {
       "name": "Fuerza Bruta (Rush): ganar 3, asistir 3, 2 goles con defensa",
       "reward": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)",
@@ -40,6 +46,14 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Mejora x3 79+",
+      "cost": "10 oros",
+      "reward": "Sobre oro x3 79+ (intransferible)",
+      "starts": "2026-10-26",
+      "ends": "2026-11-01",
+      "source_type": "official"
+    },
     {
       "name": "Caramelos escalofriantes",
       "cost": "30 tokens de Galería",
@@ -138,6 +152,12 @@
   ],
   "events": [
     {
+      "name": "Tienda de fichas Scream: precios y máximo de fichas",
+      "starts": "2026-10-23",
+      "ends": "2026-11-13",
+      "source_type": "official"
+    },
+    {
       "name": "Recompensas de Squad Battles",
       "starts": "2026-10-25",
       "source_type": "official"
@@ -166,6 +186,42 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Cerci",
+      "rating": 84,
+      "position": "DC",
+      "club": "Arsenal",
+      "promo": "OTW",
+      "source_type": "leak",
+      "_key": "Cerci|OTW|84"
+    },
+    {
+      "player": "Pedro Gonçalves",
+      "rating": 83,
+      "position": "MI",
+      "club": "Fiorentina",
+      "promo": "OTW",
+      "source_type": "leak",
+      "_key": "Pedro Gonçalves|OTW|83"
+    },
+    {
+      "player": "Tielemans",
+      "rating": 85,
+      "position": "MC",
+      "club": "Manchester United",
+      "promo": "OTW",
+      "source_type": "leak",
+      "_key": "Tielemans|OTW|85"
+    },
+    {
+      "player": "Diomande",
+      "rating": 83,
+      "position": "DFC",
+      "club": "Nottingham Forest",
+      "promo": "OTW",
+      "source_type": "leak",
+      "_key": "Diomande|OTW|83"
+    },
     {
       "player": "Berenguer",
       "rating": 82,
@@ -249,41 +305,13 @@
       "position": "LI",
       "source_type": "official",
       "_key": "Spence||84"
-    },
-    {
-      "player": "Ampadu",
-      "rating": 85,
-      "position": "MCD",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Ampadu|Ultimate Scream|85"
-    },
-    {
-      "player": "Hannibal",
-      "rating": 85,
-      "position": "MC",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Hannibal|Ultimate Scream|85"
-    },
-    {
-      "player": "Jonny",
-      "rating": 85,
-      "position": "LD",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Jonny|Ultimate Scream|85"
-    },
-    {
-      "player": "Ojeda",
-      "rating": 85,
-      "position": "MCO",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Ojeda|Ultimate Scream|85"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "4 cartas OTW pierden la mejora de 3 de 6 victorias",
+      "date": "2026-10-26 22:00"
+    },
     {
       "title": "Predicción TOTW 07: Mbappé 92, Gabriel 90 y Dumornay 90",
       "date": "2026-10-26 16:17"
@@ -319,13 +347,37 @@
     {
       "title": "Filtrada la Tienda de fichas con Champions Token",
       "date": "2026-10-24 14:38"
-    },
-    {
-      "title": "Nueva evolución filtrada: LI/LD máx. 80",
-      "date": "2026-10-24 14:38"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Tienda de fichas Scream: precios y máximo de fichas",
+      "starts": "2026-10-23",
+      "ends": "2026-11-13",
+      "detail": ""
+    },
+    {
+      "type": "sbc",
+      "name": "Mejora x3 79+",
+      "starts": "2026-10-26",
+      "ends": "2026-11-01",
+      "detail": "Sobre oro x3 79+ (intransferible) · 10 oros"
+    },
+    {
+      "type": "mode",
+      "name": "Torneo Eliminatorio Diario T2 (Olga Carmona)",
+      "starts": "2026-10-26",
+      "ends": "",
+      "detail": "200 Scream Tokens + préstamo Scream + 50 SP"
+    },
+    {
+      "type": "objective",
+      "name": "Carrera en vivo: La Experiencia Manda",
+      "starts": "2026-10-26",
+      "ends": "",
+      "detail": "1000 SP adicionales para el Pase (total de desafíos)"
+    },
     {
       "type": "card",
       "name": "Mejoras: Spence +1, Delgado +2, Diomande +1 y Mbappé +1/+1",
@@ -482,101 +534,6 @@
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2541,
-      "name": "Future Stars Academy I",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-09 19:00",
-      "ends": "2026-10-26 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · MCO/DC",
-      "upgrades": [
-        "Rareza Future Stars Academy",
-        "Filigranas +2 ⭐",
-        "Media +34",
-        "Fuerza +15"
-      ],
-      "url": "https://www.fut.gg/evolutions/2541-future-stars-academy-i/"
-    },
-    {
-      "id": 2549,
-      "name": "Future Stars Academy II",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-11 19:00",
-      "ends": "2026-10-26 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤81 · Media ≥81",
-      "upgrades": [
-        "Media +1",
-        "Definición +1",
-        "Tiros lejanos +1",
-        "Regate +1"
-      ],
-      "url": "https://www.fut.gg/evolutions/2549-future-stars-academy-ii/"
-    },
-    {
-      "id": 2551,
-      "name": "Future Stars Academy III",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-13 19:05",
-      "ends": "2026-10-26 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤82 · Media ≥82",
-      "upgrades": [
-        "PlayStyle Rapidez",
-        "Media +1",
-        "Velocidad de sprint +3",
-        "Aceleración +3"
-      ],
-      "url": "https://www.fut.gg/evolutions/2551-future-stars-academy-iii/"
-    },
-    {
-      "id": 2561,
-      "name": "Future Stars Academy IV",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-16 19:00",
-      "ends": "2026-10-26 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤83 · Media ≥83",
-      "upgrades": [
-        "PlayStyle Tiro raso",
-        "Media +2",
-        "Definición +1",
-        "Resistencia +3"
-      ],
-      "url": "https://www.fut.gg/evolutions/2561-future-stars-academy-iv/"
-    },
-    {
-      "id": 2557,
-      "name": "Resalto de velocidad",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-16 19:00",
-      "ends": "2026-10-26 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · DFC",
-      "upgrades": [
-        "PlayStyle Contención",
-        "PlayStyle Interceptación",
-        "Media +10",
-        "Pase largo +4"
-      ],
-      "url": "https://www.fut.gg/evolutions/2557-speed-bump/"
-    },
     {
       "id": 2558,
       "name": "Desequilibrante",
@@ -1040,6 +997,25 @@
         "Rareza Ultimate Scream Retro 20"
       ],
       "url": "https://www.fut.gg/evolutions/2625-ultimate-scream-retro-20/"
+    },
+    {
+      "id": 2637,
+      "name": "Resurgir de la tumba",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-26 19:00",
+      "ends": "2026-11-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤74 · MD/ED",
+      "upgrades": [
+        "Filigranas +2 ⭐",
+        "Pie malo +2 ⭐",
+        "PlayStyle Técnico",
+        "PlayStyle Paso rápido"
+      ],
+      "url": "https://www.fut.gg/evolutions/2637-rise-from-the-grave/"
     },
     {
       "id": 2622,
