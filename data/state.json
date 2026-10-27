@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-27 15:23",
+  "updated_at": "2026-10-27 21:40",
   "active_promo": {
-    "name": "Ultimate Scream Equipo 2",
+    "name": "TOTW 07",
     "source_type": "leak"
   },
   "objectives": [
@@ -46,6 +46,22 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Mejora x5 80+",
+      "cost": "6.750",
+      "reward": "Sobre oro x5 80+ (intransferible)",
+      "starts": "2026-10-27",
+      "ends": "2026-11-02",
+      "source_type": "official"
+    },
+    {
+      "name": "Héctor Bellerín",
+      "cost": "~30.000",
+      "reward": "Bellerín 85 MD Ultimate Scream (intransferible)",
+      "starts": "2026-10-27",
+      "ends": "2026-11-02",
+      "source_type": "official"
+    },
     {
       "name": "Bellerín",
       "source_type": "leak"
@@ -116,6 +132,21 @@
     }
   ],
   "evolutions": [
+    {
+      "name": "David Luiz: Un Héroe Nacional",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
+    {
+      "name": "David Luiz: El Campeón",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
+    {
+      "name": "David Luiz: El Finalizador",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
     {
       "name": "Evolución DFC máx. 81",
       "requirements": "Media máx. 81; posición DFC; máx. 7 estilos de juego",
@@ -197,6 +228,128 @@
   ],
   "recent_cards": [
     {
+      "player": "Tel",
+      "rating": 80,
+      "position": "MI",
+      "club": "Tottenham",
+      "league": "Premier League",
+      "nation": "Francia",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Tel|TOTW|80"
+    },
+    {
+      "player": "Stanway",
+      "rating": 87,
+      "position": "MC",
+      "club": "Arsenal",
+      "league": "Barclays WSL",
+      "nation": "Inglaterra",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Stanway|TOTW|87"
+    },
+    {
+      "player": "Berenguer",
+      "promo": "TOTW 07",
+      "nation": "España",
+      "source_type": "leak",
+      "_key": "Berenguer|TOTW 07|"
+    },
+    {
+      "player": "Tel",
+      "promo": "TOTW 07",
+      "nation": "Francia",
+      "source_type": "leak",
+      "_key": "Tel|TOTW 07|"
+    },
+    {
+      "player": "Stanway",
+      "rating": 87,
+      "position": "CDM",
+      "promo": "TOTW 07",
+      "club": "Arsenal",
+      "nation": "Inglaterra",
+      "league": "Barclays WSL",
+      "source_type": "leak",
+      "_key": "Stanway|TOTW 07|87"
+    },
+    {
+      "player": "Mbappé",
+      "rating": 92,
+      "position": "ST",
+      "promo": "TOTW 07",
+      "club": "Real Madrid",
+      "nation": "Francia",
+      "league": "LaLiga",
+      "source_type": "leak",
+      "_key": "Mbappé|TOTW 07|92"
+    },
+    {
+      "player": "Héctor Bellerín",
+      "rating": 85,
+      "position": "MD",
+      "promo": "Ultimate Scream",
+      "club": "Real Betis",
+      "source_type": "official",
+      "_key": "Héctor Bellerín|Ultimate Scream|85"
+    },
+    {
+      "player": "Mohya",
+      "rating": 80,
+      "position": "MCO",
+      "club": "Borussia Mönchengladbach",
+      "league": "Bundesliga",
+      "nation": "Alemania",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Mohya|TOTW 07|80"
+    },
+    {
+      "player": "Balerdi",
+      "rating": 83,
+      "position": "DFC",
+      "club": "Roma",
+      "league": "Serie A",
+      "nation": "Argentina",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Balerdi|TOTW 07|83"
+    },
+    {
+      "player": "Osimhen",
+      "rating": 86,
+      "position": "DC",
+      "club": "Galatasaray",
+      "league": "Trendyol Süper Lig",
+      "nation": "Nigeria",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Osimhen|TOTW 07|86"
+    },
+    {
+      "player": "Bühl",
+      "rating": 89,
+      "position": "MI",
+      "club": "Bayern de Múnich",
+      "league": "Frauen-Bundesliga",
+      "nation": "Alemania",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Bühl|TOTW 07|89"
+    },
+    {
+      "player": "Gabriel",
+      "rating": 90,
+      "position": "DFC",
+      "club": "Arsenal",
+      "league": "Premier League",
+      "nation": "Brasil",
+      "promo": "TOTW 07",
+      "source_type": "leak",
+      "_key": "Gabriel|TOTW 07|90"
+    },
+    {
       "player": "Amoura",
       "rating": 85,
       "position": "ST",
@@ -219,109 +372,25 @@
       "promo": "Ultimate Scream",
       "source_type": "leak",
       "_key": "McTominay|Ultimate Scream|87"
-    },
-    {
-      "player": "Valverde",
-      "rating": 88,
-      "position": "CM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Valverde|Ultimate Scream|88"
-    },
-    {
-      "player": "Laudehr",
-      "rating": 89,
-      "position": "CM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Laudehr|Ultimate Scream|89"
-    },
-    {
-      "player": "Messi",
-      "rating": 90,
-      "position": "CAM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Messi|Ultimate Scream|90"
-    },
-    {
-      "player": "Kvaratskhelia",
-      "rating": 90,
-      "position": "LW",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Kvaratskhelia|Ultimate Scream|90"
-    },
-    {
-      "player": "Ginola",
-      "rating": 90,
-      "position": "LM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Ginola|Ultimate Scream|90"
-    },
-    {
-      "player": "Olise",
-      "rating": 92,
-      "position": "RM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Olise|Ultimate Scream|92"
-    },
-    {
-      "player": "Cerci",
-      "rating": 84,
-      "position": "DC",
-      "club": "Arsenal",
-      "promo": "OTW",
-      "source_type": "leak",
-      "_key": "Cerci|OTW|84"
-    },
-    {
-      "player": "Pedro Gonçalves",
-      "rating": 83,
-      "position": "MI",
-      "club": "Fiorentina",
-      "promo": "OTW",
-      "source_type": "leak",
-      "_key": "Pedro Gonçalves|OTW|83"
-    },
-    {
-      "player": "Tielemans",
-      "rating": 85,
-      "position": "MC",
-      "club": "Manchester United",
-      "promo": "OTW",
-      "source_type": "leak",
-      "_key": "Tielemans|OTW|85"
-    },
-    {
-      "player": "Diomande",
-      "rating": 83,
-      "position": "DFC",
-      "club": "Nottingham Forest",
-      "promo": "OTW",
-      "source_type": "leak",
-      "_key": "Diomande|OTW|83"
-    },
-    {
-      "player": "Berenguer",
-      "rating": 82,
-      "position": "ED",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Berenguer|TOTW 07|82"
-    },
-    {
-      "player": "Jackson",
-      "rating": 82,
-      "position": "DC",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Jackson|TOTW 07|82"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Cartas TOTW filtradas: Stanway 87 MC y Tel 80 MI",
+      "date": "2026-10-27 21:40"
+    },
+    {
+      "title": "Nuevo diseño para las cartas de LaLiga",
+      "date": "2026-10-27 21:40"
+    },
+    {
+      "title": "TOTW 07 predicho: Mbappé 92, Tel, Berenguer y Stanway 87",
+      "date": "2026-10-27 21:39"
+    },
+    {
+      "title": "TOTW 07 filtrado: Mbappé, Gabriel, Osimhen, Bühl, Balerdi y Mohya",
+      "date": "2026-10-27 21:39"
+    },
     {
       "title": "Nueva evolución filtrada: DFC máx. 81",
       "date": "2026-10-27 15:23"
@@ -345,25 +414,44 @@
     {
       "title": "Ultimate Scream Equipo 2 filtrado: Schüller y Reijnders 86",
       "date": "2026-10-25 23:30"
-    },
-    {
-      "title": "Galería: 38 tokens con Rango S de Rayo Vallecano",
-      "date": "2026-10-25 14:10"
-    },
-    {
-      "title": "Posible TOTW: Rangel 80 POR",
-      "date": "2026-10-25 14:09"
-    },
-    {
-      "title": "Nueva evolución filtrada: MC/MCO máx. 80",
-      "date": "2026-10-25 14:09"
-    },
-    {
-      "title": "Evolución de diseño Scream para cartas por 20K",
-      "date": "2026-10-24 20:46"
     }
   ],
   "calendar": [
+    {
+      "type": "evolution",
+      "name": "David Luiz: Un Héroe Nacional",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "evolution",
+      "name": "David Luiz: El Campeón",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "evolution",
+      "name": "David Luiz: El Finalizador",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "sbc",
+      "name": "Mejora x5 80+",
+      "starts": "2026-10-27",
+      "ends": "2026-11-02",
+      "detail": "Sobre oro x5 80+ (intransferible) · 6.750"
+    },
+    {
+      "type": "sbc",
+      "name": "Héctor Bellerín",
+      "starts": "2026-10-27",
+      "ends": "2026-11-02",
+      "detail": "Bellerín 85 MD Ultimate Scream (intransferible) · ~30.000"
+    },
     {
       "type": "event",
       "name": "Tienda de fichas Scream: precios y máximo de fichas",
@@ -541,41 +629,6 @@
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2558,
-      "name": "Desequilibrante",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-16 19:00",
-      "ends": "2026-10-27 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80",
-      "upgrades": [
-        "PlayStyle Desequilibrante"
-      ],
-      "url": "https://www.fut.gg/evolutions/2558-gamechanger/"
-    },
-    {
-      "id": 2562,
-      "name": "Mandos intermedios",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-17 19:00",
-      "ends": "2026-10-27 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤74 · MCD/MC",
-      "upgrades": [
-        "Pie malo +2 ⭐",
-        "PlayStyle Tiro potente",
-        "Media +40",
-        "Definición +40"
-      ],
-      "url": "https://www.fut.gg/evolutions/2562-middle-management/"
-    },
     {
       "id": 2602,
       "name": "Zoomaestro",
