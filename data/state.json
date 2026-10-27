@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26 22:00",
+  "updated_at": "2026-10-27 05:59",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
@@ -351,6 +351,13 @@
   ],
   "calendar": [
     {
+      "type": "mode",
+      "name": "FUT Champions",
+      "starts": "2026-10-27",
+      "ends": "2026-10-27 11:28",
+      "detail": "Aspirante a V: 15 x Ficha Champions"
+    },
+    {
       "type": "event",
       "name": "Tienda de fichas Scream: precios y máximo de fichas",
       "starts": "2026-10-23",
@@ -447,13 +454,6 @@
       "starts": "2026-10-24",
       "ends": "",
       "detail": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)"
-    },
-    {
-      "type": "promo",
-      "name": "Star Performers",
-      "starts": "2026-10-24",
-      "ends": "2026-10-27",
-      "detail": ""
     },
     {
       "type": "objective",
