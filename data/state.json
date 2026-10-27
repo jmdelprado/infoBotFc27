@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 05:59",
+  "updated_at": "2026-10-27 15:23",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
@@ -46,6 +46,10 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Bellerín",
+      "source_type": "leak"
+    },
     {
       "name": "Mejora x3 79+",
       "cost": "10 oros",
@@ -112,6 +116,12 @@
     }
   ],
   "evolutions": [
+    {
+      "name": "Evolución DFC máx. 81",
+      "requirements": "Media máx. 81; posición DFC; máx. 7 estilos de juego",
+      "upgrades": "Mejora de estadísticas; pie malo +1 (máx. 3); Pinged Pass",
+      "source_type": "leak"
+    },
     {
       "name": "Evolución MC/MCO máx. 80",
       "requirements": "Media general máx. 80; posición MC/MCO; máx. 7 estilos de juego; máx. 0 estilos de juego+",
@@ -187,6 +197,78 @@
   ],
   "recent_cards": [
     {
+      "player": "Amoura",
+      "rating": 85,
+      "position": "ST",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Amoura|Ultimate Scream|85"
+    },
+    {
+      "player": "Quaresma",
+      "rating": 87,
+      "position": "RW",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Quaresma|Ultimate Scream|87"
+    },
+    {
+      "player": "McTominay",
+      "rating": 87,
+      "position": "CM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "McTominay|Ultimate Scream|87"
+    },
+    {
+      "player": "Valverde",
+      "rating": 88,
+      "position": "CM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Valverde|Ultimate Scream|88"
+    },
+    {
+      "player": "Laudehr",
+      "rating": 89,
+      "position": "CM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Laudehr|Ultimate Scream|89"
+    },
+    {
+      "player": "Messi",
+      "rating": 90,
+      "position": "CAM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Messi|Ultimate Scream|90"
+    },
+    {
+      "player": "Kvaratskhelia",
+      "rating": 90,
+      "position": "LW",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Kvaratskhelia|Ultimate Scream|90"
+    },
+    {
+      "player": "Ginola",
+      "rating": 90,
+      "position": "LM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Ginola|Ultimate Scream|90"
+    },
+    {
+      "player": "Olise",
+      "rating": 92,
+      "position": "RM",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Olise|Ultimate Scream|92"
+    },
+    {
       "player": "Cerci",
       "rating": 84,
       "position": "DC",
@@ -237,77 +319,21 @@
       "promo": "TOTW 07",
       "source_type": "leak",
       "_key": "Jackson|TOTW 07|82"
-    },
-    {
-      "player": "Sonis",
-      "rating": 82,
-      "position": "LI",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Sonis|TOTW 07|82"
-    },
-    {
-      "player": "Toney",
-      "rating": 85,
-      "position": "DC",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Toney|TOTW 07|85"
-    },
-    {
-      "player": "Dumornay",
-      "rating": 90,
-      "position": "EI",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Dumornay|TOTW 07|90"
-    },
-    {
-      "player": "Gabriel",
-      "rating": 90,
-      "position": "DFC",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Gabriel|TOTW 07|90"
-    },
-    {
-      "player": "Mbappé",
-      "rating": 92,
-      "position": "DC",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Mbappé|TOTW 07|92"
-    },
-    {
-      "player": "Mbappé",
-      "rating": 91,
-      "position": "DC",
-      "source_type": "official",
-      "_key": "Mbappé||91"
-    },
-    {
-      "player": "Diomande",
-      "rating": 86,
-      "position": "ED",
-      "source_type": "official",
-      "_key": "Diomande||86"
-    },
-    {
-      "player": "Delgado",
-      "rating": 86,
-      "position": "MC",
-      "source_type": "official",
-      "_key": "Delgado||86"
-    },
-    {
-      "player": "Spence",
-      "rating": 84,
-      "position": "LI",
-      "source_type": "official",
-      "_key": "Spence||84"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Nueva evolución filtrada: DFC máx. 81",
+      "date": "2026-10-27 15:23"
+    },
+    {
+      "title": "SBC Bellerín esperado hoy",
+      "date": "2026-10-27 15:23"
+    },
+    {
+      "title": "Ultimate Scream Equipo 2 filtrado completo: Olise 92 y Messi 90",
+      "date": "2026-10-27 15:23"
+    },
     {
       "title": "4 cartas OTW pierden la mejora de 3 de 6 victorias",
       "date": "2026-10-26 22:00"
@@ -335,28 +361,9 @@
     {
       "title": "Evolución de diseño Scream para cartas por 20K",
       "date": "2026-10-24 20:46"
-    },
-    {
-      "title": "Mejoras +1 de Tzolis, Konsa y Nusa",
-      "date": "2026-10-24 20:46"
-    },
-    {
-      "title": "Nueva evolución filtrada: RB/LB máx. 80",
-      "date": "2026-10-24 20:46"
-    },
-    {
-      "title": "Filtrada la Tienda de fichas con Champions Token",
-      "date": "2026-10-24 14:38"
     }
   ],
   "calendar": [
-    {
-      "type": "mode",
-      "name": "FUT Champions",
-      "starts": "2026-10-27",
-      "ends": "2026-10-27 11:28",
-      "detail": "Aspirante a V: 15 x Ficha Champions"
-    },
     {
       "type": "event",
       "name": "Tienda de fichas Scream: precios y máximo de fichas",
