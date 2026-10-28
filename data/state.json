@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-28 06:29",
+  "updated_at": "2026-10-28 16:06",
   "active_promo": {
-    "name": "TOTW 07",
+    "name": "Ultimate Scream",
     "source_type": "leak"
   },
   "objectives": [
@@ -233,6 +233,38 @@
   ],
   "recent_cards": [
     {
+      "player": "Valverde",
+      "rating": 88,
+      "position": "RB",
+      "league": "LaLiga",
+      "club": "Real Madrid",
+      "nation": "Uruguay",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Valverde|Ultimate Scream|88"
+    },
+    {
+      "player": "Olise",
+      "rating": 91,
+      "position": "CAM",
+      "league": "Bundesliga",
+      "club": "Bayern",
+      "nation": "Francia",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Olise|Ultimate Scream|91"
+    },
+    {
+      "player": "Ginola",
+      "rating": 90,
+      "position": "ST",
+      "league": "Ligue 1",
+      "nation": "Francia",
+      "promo": "Ultimate Scream",
+      "source_type": "leak",
+      "_key": "Ginola|Ultimate Scream|90"
+    },
+    {
       "player": "Milinković-Savić",
       "rating": 85,
       "position": "MC",
@@ -331,40 +363,13 @@
       "league": "LaLiga",
       "source_type": "leak",
       "_key": "Mbappé|TOTW 07|92"
-    },
-    {
-      "player": "Héctor Bellerín",
-      "rating": 85,
-      "position": "MD",
-      "promo": "Ultimate Scream",
-      "club": "Real Betis",
-      "source_type": "official",
-      "_key": "Héctor Bellerín|Ultimate Scream|85"
-    },
-    {
-      "player": "Mohya",
-      "rating": 80,
-      "position": "MCO",
-      "club": "Borussia Mönchengladbach",
-      "league": "Bundesliga",
-      "nation": "Alemania",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Mohya|TOTW 07|80"
-    },
-    {
-      "player": "Balerdi",
-      "rating": 83,
-      "position": "DFC",
-      "club": "Roma",
-      "league": "Serie A",
-      "nation": "Argentina",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Balerdi|TOTW 07|83"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Ultimate Scream: Ginola 90, Olise 91 y Valverde 88 filtrados",
+      "date": "2026-10-28 16:06"
+    },
     {
       "title": "TOTW 07 filtrado completo: Mbappé 92, Gabriel 90 y Bühl 89",
       "date": "2026-10-28 06:29"
@@ -400,10 +405,6 @@
     {
       "title": "4 cartas OTW pierden la mejora de 3 de 6 victorias",
       "date": "2026-10-26 22:00"
-    },
-    {
-      "title": "Predicción TOTW 07: Mbappé 92, Gabriel 90 y Dumornay 90",
-      "date": "2026-10-26 16:17"
     }
   ],
   "calendar": [
