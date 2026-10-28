@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 21:40",
+  "updated_at": "2026-10-28 06:29",
   "active_promo": {
     "name": "TOTW 07",
     "source_type": "leak"
@@ -193,6 +193,11 @@
   ],
   "events": [
     {
+      "name": "Caducidad evoluciones Temporada 1",
+      "ends": "2026-10-29",
+      "source_type": "official"
+    },
+    {
       "name": "Tienda de fichas Scream: precios y máximo de fichas",
       "starts": "2026-10-23",
       "ends": "2026-11-13",
@@ -227,6 +232,48 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Milinković-Savić",
+      "rating": 85,
+      "position": "MC",
+      "source_type": "leak",
+      "_key": "Milinković-Savić||85"
+    },
+    {
+      "player": "Osimhen",
+      "rating": 86,
+      "position": "DC",
+      "source_type": "leak",
+      "_key": "Osimhen||86"
+    },
+    {
+      "player": "Stanway",
+      "rating": 87,
+      "position": "MC",
+      "source_type": "leak",
+      "_key": "Stanway||87"
+    },
+    {
+      "player": "Bühl",
+      "rating": 89,
+      "position": "EI",
+      "source_type": "leak",
+      "_key": "Bühl||89"
+    },
+    {
+      "player": "Gabriel",
+      "rating": 90,
+      "position": "DFC",
+      "source_type": "leak",
+      "_key": "Gabriel||90"
+    },
+    {
+      "player": "Mbappé",
+      "rating": 92,
+      "position": "DC",
+      "source_type": "leak",
+      "_key": "Mbappé||92"
+    },
     {
       "player": "Tel",
       "rating": 80,
@@ -315,66 +362,13 @@
       "promo": "TOTW 07",
       "source_type": "leak",
       "_key": "Balerdi|TOTW 07|83"
-    },
-    {
-      "player": "Osimhen",
-      "rating": 86,
-      "position": "DC",
-      "club": "Galatasaray",
-      "league": "Trendyol Süper Lig",
-      "nation": "Nigeria",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Osimhen|TOTW 07|86"
-    },
-    {
-      "player": "Bühl",
-      "rating": 89,
-      "position": "MI",
-      "club": "Bayern de Múnich",
-      "league": "Frauen-Bundesliga",
-      "nation": "Alemania",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Bühl|TOTW 07|89"
-    },
-    {
-      "player": "Gabriel",
-      "rating": 90,
-      "position": "DFC",
-      "club": "Arsenal",
-      "league": "Premier League",
-      "nation": "Brasil",
-      "promo": "TOTW 07",
-      "source_type": "leak",
-      "_key": "Gabriel|TOTW 07|90"
-    },
-    {
-      "player": "Amoura",
-      "rating": 85,
-      "position": "ST",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Amoura|Ultimate Scream|85"
-    },
-    {
-      "player": "Quaresma",
-      "rating": 87,
-      "position": "RW",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Quaresma|Ultimate Scream|87"
-    },
-    {
-      "player": "McTominay",
-      "rating": 87,
-      "position": "CM",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "McTominay|Ultimate Scream|87"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "TOTW 07 filtrado completo: Mbappé 92, Gabriel 90 y Bühl 89",
+      "date": "2026-10-28 06:29"
+    },
     {
       "title": "Cartas TOTW filtradas: Stanway 87 MC y Tel 80 MI",
       "date": "2026-10-27 21:40"
@@ -410,13 +404,16 @@
     {
       "title": "Predicción TOTW 07: Mbappé 92, Gabriel 90 y Dumornay 90",
       "date": "2026-10-26 16:17"
-    },
-    {
-      "title": "Ultimate Scream Equipo 2 filtrado: Schüller y Reijnders 86",
-      "date": "2026-10-25 23:30"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Caducidad evoluciones Temporada 1",
+      "starts": "2026-10-28",
+      "ends": "2026-10-29",
+      "detail": ""
+    },
     {
       "type": "evolution",
       "name": "David Luiz: Un Héroe Nacional",
