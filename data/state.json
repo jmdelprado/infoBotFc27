@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-28 16:06",
+  "updated_at": "2026-10-28 22:00",
   "active_promo": {
-    "name": "Ultimate Scream",
+    "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
   },
   "objectives": [
@@ -46,6 +46,29 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Bundesliga y Google Pixel Frauen-Bundesliga",
+      "cost": "2 x 2.500 puntos",
+      "reward": "Sobre de recompensa por desafío (≈3 x 84 + 1 bronce)",
+      "starts": "2026-10-28",
+      "ends": "2026-11-03",
+      "source_type": "official"
+    },
+    {
+      "name": "Fiesta Boo Hoo",
+      "cost": "30 Scream Tokens",
+      "reward": "Sobre de futbolistas Electro grande",
+      "starts": "2026-10-28",
+      "source_type": "official"
+    },
+    {
+      "name": "Showdown Serie A: Loftus-Cheek vs Carlos Augusto",
+      "cost": "~21.000",
+      "reward": "Loftus-Cheek 83 MCO o Carlos Augusto 83 LI (intransferibles)",
+      "starts": "2026-10-28",
+      "ends": "2026-10-30 18:00",
+      "source_type": "official"
+    },
     {
       "name": "Mejora x5 80+",
       "cost": "6.750",
@@ -111,24 +134,6 @@
       "starts": "2026-10-24",
       "ends": "2026-10-31",
       "source_type": "official"
-    },
-    {
-      "name": "Noches espeluznantes",
-      "reward": "30 Scream Tokens + sobre pequeño de futbolistas de oro",
-      "starts": "2026-10-23",
-      "source_type": "official"
-    },
-    {
-      "name": "Woltemade",
-      "cost": "~50K",
-      "starts": "2026-10-23",
-      "source_type": "official"
-    },
-    {
-      "name": "Noches espeluznantes (6 SBC Scream)",
-      "reward": "30 Scream Tokens por SBC + 100 extra al final (280 en total)",
-      "starts": "2026-10-23",
-      "source_type": "official"
     }
   ],
   "evolutions": [
@@ -193,6 +198,21 @@
   ],
   "events": [
     {
+      "name": "Galería: Al Hilal y Denver Summit FC",
+      "starts": "2026-10-28",
+      "source_type": "official"
+    },
+    {
+      "name": "Actualización de jugabilidad v1.2.0",
+      "starts": "2026-10-28",
+      "source_type": "official"
+    },
+    {
+      "name": "Votación POTM octubre LaLiga y Liga F",
+      "starts": "2026-10-28",
+      "source_type": "official"
+    },
+    {
       "name": "Caducidad evoluciones Temporada 1",
       "ends": "2026-10-29",
       "source_type": "official"
@@ -232,6 +252,54 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Milinkovic-Savic",
+      "rating": 85,
+      "position": "MC",
+      "promo": "TOTW 07",
+      "source_type": "official",
+      "_key": "Milinkovic-Savic|TOTW 07|85"
+    },
+    {
+      "player": "Osimhen",
+      "rating": 86,
+      "position": "DC",
+      "promo": "TOTW 07",
+      "source_type": "official",
+      "_key": "Osimhen|TOTW 07|86"
+    },
+    {
+      "player": "Stanway",
+      "rating": 87,
+      "position": "MC",
+      "promo": "TOTW 07",
+      "source_type": "official",
+      "_key": "Stanway|TOTW 07|87"
+    },
+    {
+      "player": "Bühl",
+      "rating": 89,
+      "position": "EI",
+      "promo": "TOTW 07",
+      "source_type": "official",
+      "_key": "Bühl|TOTW 07|89"
+    },
+    {
+      "player": "Gabriel",
+      "rating": 90,
+      "position": "DFC",
+      "promo": "TOTW 07",
+      "source_type": "official",
+      "_key": "Gabriel|TOTW 07|90"
+    },
+    {
+      "player": "Mbappé",
+      "rating": 92,
+      "position": "DC",
+      "promo": "TOTW 07",
+      "source_type": "official",
+      "_key": "Mbappé|TOTW 07|92"
+    },
     {
       "player": "Valverde",
       "rating": 88,
@@ -305,67 +373,17 @@
       "position": "DC",
       "source_type": "leak",
       "_key": "Mbappé||92"
-    },
-    {
-      "player": "Tel",
-      "rating": 80,
-      "position": "MI",
-      "club": "Tottenham",
-      "league": "Premier League",
-      "nation": "Francia",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Tel|TOTW|80"
-    },
-    {
-      "player": "Stanway",
-      "rating": 87,
-      "position": "MC",
-      "club": "Arsenal",
-      "league": "Barclays WSL",
-      "nation": "Inglaterra",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Stanway|TOTW|87"
-    },
-    {
-      "player": "Berenguer",
-      "promo": "TOTW 07",
-      "nation": "España",
-      "source_type": "leak",
-      "_key": "Berenguer|TOTW 07|"
-    },
-    {
-      "player": "Tel",
-      "promo": "TOTW 07",
-      "nation": "Francia",
-      "source_type": "leak",
-      "_key": "Tel|TOTW 07|"
-    },
-    {
-      "player": "Stanway",
-      "rating": 87,
-      "position": "CDM",
-      "promo": "TOTW 07",
-      "club": "Arsenal",
-      "nation": "Inglaterra",
-      "league": "Barclays WSL",
-      "source_type": "leak",
-      "_key": "Stanway|TOTW 07|87"
-    },
-    {
-      "player": "Mbappé",
-      "rating": 92,
-      "position": "ST",
-      "promo": "TOTW 07",
-      "club": "Real Madrid",
-      "nation": "Francia",
-      "league": "LaLiga",
-      "source_type": "leak",
-      "_key": "Mbappé|TOTW 07|92"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Ultimate Scream Equipo 2: lista de cartas filtrada",
+      "date": "2026-10-28 22:00"
+    },
+    {
+      "title": "Mejoras de Galería más baratas y nuevos sobres filtrados",
+      "date": "2026-10-28 22:00"
+    },
     {
       "title": "Ultimate Scream: Ginola 90, Olise 91 y Valverde 88 filtrados",
       "date": "2026-10-28 16:06"
@@ -397,17 +415,58 @@
     {
       "title": "SBC Bellerín esperado hoy",
       "date": "2026-10-27 15:23"
-    },
-    {
-      "title": "Ultimate Scream Equipo 2 filtrado completo: Olise 92 y Messi 90",
-      "date": "2026-10-27 15:23"
-    },
-    {
-      "title": "4 cartas OTW pierden la mejora de 3 de 6 victorias",
-      "date": "2026-10-26 22:00"
     }
   ],
   "calendar": [
+    {
+      "type": "sbc",
+      "name": "Bundesliga y Google Pixel Frauen-Bundesliga",
+      "starts": "2026-10-28",
+      "ends": "2026-11-03",
+      "detail": "Sobre de recompensa por desafío (≈3 x 84 + 1 bronce) · 2 x 2.500 puntos"
+    },
+    {
+      "type": "sbc",
+      "name": "Fiesta Boo Hoo",
+      "starts": "2026-10-28",
+      "ends": "",
+      "detail": "Sobre de futbolistas Electro grande · 30 Scream Tokens"
+    },
+    {
+      "type": "event",
+      "name": "Galería: Al Hilal y Denver Summit FC",
+      "starts": "2026-10-28",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "sbc",
+      "name": "Showdown Serie A: Loftus-Cheek vs Carlos Augusto",
+      "starts": "2026-10-28",
+      "ends": "2026-10-30 18:00",
+      "detail": "Loftus-Cheek 83 MCO o Carlos Augusto 83 LI (intransferibles) · ~21.000"
+    },
+    {
+      "type": "promo",
+      "name": "TOTW 07",
+      "starts": "2026-10-28 18:00",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Actualización de jugabilidad v1.2.0",
+      "starts": "2026-10-28",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Votación POTM octubre LaLiga y Liga F",
+      "starts": "2026-10-28",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "event",
       "name": "Caducidad evoluciones Temporada 1",
@@ -627,25 +686,6 @@
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2602,
-      "name": "Zoomaestro",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-18 19:00",
-      "ends": "2026-10-28 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · MCO/MC",
-      "upgrades": [
-        "Filigranas +1 ⭐",
-        "PlayStyle Técnico",
-        "PlayStyle Rapidez",
-        "PlayStyle Primer toque"
-      ],
-      "url": "https://www.fut.gg/evolutions/2602-zoomaestro/"
-    },
     {
       "id": 2503,
       "name": "Ones to Watch Retro 18",
@@ -943,6 +983,25 @@
         "Agilidad +4"
       ],
       "url": "https://www.fut.gg/evolutions/2636-witching-hour/"
+    },
+    {
+      "id": 2639,
+      "name": "Constructor de huesos",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-28 19:00",
+      "ends": "2026-11-07 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤81 · DFC",
+      "upgrades": [
+        "Pie malo +1 ⭐",
+        "PlayStyle Pase teledirigido",
+        "Media +7",
+        "Conciencia defensiva +4"
+      ],
+      "url": "https://www.fut.gg/evolutions/2639-bone-builder/"
     },
     {
       "id": 2634,
