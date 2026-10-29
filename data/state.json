@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 22:00",
+  "updated_at": "2026-10-29 06:38",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
@@ -198,6 +198,11 @@
   ],
   "events": [
     {
+      "name": "Galería Temporada 1: Rango S con Diomande OTW (85 tokens)",
+      "starts": "2026-10-29",
+      "source_type": "official"
+    },
+    {
       "name": "Galería: Al Hilal y Denver Summit FC",
       "starts": "2026-10-28",
       "source_type": "official"
@@ -210,11 +215,6 @@
     {
       "name": "Votación POTM octubre LaLiga y Liga F",
       "starts": "2026-10-28",
-      "source_type": "official"
-    },
-    {
-      "name": "Caducidad evoluciones Temporada 1",
-      "ends": "2026-10-29",
       "source_type": "official"
     },
     {
@@ -419,6 +419,13 @@
   ],
   "calendar": [
     {
+      "type": "event",
+      "name": "Galería Temporada 1: Rango S con Diomande OTW (85 tokens)",
+      "starts": "2026-10-29",
+      "ends": "",
+      "detail": ""
+    },
+    {
       "type": "sbc",
       "name": "Bundesliga y Google Pixel Frauen-Bundesliga",
       "starts": "2026-10-28",
@@ -465,13 +472,6 @@
       "name": "Votación POTM octubre LaLiga y Liga F",
       "starts": "2026-10-28",
       "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Caducidad evoluciones Temporada 1",
-      "starts": "2026-10-28",
-      "ends": "2026-10-29",
       "detail": ""
     },
     {
