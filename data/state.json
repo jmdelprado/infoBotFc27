@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29 06:38",
+  "updated_at": "2026-10-29 16:11",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
@@ -198,6 +198,11 @@
   ],
   "events": [
     {
+      "name": "Opción para desactivar ruedas de prensa en Modo Carrera",
+      "starts": "2026-10-29",
+      "source_type": "official"
+    },
+    {
       "name": "Galería Temporada 1: Rango S con Diomande OTW (85 tokens)",
       "starts": "2026-10-29",
       "source_type": "official"
@@ -252,6 +257,24 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Richards",
+      "rating": 85,
+      "position": "LD",
+      "league": "Premier League",
+      "nation": "Inglaterra",
+      "source_type": "official",
+      "_key": "Richards||85"
+    },
+    {
+      "player": "Valencia",
+      "rating": 85,
+      "position": "MD",
+      "league": "Premier League",
+      "nation": "Ecuador",
+      "source_type": "official",
+      "_key": "Valencia||85"
+    },
     {
       "player": "Milinkovic-Savic",
       "rating": 85,
@@ -359,20 +382,6 @@
       "position": "EI",
       "source_type": "leak",
       "_key": "Bühl||89"
-    },
-    {
-      "player": "Gabriel",
-      "rating": 90,
-      "position": "DFC",
-      "source_type": "leak",
-      "_key": "Gabriel||90"
-    },
-    {
-      "player": "Mbappé",
-      "rating": 92,
-      "position": "DC",
-      "source_type": "leak",
-      "_key": "Mbappé||92"
     }
   ],
   "recent_leaks": [
@@ -418,6 +427,20 @@
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Opción para desactivar ruedas de prensa en Modo Carrera",
+      "starts": "2026-10-29",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "mode",
+      "name": "Recompensas semanales Division Rivals",
+      "starts": "2026-10-29",
+      "ends": "",
+      "detail": "Sobre Oro 84+, sobre Oro x5 83+, 2 elecciones de artículo y 37.500 monedas (ejemplo de captura)"
+    },
     {
       "type": "event",
       "name": "Galería Temporada 1: Rango S con Diomande OTW (85 tokens)",
@@ -686,70 +709,6 @@
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2503,
-      "name": "Ones to Watch Retro 18",
-      "premium": false,
-      "season_pass": true,
-      "sp_level": 27,
-      "starts": "2026-09-19 19:31",
-      "ends": "2026-10-29 08:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "",
-      "upgrades": [
-        "Rareza Ones to Watch Retro 18"
-      ],
-      "url": "https://www.fut.gg/evolutions/2503-ones-to-watch-retro-18-sp-27/"
-    },
-    {
-      "id": 2504,
-      "name": "Ones to Watch Retro 19",
-      "premium": true,
-      "season_pass": true,
-      "sp_level": 26,
-      "starts": "2026-09-19 19:32",
-      "ends": "2026-10-29 08:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "",
-      "upgrades": [
-        "Rareza Ones to Watch Retro 19"
-      ],
-      "url": "https://www.fut.gg/evolutions/2504-ones-to-watch-retro-19-sp-26/"
-    },
-    {
-      "id": 2505,
-      "name": "Ones to Watch Retro 20",
-      "premium": true,
-      "season_pass": true,
-      "sp_level": 26,
-      "starts": "2026-09-19 19:33",
-      "ends": "2026-10-29 08:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "",
-      "upgrades": [
-        "Rareza Ones to Watch Retro 20"
-      ],
-      "url": "https://www.fut.gg/evolutions/2505-ones-to-watch-retro-20-sp-26/"
-    },
-    {
-      "id": 2526,
-      "name": "Season Ladder Excellence",
-      "premium": false,
-      "season_pass": true,
-      "sp_level": 27,
-      "starts": "2026-09-29 16:20",
-      "ends": "2026-10-29 08:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "",
-      "upgrades": [
-        "Rareza Season Ladder Excellence"
-      ],
-      "url": "https://www.fut.gg/evolutions/2526-season-ladder-excellence-sp-27/"
-    },
     {
       "id": 2498,
       "name": "¿Creativo o sereno?",
