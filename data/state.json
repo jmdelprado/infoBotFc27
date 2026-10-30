@@ -1,10 +1,29 @@
 {
-  "updated_at": "2026-10-30 16:01",
+  "updated_at": "2026-10-30 21:43",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
-    "source_type": "leak"
+    "source_type": "official",
+    "start": "2026-10-30 19:00"
   },
   "objectives": [
+    {
+      "name": "Fiesta Espectral: marca goles en 13 partidos (30 goles)",
+      "reward": "450 fichas Scream + 200 SP",
+      "starts": "2026-10-30",
+      "ends": "2026-11-06",
+      "source_type": "official"
+    },
+    {
+      "name": "Liga BBVA MX ha vuelto",
+      "reward": "Sobre «Liga BBVA MX ha vuelto» (intransferible)",
+      "starts": "2026-10-30",
+      "source_type": "official"
+    },
+    {
+      "name": "Objetivo especial de Halloween",
+      "starts": "2026-10-31",
+      "source_type": "official"
+    },
     {
       "name": "Manager en vivo: 3 desafíos semanales (Traspasos libres, Debutantes, Cree y…)",
       "reward": "1000 SP",
@@ -53,13 +72,30 @@
   ],
   "sbcs": [
     {
-      "name": "Mejora de Héroe Base máx. 88",
-      "reward": "Sobre con Héroe Base máx. 88",
-      "source_type": "leak"
+      "name": "Zombi extraño",
+      "reward": "Sobre grande Oro y 30 fichas Scream",
+      "starts": "2026-10-30",
+      "source_type": "official"
+    },
+    {
+      "name": "Mejora TOTW 1-7 81+",
+      "cost": "22.000",
+      "reward": "Sobre futbolista TOTW E1-7 81+ (intransferible)",
+      "starts": "2026-10-30",
+      "ends": "2026-11-05",
+      "source_type": "official"
     },
     {
       "name": "Reijnders",
+      "cost": "60.000",
+      "reward": "Reijnders 85 MCD Ultimate Scream (intransferible)",
       "starts": "2026-10-30",
+      "ends": "2026-11-05",
+      "source_type": "official"
+    },
+    {
+      "name": "Mejora de Héroe Base máx. 88",
+      "reward": "Sobre con Héroe Base máx. 88",
       "source_type": "leak"
     },
     {
@@ -75,14 +111,6 @@
       "cost": "30 Scream Tokens",
       "reward": "Sobre de futbolistas Electro grande",
       "starts": "2026-10-28",
-      "source_type": "official"
-    },
-    {
-      "name": "Showdown Serie A: Loftus-Cheek vs Carlos Augusto",
-      "cost": "~21.000",
-      "reward": "Loftus-Cheek 83 MCO o Carlos Augusto 83 LI (intransferibles)",
-      "starts": "2026-10-28",
-      "ends": "2026-10-30 18:00",
       "source_type": "official"
     },
     {
@@ -124,14 +152,6 @@
       "name": "LALIGA y Liga F",
       "cost": "2 x 4.500 puntos",
       "reward": "Sobres bronce+plata LaLiga y Liga F + sobre 2 oros máx. 85",
-      "starts": "2026-10-25",
-      "ends": "2026-10-31",
-      "source_type": "official"
-    },
-    {
-      "name": "Premier League y Barclays WSL",
-      "cost": "2 x 6.000 puntos",
-      "reward": "Sobres bronce+plata Premier y BWSL + sobre 2 oros máx. 85",
       "starts": "2026-10-25",
       "ends": "2026-10-31",
       "source_type": "official"
@@ -211,6 +231,12 @@
   ],
   "events": [
     {
+      "name": "Tienda Héroe Ultimate Scream Jill Scott",
+      "starts": "2026-10-30",
+      "ends": "2026-11-13",
+      "source_type": "official"
+    },
+    {
       "name": "Galería: North Carolina Courage Rango S",
       "starts": "2026-10-30",
       "source_type": "official"
@@ -267,14 +293,73 @@
       "name": "Galería Ultimate Scream: tokens Rango S (FC Kohn, Atlanta United, Racing Louisville)",
       "starts": "2026-10-23",
       "source_type": "official"
-    },
-    {
-      "name": "Galería Ultimate Scream",
-      "starts": "2026-10-23",
-      "source_type": "official"
     }
   ],
   "recent_cards": [
+    {
+      "player": "Reijnders",
+      "rating": 85,
+      "position": "MCD",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Reijnders|Ultimate Scream|85"
+    },
+    {
+      "player": "Valverde",
+      "rating": 88,
+      "position": "RB",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Valverde|Ultimate Scream|88"
+    },
+    {
+      "player": "McTominay",
+      "rating": 88,
+      "position": "CDM",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "McTominay|Ultimate Scream|88"
+    },
+    {
+      "player": "Kvaratskhelia",
+      "rating": 89,
+      "position": "ST",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Kvaratskhelia|Ultimate Scream|89"
+    },
+    {
+      "player": "Laudehr",
+      "rating": 89,
+      "position": "RM",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Laudehr|Ultimate Scream|89"
+    },
+    {
+      "player": "Messi",
+      "rating": 90,
+      "position": "RW",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Messi|Ultimate Scream|90"
+    },
+    {
+      "player": "Ginola",
+      "rating": 90,
+      "position": "ST",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Ginola|Ultimate Scream|90"
+    },
+    {
+      "player": "Olise",
+      "rating": 91,
+      "position": "CAM",
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Olise|Ultimate Scream|91"
+    },
     {
       "player": "Richards",
       "rating": 85,
@@ -332,74 +417,6 @@
       "promo": "TOTW 07",
       "source_type": "official",
       "_key": "Gabriel|TOTW 07|90"
-    },
-    {
-      "player": "Mbappé",
-      "rating": 92,
-      "position": "DC",
-      "promo": "TOTW 07",
-      "source_type": "official",
-      "_key": "Mbappé|TOTW 07|92"
-    },
-    {
-      "player": "Valverde",
-      "rating": 88,
-      "position": "RB",
-      "league": "LaLiga",
-      "club": "Real Madrid",
-      "nation": "Uruguay",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Valverde|Ultimate Scream|88"
-    },
-    {
-      "player": "Olise",
-      "rating": 91,
-      "position": "CAM",
-      "league": "Bundesliga",
-      "club": "Bayern",
-      "nation": "Francia",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Olise|Ultimate Scream|91"
-    },
-    {
-      "player": "Ginola",
-      "rating": 90,
-      "position": "ST",
-      "league": "Ligue 1",
-      "nation": "Francia",
-      "promo": "Ultimate Scream",
-      "source_type": "leak",
-      "_key": "Ginola|Ultimate Scream|90"
-    },
-    {
-      "player": "Milinković-Savić",
-      "rating": 85,
-      "position": "MC",
-      "source_type": "leak",
-      "_key": "Milinković-Savić||85"
-    },
-    {
-      "player": "Osimhen",
-      "rating": 86,
-      "position": "DC",
-      "source_type": "leak",
-      "_key": "Osimhen||86"
-    },
-    {
-      "player": "Stanway",
-      "rating": 87,
-      "position": "MC",
-      "source_type": "leak",
-      "_key": "Stanway||87"
-    },
-    {
-      "player": "Bühl",
-      "rating": 89,
-      "position": "EI",
-      "source_type": "leak",
-      "_key": "Bühl||89"
     }
   ],
   "recent_leaks": [
@@ -445,6 +462,76 @@
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Galería: Rango S con Sevilla, Strasbourg, Rayo y Niza",
+      "starts": "2026-10-30",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Tienda Héroe Ultimate Scream Jill Scott",
+      "starts": "2026-10-30",
+      "ends": "2026-11-13",
+      "detail": ""
+    },
+    {
+      "type": "objective",
+      "name": "Fiesta Espectral: marca goles en 13 partidos (30 goles)",
+      "starts": "2026-10-30",
+      "ends": "2026-11-06",
+      "detail": "450 fichas Scream + 200 SP"
+    },
+    {
+      "type": "objective",
+      "name": "Liga BBVA MX ha vuelto",
+      "starts": "2026-10-30",
+      "ends": "",
+      "detail": "Sobre «Liga BBVA MX ha vuelto» (intransferible)"
+    },
+    {
+      "type": "sbc",
+      "name": "Zombi extraño",
+      "starts": "2026-10-30",
+      "ends": "",
+      "detail": "Sobre grande Oro y 30 fichas Scream"
+    },
+    {
+      "type": "sbc",
+      "name": "Mejora TOTW 1-7 81+",
+      "starts": "2026-10-30",
+      "ends": "2026-11-05",
+      "detail": "Sobre futbolista TOTW E1-7 81+ (intransferible) · 22.000"
+    },
+    {
+      "type": "sbc",
+      "name": "Reijnders",
+      "starts": "2026-10-30",
+      "ends": "2026-11-05",
+      "detail": "Reijnders 85 MCD Ultimate Scream (intransferible) · 60.000"
+    },
+    {
+      "type": "objective",
+      "name": "Objetivo especial de Halloween",
+      "starts": "2026-10-31",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "mode",
+      "name": "Fiesta espectral",
+      "starts": "2026-10-30",
+      "ends": "",
+      "detail": "200 fichas Ultimate Scream"
+    },
+    {
+      "type": "promo",
+      "name": "Ultimate Scream Equipo 2",
+      "starts": "2026-10-30 19:00",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "event",
       "name": "Galería: North Carolina Courage Rango S",
@@ -500,13 +587,6 @@
       "starts": "2026-10-28",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Showdown Serie A: Loftus-Cheek vs Carlos Augusto",
-      "starts": "2026-10-28",
-      "ends": "2026-10-30 18:00",
-      "detail": "Loftus-Cheek 83 MCO o Carlos Augusto 83 LI (intransferibles) · ~21.000"
     },
     {
       "type": "promo",
@@ -661,69 +741,6 @@
       "starts": "2026-10-24",
       "ends": "",
       "detail": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)"
-    },
-    {
-      "type": "objective",
-      "name": "Jeremiah St. Juste Legado FC: objetivo Completista",
-      "starts": "2026-10-24",
-      "ends": "2026-12-03",
-      "detail": "St. Juste 84 DFC Legado FC (intransferible)"
-    },
-    {
-      "type": "objective",
-      "name": "Axel Witsel Legado FC: completista de Eliminatoria diaria",
-      "starts": "2026-10-24",
-      "ends": "2026-12-03",
-      "detail": "Witsel 84 MCD Legado FC (intransferible)"
-    },
-    {
-      "type": "objective",
-      "name": "Olga Carmona Legado FC: 7 de 8 desafíos del Torneo eliminatorio",
-      "starts": "2026-10-24",
-      "ends": "2026-12-03",
-      "detail": "Olga Carmona 85 LI Legado FC (intransferible)"
-    },
-    {
-      "type": "event",
-      "name": "Tienda de fichas Scream",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "detail": ""
-    },
-    {
-      "type": "evolution",
-      "name": "Extremo Siniestro",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "detail": "900 fichas Scream · Nivel 5: Paradela 85 ED a elegir entre tres versiones"
-    },
-    {
-      "type": "sbc",
-      "name": "Noches espeluznantes",
-      "starts": "2026-10-23",
-      "ends": "",
-      "detail": "30 Scream Tokens + sobre pequeño de futbolistas de oro"
-    },
-    {
-      "type": "sbc",
-      "name": "Woltemade",
-      "starts": "2026-10-23",
-      "ends": "",
-      "detail": "~50K"
-    },
-    {
-      "type": "event",
-      "name": "Galería Ultimate Scream: tokens Rango S (FC Kohn, Atlanta United, Racing Louisville)",
-      "starts": "2026-10-23",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "objective",
-      "name": "Scream Tokens: 15 partidos (5 grupos)",
-      "starts": "2026-10-23",
-      "ends": "",
-      "detail": "450 Scream Tokens en total"
     }
   ],
   "evolutions_feed": [
@@ -869,6 +886,25 @@
         "Rareza Ultimate Scream Retro 20"
       ],
       "url": "https://www.fut.gg/evolutions/2633-ultimate-scream-retro-20/"
+    },
+    {
+      "id": 2642,
+      "name": "Falso 7",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-30 19:00",
+      "ends": "2026-11-09 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · MI/EI",
+      "upgrades": [
+        "PlayStyle Tiro potente",
+        "PlayStyle Primer toque",
+        "Media +6",
+        "Aceleración +7"
+      ],
+      "url": "https://www.fut.gg/evolutions/2642-false-seven/"
     },
     {
       "id": 2626,
