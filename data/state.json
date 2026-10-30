@@ -1,10 +1,16 @@
 {
-  "updated_at": "2026-10-29 16:11",
+  "updated_at": "2026-10-30 16:01",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "leak"
   },
   "objectives": [
+    {
+      "name": "Manager en vivo: 3 desafíos semanales (Traspasos libres, Debutantes, Cree y…)",
+      "reward": "1000 SP",
+      "starts": "2026-10-30",
+      "source_type": "official"
+    },
     {
       "name": "Carrera en vivo: La Experiencia Manda",
       "reward": "1000 SP adicionales para el Pase (total de desafíos)",
@@ -46,6 +52,16 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Mejora de Héroe Base máx. 88",
+      "reward": "Sobre con Héroe Base máx. 88",
+      "source_type": "leak"
+    },
+    {
+      "name": "Reijnders",
+      "starts": "2026-10-30",
+      "source_type": "leak"
+    },
     {
       "name": "Bundesliga y Google Pixel Frauen-Bundesliga",
       "cost": "2 x 2.500 puntos",
@@ -119,24 +135,21 @@
       "starts": "2026-10-25",
       "ends": "2026-10-31",
       "source_type": "official"
-    },
-    {
-      "name": "Elección de 4 Héroes",
-      "cost": "~200K",
-      "reward": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung",
-      "starts": "2026-10-25",
-      "source_type": "official"
-    },
-    {
-      "name": "Emre Mor",
-      "cost": "~24K",
-      "reward": "Mor 85 DC Ultimate Scream (intransferible)",
-      "starts": "2026-10-24",
-      "ends": "2026-10-31",
-      "source_type": "official"
     }
   ],
   "evolutions": [
+    {
+      "name": "Evolución LW/LM máx. 80",
+      "requirements": "Media máx. 80; posición LW/LM",
+      "upgrades": "Mejora de estadísticas",
+      "source_type": "leak"
+    },
+    {
+      "name": "Evolución Ultimate Scream MI/EI máx. 80",
+      "requirements": "Media general máx. 80; posiciones MI/EI/MD/ED; Control [3]",
+      "upgrades": "Mejora de estadísticas; First Touch; estilos de juego (Power Shot, Tiki Taka)",
+      "source_type": "leak"
+    },
     {
       "name": "David Luiz: Un Héroe Nacional",
       "starts": "2026-11-01",
@@ -197,6 +210,11 @@
     }
   ],
   "events": [
+    {
+      "name": "Galería: North Carolina Courage Rango S",
+      "starts": "2026-10-30",
+      "source_type": "official"
+    },
     {
       "name": "Opción para desactivar ruedas de prensa en Modo Carrera",
       "starts": "2026-10-29",
@@ -386,6 +404,22 @@
   ],
   "recent_leaks": [
     {
+      "title": "SBC Mejora de Héroe Base máx. 88 llegaría pronto",
+      "date": "2026-10-30 16:01"
+    },
+    {
+      "title": "Nueva evolución filtrada: EI/ED... LW/LM máx. 80",
+      "date": "2026-10-30 16:01"
+    },
+    {
+      "title": "Nueva evolución Ultimate Scream EI/ED máx. 80 filtrada",
+      "date": "2026-10-30 16:01"
+    },
+    {
+      "title": "SBC Reijnders esperado hoy",
+      "date": "2026-10-30 16:01"
+    },
+    {
       "title": "Ultimate Scream Equipo 2: lista de cartas filtrada",
       "date": "2026-10-28 22:00"
     },
@@ -408,25 +442,23 @@
     {
       "title": "Nuevo diseño para las cartas de LaLiga",
       "date": "2026-10-27 21:40"
-    },
-    {
-      "title": "TOTW 07 predicho: Mbappé 92, Tel, Berenguer y Stanway 87",
-      "date": "2026-10-27 21:39"
-    },
-    {
-      "title": "TOTW 07 filtrado: Mbappé, Gabriel, Osimhen, Bühl, Balerdi y Mohya",
-      "date": "2026-10-27 21:39"
-    },
-    {
-      "title": "Nueva evolución filtrada: DFC máx. 81",
-      "date": "2026-10-27 15:23"
-    },
-    {
-      "title": "SBC Bellerín esperado hoy",
-      "date": "2026-10-27 15:23"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Galería: North Carolina Courage Rango S",
+      "starts": "2026-10-30",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "objective",
+      "name": "Manager en vivo: 3 desafíos semanales (Traspasos libres, Debutantes, Cree y…)",
+      "starts": "2026-10-30",
+      "ends": "",
+      "detail": "1000 SP"
+    },
     {
       "type": "event",
       "name": "Opción para desactivar ruedas de prensa en Modo Carrera",
@@ -692,20 +724,6 @@
       "starts": "2026-10-23",
       "ends": "",
       "detail": "450 Scream Tokens en total"
-    },
-    {
-      "type": "sbc",
-      "name": "Noches espeluznantes (6 SBC Scream)",
-      "starts": "2026-10-23",
-      "ends": "",
-      "detail": "30 Scream Tokens por SBC + 100 extra al final (280 en total)"
-    },
-    {
-      "type": "event",
-      "name": "Galería Ultimate Scream",
-      "starts": "2026-10-23",
-      "ends": "",
-      "detail": ""
     }
   ],
   "evolutions_feed": [
