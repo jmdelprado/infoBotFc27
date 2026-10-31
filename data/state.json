@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 21:43",
+  "updated_at": "2026-10-31 06:26",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
@@ -73,6 +73,7 @@
   "sbcs": [
     {
       "name": "Zombi extraño",
+      "cost": "30 fichas Scream",
       "reward": "Sobre grande Oro y 30 fichas Scream",
       "starts": "2026-10-30",
       "source_type": "official"
@@ -147,17 +148,19 @@
       "reward": "Sobre de mezcla de futbolistas",
       "starts": "2026-10-25",
       "source_type": "official"
-    },
-    {
-      "name": "LALIGA y Liga F",
-      "cost": "2 x 4.500 puntos",
-      "reward": "Sobres bronce+plata LaLiga y Liga F + sobre 2 oros máx. 85",
-      "starts": "2026-10-25",
-      "ends": "2026-10-31",
-      "source_type": "official"
     }
   ],
   "evolutions": [
+    {
+      "name": "Extremo Siniestro (Árciga)",
+      "cost": "900 fichas Scream",
+      "source_type": "leak"
+    },
+    {
+      "name": "Marcador de Compostura (Guzmán y Carlos Augusto)",
+      "cost": "125 fichas de Champions (permite 2 evoluciones)",
+      "source_type": "leak"
+    },
     {
       "name": "Evolución LW/LM máx. 80",
       "requirements": "Media máx. 80; posición LW/LM",
@@ -212,20 +215,6 @@
       "name": "Evolución LI/LD máx. 80",
       "requirements": "Posición LI/LD; media general máx. 80; máx. 7 estilos de juego",
       "upgrades": "Mejora de estadísticas; estilos de juego Press Proven y Anticipate",
-      "source_type": "leak"
-    },
-    {
-      "name": "Extremo Siniestro",
-      "cost": "900 fichas Scream",
-      "upgrades": "Nivel 5: Paradela 85 ED a elegir entre tres versiones",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "source_type": "official"
-    },
-    {
-      "name": "Evolución RM/RW máx. 82 (Ultimate Scream)",
-      "requirements": "Varios requisitos de estadísticas; posición RM/RW",
-      "upgrades": "Estadísticas +10/12/15, +1 filigranas (máx. 4★), caminos Finesse Shot+ / Quick Step+ / Technical+",
       "source_type": "leak"
     }
   ],
@@ -421,6 +410,10 @@
   ],
   "recent_leaks": [
     {
+      "title": "Evoluciones Showdown: así quedarían Carlos Augusto, Guzmán y Árciga",
+      "date": "2026-10-31 06:26"
+    },
+    {
       "title": "SBC Mejora de Héroe Base máx. 88 llegaría pronto",
       "date": "2026-10-30 16:01"
     },
@@ -455,13 +448,16 @@
     {
       "title": "Cartas TOTW filtradas: Stanway 87 MC y Tel 80 MI",
       "date": "2026-10-27 21:40"
-    },
-    {
-      "title": "Nuevo diseño para las cartas de LaLiga",
-      "date": "2026-10-27 21:40"
     }
   ],
   "calendar": [
+    {
+      "name": "Zombi extraño",
+      "type": "sbc",
+      "ends": "",
+      "starts": "2026-10-30",
+      "detail": "Sobre grande Oro y 30 fichas Scream · 30 fichas Scream"
+    },
     {
       "type": "event",
       "name": "Galería: Rango S con Sevilla, Strasbourg, Rayo y Niza",
@@ -489,13 +485,6 @@
       "starts": "2026-10-30",
       "ends": "",
       "detail": "Sobre «Liga BBVA MX ha vuelto» (intransferible)"
-    },
-    {
-      "type": "sbc",
-      "name": "Zombi extraño",
-      "starts": "2026-10-30",
-      "ends": "",
-      "detail": "Sobre grande Oro y 30 fichas Scream"
     },
     {
       "type": "sbc",
@@ -688,20 +677,6 @@
     },
     {
       "type": "sbc",
-      "name": "LALIGA y Liga F",
-      "starts": "2026-10-25",
-      "ends": "2026-10-31",
-      "detail": "Sobres bronce+plata LaLiga y Liga F + sobre 2 oros máx. 85 · 2 x 4.500 puntos"
-    },
-    {
-      "type": "sbc",
-      "name": "Premier League y Barclays WSL",
-      "starts": "2026-10-25",
-      "ends": "2026-10-31",
-      "detail": "Sobres bronce+plata Premier y BWSL + sobre 2 oros máx. 85 · 2 x 6.000 puntos"
-    },
-    {
-      "type": "sbc",
       "name": "Elección de 4 Héroes",
       "starts": "2026-10-25",
       "ends": "",
@@ -727,13 +702,6 @@
       "starts": "2026-10-25",
       "ends": "2026-12-03",
       "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Emre Mor",
-      "starts": "2026-10-24",
-      "ends": "2026-10-31",
-      "detail": "Mor 85 DC Ultimate Scream (intransferible) · ~24K"
     },
     {
       "type": "objective",
