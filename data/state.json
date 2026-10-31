@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 20:56",
+  "updated_at": "2026-11-01 00:19",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
@@ -149,14 +149,6 @@
       "source_type": "leak"
     },
     {
-      "name": "Mejora x3 79+",
-      "cost": "10 oros",
-      "reward": "Sobre oro x3 79+ (intransferible)",
-      "starts": "2026-10-26",
-      "ends": "2026-11-01",
-      "source_type": "official"
-    },
-    {
       "name": "Caramelos escalofriantes",
       "cost": "30 tokens de Galería",
       "reward": "Sobre de mezcla de futbolistas",
@@ -165,6 +157,10 @@
     }
   ],
   "evolutions": [
+    {
+      "name": "David Luiz Inspired",
+      "source_type": "leak"
+    },
     {
       "name": "Evolución Showdown Guzmán",
       "upgrades": "DFC++; con victoria extra en algunas stats",
@@ -222,12 +218,6 @@
       "name": "Evolución DFC máx. 81",
       "requirements": "Media máx. 81; posición DFC; máx. 7 estilos de juego",
       "upgrades": "Mejora de estadísticas; pie malo +1 (máx. 3); Pinged Pass",
-      "source_type": "leak"
-    },
-    {
-      "name": "Evolución MC/MCO máx. 80",
-      "requirements": "Media general máx. 80; posición MC/MCO; máx. 7 estilos de juego; máx. 0 estilos de juego+",
-      "upgrades": "Mejora de estadísticas; camino 1: tiro + Gamechanger + pie malo +1 (máx. 4)",
       "source_type": "leak"
     }
   ],
@@ -295,6 +285,35 @@
     }
   ],
   "recent_cards": [
+    {
+      "player": "Loftus-Cheek",
+      "rating": 84,
+      "position": "MCO",
+      "club": "Milan",
+      "league": "Serie A",
+      "nation": "Inglaterra",
+      "source_type": "leak",
+      "_key": "Loftus-Cheek||84"
+    },
+    {
+      "player": "Manzambi",
+      "rating": 86,
+      "position": "MC",
+      "club": "Aston Villa",
+      "league": "Premier League",
+      "nation": "Suiza",
+      "source_type": "leak",
+      "_key": "Manzambi||86"
+    },
+    {
+      "player": "Jill Scott",
+      "rating": 87,
+      "position": "DFC",
+      "nation": "Inglaterra",
+      "promo": "Scream",
+      "source_type": "official",
+      "_key": "Jill Scott|Scream|87"
+    },
     {
       "player": "Rodrigo Mora",
       "rating": 84,
@@ -398,35 +417,21 @@
       "promo": "Ultimate Scream",
       "source_type": "official",
       "_key": "Olise|Ultimate Scream|91"
-    },
-    {
-      "player": "Richards",
-      "rating": 85,
-      "position": "LD",
-      "league": "Premier League",
-      "nation": "Inglaterra",
-      "source_type": "official",
-      "_key": "Richards||85"
-    },
-    {
-      "player": "Valencia",
-      "rating": 85,
-      "position": "MD",
-      "league": "Premier League",
-      "nation": "Ecuador",
-      "source_type": "official",
-      "_key": "Valencia||85"
-    },
-    {
-      "player": "Milinkovic-Savic",
-      "rating": 85,
-      "position": "MC",
-      "promo": "TOTW 07",
-      "source_type": "official",
-      "_key": "Milinkovic-Savic|TOTW 07|85"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Loftus-Cheek 84 MCO consigue +1 y +1 PS Plata",
+      "date": "2026-11-01 00:19"
+    },
+    {
+      "title": "Manzambi 86 MC consigue +1 con 4 inicios y 3 G/A",
+      "date": "2026-11-01 00:19"
+    },
+    {
+      "title": "Evo David Luiz Inspired llegaría mañana",
+      "date": "2026-11-01 00:19"
+    },
     {
       "title": "Savinho y Rodrigo Mora consiguen +1 con victorias en liga",
       "date": "2026-10-31 20:56"
@@ -454,21 +459,16 @@
     {
       "title": "SBC Mejora de Héroe Base máx. 88 llegaría pronto",
       "date": "2026-10-30 16:01"
-    },
-    {
-      "title": "Nueva evolución filtrada: EI/ED... LW/LM máx. 80",
-      "date": "2026-10-30 16:01"
-    },
-    {
-      "title": "Nueva evolución Ultimate Scream EI/ED máx. 80 filtrada",
-      "date": "2026-10-30 16:01"
-    },
-    {
-      "title": "SBC Reijnders esperado hoy",
-      "date": "2026-10-30 16:01"
     }
   ],
   "calendar": [
+    {
+      "type": "card",
+      "name": "Jill Scott Scream 87 DFC ya en FC 27",
+      "starts": "2026-10-31",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "sbc",
       "name": "Jonny",
@@ -699,13 +699,6 @@
       "starts": "2026-10-23",
       "ends": "2026-11-13",
       "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Mejora x3 79+",
-      "starts": "2026-10-26",
-      "ends": "2026-11-01",
-      "detail": "Sobre oro x3 79+ (intransferible) · 10 oros"
     },
     {
       "type": "mode",
