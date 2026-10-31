@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 06:26",
+  "updated_at": "2026-10-31 15:29",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
@@ -152,6 +152,12 @@
   ],
   "evolutions": [
     {
+      "name": "Evolución Ultimate Scream ST máx. 80",
+      "requirements": "Media máx. 80; posición ST; máx. 7 playstyles",
+      "upgrades": "Mejora de estadísticas",
+      "source_type": "leak"
+    },
+    {
       "name": "Extremo Siniestro (Árciga)",
       "cost": "900 fichas Scream",
       "source_type": "leak"
@@ -209,12 +215,6 @@
       "name": "Evolución RB/LB máx. 80",
       "requirements": "Posición RB/LB; media general máx. 80",
       "upgrades": "Mejora de estadísticas",
-      "source_type": "leak"
-    },
-    {
-      "name": "Evolución LI/LD máx. 80",
-      "requirements": "Posición LI/LD; media general máx. 80; máx. 7 estilos de juego",
-      "upgrades": "Mejora de estadísticas; estilos de juego Press Proven y Anticipate",
       "source_type": "leak"
     }
   ],
@@ -410,6 +410,10 @@
   ],
   "recent_leaks": [
     {
+      "title": "Nueva evolución Ultimate Scream DC máx. 80 filtrada",
+      "date": "2026-10-31 15:29"
+    },
+    {
       "title": "Evoluciones Showdown: así quedarían Carlos Augusto, Guzmán y Árciga",
       "date": "2026-10-31 06:26"
     },
@@ -444,10 +448,6 @@
     {
       "title": "TOTW 07 filtrado completo: Mbappé 92, Gabriel 90 y Bühl 89",
       "date": "2026-10-28 06:29"
-    },
-    {
-      "title": "Cartas TOTW filtradas: Stanway 87 MC y Tel 80 MI",
-      "date": "2026-10-27 21:40"
     }
   ],
   "calendar": [
