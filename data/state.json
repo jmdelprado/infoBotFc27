@@ -1,11 +1,17 @@
 {
-  "updated_at": "2026-10-31 15:29",
+  "updated_at": "2026-10-31 20:56",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
     "start": "2026-10-30 19:00"
   },
   "objectives": [
+    {
+      "name": "Scream: 13 partidos y 4 SBC",
+      "reward": "330 fichas Scream + 100 SP + Hannibal + Pepe Scream",
+      "starts": "2026-10-31",
+      "source_type": "official"
+    },
     {
       "name": "Fiesta Espectral: marca goles en 13 partidos (30 goles)",
       "reward": "450 fichas Scream + 200 SP",
@@ -71,6 +77,14 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Jonny",
+      "cost": "42.000",
+      "reward": "Jonny 85 LI Ultimate Scream (intransferible)",
+      "starts": "2026-10-31",
+      "ends": "2026-11-06",
+      "source_type": "official"
+    },
     {
       "name": "Zombi extraño",
       "cost": "30 fichas Scream",
@@ -152,6 +166,16 @@
   ],
   "evolutions": [
     {
+      "name": "Evolución Showdown Guzmán",
+      "upgrades": "DFC++; con victoria extra en algunas stats",
+      "source_type": "official"
+    },
+    {
+      "name": "Evolución Showdown Carlos Augusto",
+      "upgrades": "DFC++; con victoria extra en algunas stats (82/76/82/83/84/84)",
+      "source_type": "official"
+    },
+    {
       "name": "Evolución Ultimate Scream ST máx. 80",
       "requirements": "Media máx. 80; posición ST; máx. 7 playstyles",
       "upgrades": "Mejora de estadísticas",
@@ -205,20 +229,28 @@
       "requirements": "Media general máx. 80; posición MC/MCO; máx. 7 estilos de juego; máx. 0 estilos de juego+",
       "upgrades": "Mejora de estadísticas; camino 1: tiro + Gamechanger + pie malo +1 (máx. 4)",
       "source_type": "leak"
-    },
-    {
-      "name": "Diseño Scream para cartas",
-      "cost": "20K",
-      "source_type": "leak"
-    },
-    {
-      "name": "Evolución RB/LB máx. 80",
-      "requirements": "Posición RB/LB; media general máx. 80",
-      "upgrades": "Mejora de estadísticas",
-      "source_type": "leak"
     }
   ],
   "events": [
+    {
+      "name": "Ultimate Scream T2 Guaranteed en Tienda de tokens",
+      "source_type": "leak"
+    },
+    {
+      "name": "Galería: Deportivo Alavés Rango S (28 tokens)",
+      "source_type": "leak"
+    },
+    {
+      "name": "Tienda Héroe Jill Scott",
+      "starts": "2026-10-31",
+      "ends": "2026-11-14",
+      "source_type": "official"
+    },
+    {
+      "name": "Galería Denver Summit FC: 28 tokens con Rango S",
+      "starts": "2026-10-31",
+      "source_type": "official"
+    },
     {
       "name": "Tienda Héroe Ultimate Scream Jill Scott",
       "starts": "2026-10-30",
@@ -260,31 +292,49 @@
       "starts": "2026-10-23",
       "ends": "2026-11-13",
       "source_type": "official"
-    },
-    {
-      "name": "Recompensas de Squad Battles",
-      "starts": "2026-10-25",
-      "source_type": "official"
-    },
-    {
-      "name": "Tienda de fichas Scream: ficha Héroe Jill Scott",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "source_type": "official"
-    },
-    {
-      "name": "Tienda de fichas Scream",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "source_type": "official"
-    },
-    {
-      "name": "Galería Ultimate Scream: tokens Rango S (FC Kohn, Atlanta United, Racing Louisville)",
-      "starts": "2026-10-23",
-      "source_type": "official"
     }
   ],
   "recent_cards": [
+    {
+      "player": "Rodrigo Mora",
+      "rating": 84,
+      "position": "CAM",
+      "club": "Roma",
+      "league": "Serie A",
+      "nation": "Portugal",
+      "source_type": "leak",
+      "_key": "Rodrigo Mora||84"
+    },
+    {
+      "player": "Savinho",
+      "rating": 84,
+      "position": "RW",
+      "club": "Tottenham",
+      "league": "Premier League",
+      "nation": "Brasil",
+      "source_type": "leak",
+      "_key": "Savinho||84"
+    },
+    {
+      "player": "Jonny",
+      "club": "Alavés",
+      "nation": "España",
+      "position": "LI",
+      "rating": 85,
+      "promo": "Ultimate Scream",
+      "source_type": "official",
+      "_key": "Jonny|Ultimate Scream|85"
+    },
+    {
+      "player": "Lacroix",
+      "club": "Chelsea",
+      "league": "Premier League",
+      "nation": "Francia",
+      "position": "DFC",
+      "rating": 84,
+      "source_type": "leak",
+      "_key": "Lacroix||84"
+    },
     {
       "player": "Reijnders",
       "rating": 85,
@@ -374,41 +424,25 @@
       "promo": "TOTW 07",
       "source_type": "official",
       "_key": "Milinkovic-Savic|TOTW 07|85"
-    },
-    {
-      "player": "Osimhen",
-      "rating": 86,
-      "position": "DC",
-      "promo": "TOTW 07",
-      "source_type": "official",
-      "_key": "Osimhen|TOTW 07|86"
-    },
-    {
-      "player": "Stanway",
-      "rating": 87,
-      "position": "MC",
-      "promo": "TOTW 07",
-      "source_type": "official",
-      "_key": "Stanway|TOTW 07|87"
-    },
-    {
-      "player": "Bühl",
-      "rating": 89,
-      "position": "EI",
-      "promo": "TOTW 07",
-      "source_type": "official",
-      "_key": "Bühl|TOTW 07|89"
-    },
-    {
-      "player": "Gabriel",
-      "rating": 90,
-      "position": "DFC",
-      "promo": "TOTW 07",
-      "source_type": "official",
-      "_key": "Gabriel|TOTW 07|90"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Savinho y Rodrigo Mora consiguen +1 con victorias en liga",
+      "date": "2026-10-31 20:56"
+    },
+    {
+      "title": "Ultimate Scream T2 Guaranteed llegará pronto a la Tienda de tokens",
+      "date": "2026-10-31 20:56"
+    },
+    {
+      "title": "Galería: 28 tokens con Rango S para Deportivo Alavés",
+      "date": "2026-10-31 20:56"
+    },
+    {
+      "title": "Lacroix 84 DFC consigue +1 por 3 victorias en Premier",
+      "date": "2026-10-31 20:55"
+    },
     {
       "title": "Nueva evolución Ultimate Scream DC máx. 80 filtrada",
       "date": "2026-10-31 15:29"
@@ -432,25 +466,51 @@
     {
       "title": "SBC Reijnders esperado hoy",
       "date": "2026-10-30 16:01"
-    },
-    {
-      "title": "Ultimate Scream Equipo 2: lista de cartas filtrada",
-      "date": "2026-10-28 22:00"
-    },
-    {
-      "title": "Mejoras de Galería más baratas y nuevos sobres filtrados",
-      "date": "2026-10-28 22:00"
-    },
-    {
-      "title": "Ultimate Scream: Ginola 90, Olise 91 y Valverde 88 filtrados",
-      "date": "2026-10-28 16:06"
-    },
-    {
-      "title": "TOTW 07 filtrado completo: Mbappé 92, Gabriel 90 y Bühl 89",
-      "date": "2026-10-28 06:29"
     }
   ],
   "calendar": [
+    {
+      "type": "sbc",
+      "name": "Jonny",
+      "starts": "2026-10-31",
+      "ends": "2026-11-06",
+      "detail": "Jonny 85 LI Ultimate Scream (intransferible) · 42.000"
+    },
+    {
+      "type": "objective",
+      "name": "Scream: 13 partidos y 4 SBC",
+      "starts": "2026-10-31",
+      "ends": "",
+      "detail": "330 fichas Scream + 100 SP + Hannibal + Pepe Scream"
+    },
+    {
+      "type": "event",
+      "name": "Tienda Héroe Jill Scott",
+      "starts": "2026-10-31",
+      "ends": "2026-11-14",
+      "detail": ""
+    },
+    {
+      "type": "evolution",
+      "name": "Evolución Showdown Guzmán",
+      "starts": "2026-10-31",
+      "ends": "",
+      "detail": "DFC++; con victoria extra en algunas stats"
+    },
+    {
+      "type": "evolution",
+      "name": "Evolución Showdown Carlos Augusto",
+      "starts": "2026-10-31",
+      "ends": "",
+      "detail": "DFC++; con victoria extra en algunas stats (82/76/82/83/84/84)"
+    },
+    {
+      "type": "event",
+      "name": "Galería Denver Summit FC: 28 tokens con Rango S",
+      "starts": "2026-10-31",
+      "ends": "",
+      "detail": ""
+    },
     {
       "name": "Zombi extraño",
       "type": "sbc",
@@ -688,49 +748,9 @@
       "starts": "2026-10-25",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Tienda de fichas Scream: ficha Héroe Jill Scott",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "detail": ""
-    },
-    {
-      "type": "mode",
-      "name": "Torneo Eliminatorio Diario Temporada 2",
-      "starts": "2026-10-25",
-      "ends": "2026-12-03",
-      "detail": ""
-    },
-    {
-      "type": "objective",
-      "name": "Fuerza Bruta (Rush): ganar 3, asistir 3, 2 goles con defensa",
-      "starts": "2026-10-24",
-      "ends": "",
-      "detail": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)"
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2604,
-      "name": "Cierre lateral",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-21 19:00",
-      "ends": "2026-10-31 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤81 · LI/LD",
-      "upgrades": [
-        "PlayStyle Interceptación",
-        "PlayStyle Entrada deslizante",
-        "Media +4",
-        "Equilibrio +5"
-      ],
-      "url": "https://www.fut.gg/evolutions/2604-side-stopper/"
-    },
     {
       "id": 2631,
       "name": "Espectro Central",
@@ -873,6 +893,25 @@
         "Aceleración +7"
       ],
       "url": "https://www.fut.gg/evolutions/2642-false-seven/"
+    },
+    {
+      "id": 2643,
+      "name": "Las dos caras del miedo",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-10-31 19:00",
+      "ends": "2026-11-10 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · DC",
+      "upgrades": [
+        "Rol++ DC Falso 9++",
+        "PlayStyle Pase incisivo",
+        "Media +5",
+        "Velocidad de sprint +4"
+      ],
+      "url": "https://www.fut.gg/evolutions/2643-two-faces-of-fear/"
     },
     {
       "id": 2626,
