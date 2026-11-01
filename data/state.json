@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 06:52",
+  "updated_at": "2026-11-01 16:00",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
@@ -77,6 +77,11 @@
     }
   ],
   "sbcs": [
+    {
+      "name": "Schuller",
+      "cost": "~35.000",
+      "source_type": "leak"
+    },
     {
       "name": "Jonny",
       "cost": "42.000",
@@ -158,6 +163,13 @@
   ],
   "evolutions": [
     {
+      "name": "Luiz Legacy (David Luiz Inspired)",
+      "requirements": "Media máx. 82; posición DFC (excluidas LI y LD); máx. 7 PlayStyles; 0 PlayStyles+; ritmo máx. 85",
+      "upgrades": "+15 de media (85), mejoras de stats, Block+ y mejora de PlayStyles",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
+    {
       "name": "David Luiz Inspired",
       "source_type": "leak"
     },
@@ -213,12 +225,6 @@
       "name": "David Luiz: El Finalizador",
       "starts": "2026-11-01",
       "source_type": "official"
-    },
-    {
-      "name": "Evolución DFC máx. 81",
-      "requirements": "Media máx. 81; posición DFC; máx. 7 estilos de juego",
-      "upgrades": "Mejora de estadísticas; pie malo +1 (máx. 3); Pinged Pass",
-      "source_type": "leak"
     }
   ],
   "events": [
@@ -427,6 +433,10 @@
   ],
   "recent_leaks": [
     {
+      "title": "SBC Schuller esperado hoy por unos 35.000",
+      "date": "2026-11-01 16:00"
+    },
+    {
       "title": "Arciga y Guzmán 82 reciben +1 PS Plata",
       "date": "2026-11-01 06:52"
     },
@@ -461,13 +471,16 @@
     {
       "title": "Nueva evolución Ultimate Scream DC máx. 80 filtrada",
       "date": "2026-10-31 15:29"
-    },
-    {
-      "title": "Evoluciones Showdown: así quedarían Carlos Augusto, Guzmán y Árciga",
-      "date": "2026-10-31 06:26"
     }
   ],
   "calendar": [
+    {
+      "type": "evolution",
+      "name": "Luiz Legacy (David Luiz Inspired)",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": "Media máx. 82; posición DFC (excluidas LI y LD); máx. 7 PlayStyles; 0 PlayStyles+; ritmo máx. 85 · +15 de media (85), mejoras de stats, Block+ y mejora de PlayStyles"
+    },
     {
       "type": "card",
       "name": "Jill Scott Scream 87 DFC ya en FC 27",
@@ -740,13 +753,6 @@
       "starts": "2026-10-25",
       "ends": "",
       "detail": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung · ~200K"
-    },
-    {
-      "type": "event",
-      "name": "Recompensas de Squad Battles",
-      "starts": "2026-10-25",
-      "ends": "",
-      "detail": ""
     }
   ],
   "evolutions_feed": [
