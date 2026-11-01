@@ -1,11 +1,30 @@
 {
-  "updated_at": "2026-11-01 16:00",
+  "updated_at": "2026-11-01 21:27",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
     "start": "2026-10-30 19:00"
   },
   "objectives": [
+    {
+      "name": "Camiseta Movember: jugar 1 partido",
+      "reward": "Camiseta exclusiva",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
+    {
+      "name": "Camiseta Liga BBVA MX Día de los Muertos",
+      "reward": "Camiseta exclusiva",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
+    {
+      "name": "Rush Balas de plata: ganar 3, marcar 4 con 1 atacante, asistir 3",
+      "reward": "190 Scream Tokens",
+      "starts": "2026-11-01",
+      "ends": "2026-11-04",
+      "source_type": "official"
+    },
     {
       "name": "Scream: 13 partidos y 4 SBC",
       "reward": "330 fichas Scream + 100 SP + Hannibal + Pepe Scream",
@@ -61,22 +80,24 @@
       "starts": "2026-10-24",
       "ends": "2026-12-03",
       "source_type": "official"
-    },
-    {
-      "name": "Olga Carmona Legado FC: 7 de 8 desafíos del Torneo eliminatorio",
-      "reward": "Olga Carmona 85 LI Legado FC (intransferible)",
-      "starts": "2026-10-24",
-      "ends": "2026-12-03",
-      "source_type": "official"
-    },
-    {
-      "name": "Scream Tokens: 15 partidos (5 grupos)",
-      "reward": "450 Scream Tokens en total",
-      "starts": "2026-10-23",
-      "source_type": "official"
     }
   ],
   "sbcs": [
+    {
+      "name": "Semillas de calabaza",
+      "cost": "30 Scream Tokens",
+      "reward": "Sobre de futbolistas Oro grande",
+      "starts": "2026-11-01",
+      "source_type": "official"
+    },
+    {
+      "name": "Lea Schüller",
+      "cost": "35.000",
+      "reward": "Schüller 86 MCO Ultimate Scream (intransferible)",
+      "starts": "2026-11-01",
+      "ends": "2026-11-07",
+      "source_type": "official"
+    },
     {
       "name": "Schuller",
       "cost": "~35.000",
@@ -147,17 +168,6 @@
       "reward": "Bellerín 85 MD Ultimate Scream (intransferible)",
       "starts": "2026-10-27",
       "ends": "2026-11-02",
-      "source_type": "official"
-    },
-    {
-      "name": "Bellerín",
-      "source_type": "leak"
-    },
-    {
-      "name": "Caramelos escalofriantes",
-      "cost": "30 tokens de Galería",
-      "reward": "Sobre de mezcla de futbolistas",
-      "starts": "2026-10-25",
       "source_type": "official"
     }
   ],
@@ -292,6 +302,15 @@
   ],
   "recent_cards": [
     {
+      "player": "Cucurella",
+      "rating": 88,
+      "position": "LI",
+      "club": "Real Madrid",
+      "nation": "España",
+      "source_type": "official",
+      "_key": "Cucurella||88"
+    },
+    {
       "player": "Guzmán",
       "rating": 82,
       "position": "DFC",
@@ -421,17 +440,13 @@
       "promo": "Ultimate Scream",
       "source_type": "official",
       "_key": "Laudehr|Ultimate Scream|89"
-    },
-    {
-      "player": "Messi",
-      "rating": 90,
-      "position": "RW",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Messi|Ultimate Scream|90"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Mejores opciones para la evo Luiz Legacy (David Luiz)",
+      "date": "2026-11-01 21:27"
+    },
     {
       "title": "SBC Schuller esperado hoy por unos 35.000",
       "date": "2026-11-01 16:00"
@@ -467,13 +482,44 @@
     {
       "title": "Lacroix 84 DFC consigue +1 por 3 victorias en Premier",
       "date": "2026-10-31 20:55"
-    },
-    {
-      "title": "Nueva evolución Ultimate Scream DC máx. 80 filtrada",
-      "date": "2026-10-31 15:29"
     }
   ],
   "calendar": [
+    {
+      "type": "objective",
+      "name": "Camiseta Movember: jugar 1 partido",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": "Camiseta exclusiva"
+    },
+    {
+      "type": "objective",
+      "name": "Camiseta Liga BBVA MX Día de los Muertos",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": "Camiseta exclusiva"
+    },
+    {
+      "type": "objective",
+      "name": "Rush Balas de plata: ganar 3, marcar 4 con 1 atacante, asistir 3",
+      "starts": "2026-11-01",
+      "ends": "2026-11-04",
+      "detail": "190 Scream Tokens"
+    },
+    {
+      "type": "sbc",
+      "name": "Semillas de calabaza",
+      "starts": "2026-11-01",
+      "ends": "",
+      "detail": "Sobre de futbolistas Oro grande · 30 Scream Tokens"
+    },
+    {
+      "type": "sbc",
+      "name": "Lea Schüller",
+      "starts": "2026-11-01",
+      "ends": "2026-11-07",
+      "detail": "Schüller 86 MCO Ultimate Scream (intransferible) · 35.000"
+    },
     {
       "type": "evolution",
       "name": "Luiz Legacy (David Luiz Inspired)",
@@ -718,41 +764,6 @@
       "starts": "2026-10-23",
       "ends": "2026-11-13",
       "detail": ""
-    },
-    {
-      "type": "mode",
-      "name": "Torneo Eliminatorio Diario T2 (Olga Carmona)",
-      "starts": "2026-10-26",
-      "ends": "",
-      "detail": "200 Scream Tokens + préstamo Scream + 50 SP"
-    },
-    {
-      "type": "objective",
-      "name": "Carrera en vivo: La Experiencia Manda",
-      "starts": "2026-10-26",
-      "ends": "",
-      "detail": "1000 SP adicionales para el Pase (total de desafíos)"
-    },
-    {
-      "type": "card",
-      "name": "Mejoras: Spence +1, Delgado +2, Diomande +1 y Mbappé +1/+1",
-      "starts": "2026-10-25",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Caramelos escalofriantes",
-      "starts": "2026-10-25",
-      "ends": "",
-      "detail": "Sobre de mezcla de futbolistas · 30 tokens de Galería"
-    },
-    {
-      "type": "sbc",
-      "name": "Elección de 4 Héroes",
-      "starts": "2026-10-25",
-      "ends": "",
-      "detail": "Un Héroe a elegir: Rui Costa, Hernández, Larsson o Park Ji Sung · ~200K"
     }
   ],
   "evolutions_feed": [
