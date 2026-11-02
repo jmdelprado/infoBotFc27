@@ -1,9 +1,8 @@
 {
-  "updated_at": "2026-11-02 06:52",
+  "updated_at": "2026-11-02 19:14",
   "active_promo": {
-    "name": "Ultimate Scream Equipo 2",
-    "source_type": "official",
-    "start": "2026-10-30 19:00"
+    "name": "TOTW 08",
+    "source_type": "leak"
   },
   "objectives": [
     {
@@ -84,6 +83,13 @@
   ],
   "sbcs": [
     {
+      "name": "Mejora de Héroe básico máx. 88",
+      "cost": "140.000",
+      "reward": "Sobre con 1 Héroe básico GRL 88 o inferior",
+      "starts": "2026-11-02 19:05",
+      "source_type": "official"
+    },
+    {
       "name": "Semillas de calabaza",
       "cost": "30 Scream Tokens",
       "reward": "Sobre de futbolistas Oro grande",
@@ -157,6 +163,11 @@
   ],
   "evolutions": [
     {
+      "name": "Evolución POR máx. 80/81",
+      "upgrades": "Mejora de stats y PlayStyles",
+      "source_type": "leak"
+    },
+    {
       "name": "Luiz Legacy (David Luiz Inspired)",
       "requirements": "Media máx. 82; posición DFC (excluidas LI y LD); máx. 7 PlayStyles; 0 PlayStyles+; ritmo máx. 85",
       "upgrades": "+15 de media (85), mejoras de stats, Block+ y mejora de PlayStyles",
@@ -214,14 +225,15 @@
       "name": "David Luiz: El Campeón",
       "starts": "2026-11-01",
       "source_type": "official"
-    },
-    {
-      "name": "David Luiz: El Finalizador",
-      "starts": "2026-11-01",
-      "source_type": "official"
     }
   ],
   "events": [
+    {
+      "name": "Mejoras de liga: Serie A + Liga Saudí y MLS + NWSL",
+      "starts": "2026-11-02",
+      "ends": "2026-12-05",
+      "source_type": "official"
+    },
     {
       "name": "Resumen de 2090 fichas Scream",
       "starts": "2026-11-02",
@@ -276,14 +288,49 @@
       "name": "Actualización de jugabilidad v1.2.0",
       "starts": "2026-10-28",
       "source_type": "official"
-    },
-    {
-      "name": "Votación POTM octubre LaLiga y Liga F",
-      "starts": "2026-10-28",
-      "source_type": "official"
     }
   ],
   "recent_cards": [
+    {
+      "player": "Carrasco",
+      "rating": 84,
+      "position": "EI",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Carrasco|TOTW|84"
+    },
+    {
+      "player": "Diego Moreira",
+      "rating": 84,
+      "position": "MD",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Diego Moreira|TOTW|84"
+    },
+    {
+      "player": "Kerolin Nicoli",
+      "rating": 86,
+      "position": "MD",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Kerolin Nicoli|TOTW|86"
+    },
+    {
+      "player": "Fermín",
+      "rating": 86,
+      "position": "MCO",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Fermín|TOTW|86"
+    },
+    {
+      "player": "Wilson",
+      "rating": 90,
+      "position": "DC",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Wilson|TOTW|90"
+    },
     {
       "player": "Cucurella",
       "rating": 88,
@@ -383,49 +430,17 @@
       "rating": 84,
       "source_type": "leak",
       "_key": "Lacroix||84"
-    },
-    {
-      "player": "Reijnders",
-      "rating": 85,
-      "position": "MCD",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Reijnders|Ultimate Scream|85"
-    },
-    {
-      "player": "Valverde",
-      "rating": 88,
-      "position": "RB",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Valverde|Ultimate Scream|88"
-    },
-    {
-      "player": "McTominay",
-      "rating": 88,
-      "position": "CDM",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "McTominay|Ultimate Scream|88"
-    },
-    {
-      "player": "Kvaratskhelia",
-      "rating": 89,
-      "position": "ST",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Kvaratskhelia|Ultimate Scream|89"
-    },
-    {
-      "player": "Laudehr",
-      "rating": 89,
-      "position": "RM",
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Laudehr|Ultimate Scream|89"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Filtrada nueva evolución de portero máx. 80/81",
+      "date": "2026-11-02 19:14"
+    },
+    {
+      "title": "Predicción TOTW 08: Wilson 90, Fermín y Kerolin Nicoli 86",
+      "date": "2026-11-02 19:14"
+    },
     {
       "title": "Mejores opciones para la evo Luiz Legacy (David Luiz)",
       "date": "2026-11-01 21:27"
@@ -457,17 +472,30 @@
     {
       "title": "Ultimate Scream T2 Guaranteed llegará pronto a la Tienda de tokens",
       "date": "2026-10-31 20:56"
-    },
-    {
-      "title": "Galería: 28 tokens con Rango S para Deportivo Alavés",
-      "date": "2026-10-31 20:56"
-    },
-    {
-      "title": "Lacroix 84 DFC consigue +1 por 3 victorias en Premier",
-      "date": "2026-10-31 20:55"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Mejoras de liga: Serie A + Liga Saudí y MLS + NWSL",
+      "starts": "2026-11-02",
+      "ends": "2026-12-05",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Showdown actualizado: Guzmán Insuperable y Arciga Implacable",
+      "starts": "2026-11-02",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "sbc",
+      "name": "Mejora de Héroe básico máx. 88",
+      "starts": "2026-11-02 19:05",
+      "ends": "",
+      "detail": "Sobre con 1 Héroe básico GRL 88 o inferior · 140.000"
+    },
     {
       "type": "event",
       "name": "Resumen de 2090 fichas Scream",
@@ -726,42 +754,9 @@
       "starts": "2026-11-01",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "evolution",
-      "name": "David Luiz: El Finalizador",
-      "starts": "2026-11-01",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Tienda de fichas Scream: precios y máximo de fichas",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
-      "detail": ""
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2631,
-      "name": "Espectro Central",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-23 19:00",
-      "ends": "2026-11-02 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · MC/MCD",
-      "upgrades": [
-        "PlayStyle Pase teledirigido",
-        "Media +5",
-        "Remate de cabeza +3",
-        "Salto +3"
-      ],
-      "url": "https://www.fut.gg/evolutions/2631-center-spectre/"
-    },
     {
       "id": 2632,
       "name": "Infiltración",
@@ -904,6 +899,25 @@
         "Velocidad de sprint +4"
       ],
       "url": "https://www.fut.gg/evolutions/2643-two-faces-of-fear/"
+    },
+    {
+      "id": 2647,
+      "name": "No pasarán",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-11-02 19:00",
+      "ends": "2026-11-12 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤80 · POR",
+      "upgrades": [
+        "Rol++ POR Portero líbero++",
+        "PlayStyle Achique 1c1",
+        "Media +3",
+        "Estirada +5"
+      ],
+      "url": "https://www.fut.gg/evolutions/2647-no-soul-shall-pass/"
     },
     {
       "id": 2626,
