@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 21:27",
+  "updated_at": "2026-11-02 06:52",
   "active_promo": {
     "name": "Ultimate Scream Equipo 2",
     "source_type": "official",
@@ -153,22 +153,6 @@
       "reward": "Sobre de futbolistas Electro grande",
       "starts": "2026-10-28",
       "source_type": "official"
-    },
-    {
-      "name": "Mejora x5 80+",
-      "cost": "6.750",
-      "reward": "Sobre oro x5 80+ (intransferible)",
-      "starts": "2026-10-27",
-      "ends": "2026-11-02",
-      "source_type": "official"
-    },
-    {
-      "name": "Héctor Bellerín",
-      "cost": "~30.000",
-      "reward": "Bellerín 85 MD Ultimate Scream (intransferible)",
-      "starts": "2026-10-27",
-      "ends": "2026-11-02",
-      "source_type": "official"
     }
   ],
   "evolutions": [
@@ -239,6 +223,11 @@
   ],
   "events": [
     {
+      "name": "Resumen de 2090 fichas Scream",
+      "starts": "2026-11-02",
+      "source_type": "official"
+    },
+    {
       "name": "Ultimate Scream T2 Guaranteed en Tienda de tokens",
       "source_type": "leak"
     },
@@ -291,12 +280,6 @@
     {
       "name": "Votación POTM octubre LaLiga y Liga F",
       "starts": "2026-10-28",
-      "source_type": "official"
-    },
-    {
-      "name": "Tienda de fichas Scream: precios y máximo de fichas",
-      "starts": "2026-10-23",
-      "ends": "2026-11-13",
       "source_type": "official"
     }
   ],
@@ -485,6 +468,13 @@
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Resumen de 2090 fichas Scream",
+      "starts": "2026-11-02",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "objective",
       "name": "Camiseta Movember: jugar 1 partido",
@@ -743,20 +733,6 @@
       "starts": "2026-11-01",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Mejora x5 80+",
-      "starts": "2026-10-27",
-      "ends": "2026-11-02",
-      "detail": "Sobre oro x5 80+ (intransferible) · 6.750"
-    },
-    {
-      "type": "sbc",
-      "name": "Héctor Bellerín",
-      "starts": "2026-10-27",
-      "ends": "2026-11-02",
-      "detail": "Bellerín 85 MD Ultimate Scream (intransferible) · ~30.000"
     },
     {
       "type": "event",
