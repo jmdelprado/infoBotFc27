@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-03 12:51",
+  "updated_at": "2026-11-03 20:31",
   "active_promo": {
-    "name": "Road to the Knockouts",
+    "name": "Star Performers",
     "source_type": "leak"
   },
   "objectives": [
@@ -83,6 +83,29 @@
   ],
   "sbcs": [
     {
+      "name": "Mejora x2 83+",
+      "cost": "5.500",
+      "reward": "Sobre Oro x2 83+ (intransferible)",
+      "starts": "2026-11-03",
+      "ends": "2026-11-09",
+      "source_type": "official"
+    },
+    {
+      "name": "Ethan Ampadu",
+      "cost": "22.000",
+      "reward": "Ampadu 85 MC Ultimate Scream (intransferible)",
+      "starts": "2026-11-03",
+      "ends": "2026-11-09",
+      "source_type": "official"
+    },
+    {
+      "name": "Abracadabra",
+      "cost": "30 fichas Scream",
+      "reward": "Sobre Oro Jumbo + 100 fichas Scream de bonus",
+      "starts": "2026-11-03",
+      "source_type": "official"
+    },
+    {
       "name": "1 de 3 Elección de futbolista Oro 79+",
       "cost": "2.500",
       "reward": "Elección de futbolista Oro 79+ (intransferible)",
@@ -146,18 +169,6 @@
       "reward": "Reijnders 85 MCD Ultimate Scream (intransferible)",
       "starts": "2026-10-30",
       "ends": "2026-11-05",
-      "source_type": "official"
-    },
-    {
-      "name": "Mejora de Héroe Base máx. 88",
-      "reward": "Sobre con Héroe Base máx. 88",
-      "source_type": "leak"
-    },
-    {
-      "name": "Fiesta Boo Hoo",
-      "cost": "30 Scream Tokens",
-      "reward": "Sobre de futbolistas Electro grande",
-      "starts": "2026-10-28",
       "source_type": "official"
     }
   ],
@@ -293,6 +304,88 @@
   ],
   "recent_cards": [
     {
+      "player": "Ethan Ampadu",
+      "rating": 85,
+      "position": "MC",
+      "promo": "Ultimate Scream",
+      "club": "Leeds United",
+      "league": "Premier League",
+      "nation": "Gales",
+      "source_type": "official",
+      "_key": "Ethan Ampadu|Ultimate Scream|85"
+    },
+    {
+      "player": "Lynch",
+      "rating": 85,
+      "position": "GK",
+      "club": "Fleetwood",
+      "promo": "Star Performers",
+      "source_type": "leak",
+      "_key": "Lynch|Star Performers|85"
+    },
+    {
+      "player": "Ta Bi",
+      "rating": 85,
+      "position": "RM",
+      "club": "Sunderland",
+      "promo": "Star Performers",
+      "source_type": "leak",
+      "_key": "Ta Bi|Star Performers|85"
+    },
+    {
+      "player": "Baumgartl",
+      "rating": 85,
+      "position": "CB",
+      "promo": "Star Performers",
+      "source_type": "leak",
+      "_key": "Baumgartl|Star Performers|85"
+    },
+    {
+      "player": "Nyoni",
+      "rating": 86,
+      "position": "CM",
+      "club": "Liverpool",
+      "promo": "Star Performers",
+      "source_type": "leak",
+      "_key": "Nyoni|Star Performers|86"
+    },
+    {
+      "player": "Sabitzer",
+      "rating": 87,
+      "position": "CM",
+      "club": "Borussia Dortmund",
+      "promo": "Star Performers",
+      "source_type": "leak",
+      "_key": "Sabitzer|Star Performers|87"
+    },
+    {
+      "player": "Ayari",
+      "rating": 83,
+      "position": "CDM",
+      "club": "Brighton",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Ayari|TOTW|83"
+    },
+    {
+      "player": "Rogers",
+      "rating": 85,
+      "position": "CAM",
+      "club": "Chelsea",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Rogers|TOTW|85"
+    },
+    {
+      "player": "Rodman",
+      "rating": 88,
+      "position": "LM",
+      "club": "Washington Spirit",
+      "promo": "TOTW",
+      "source_type": "leak",
+      "_key": "Rodman|TOTW|88"
+    },
+    {
       "player": "Bonmati",
       "rating": 91,
       "position": "MC",
@@ -341,96 +434,25 @@
       "promo": "Road to the Knockouts",
       "source_type": "leak",
       "_key": "Nwaneri|Road to the Knockouts|85"
-    },
-    {
-      "player": "Openda",
-      "rating": 85,
-      "position": "EI",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Openda|Road to the Knockouts|85"
-    },
-    {
-      "player": "Calafiori",
-      "rating": 86,
-      "position": "LI",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Calafiori|Road to the Knockouts|86"
-    },
-    {
-      "player": "Karchaoui",
-      "rating": 89,
-      "position": "MC",
-      "club": "PSG",
-      "nation": "Francia",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Karchaoui|Road to the Knockouts|89"
-    },
-    {
-      "player": "Aitana Bonmatí",
-      "rating": 91,
-      "position": "MC",
-      "club": "FC Barcelona",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Aitana Bonmatí|Road to the Knockouts|91"
-    },
-    {
-      "player": "Bellingham",
-      "rating": 92,
-      "position": "MCO",
-      "club": "Real Madrid",
-      "league": "LALIGA EA SPORTS",
-      "nation": "Inglaterra",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Bellingham|Road to the Knockouts|92"
-    },
-    {
-      "player": "De Cuyper",
-      "rating": 88,
-      "position": "EI",
-      "club": "Brighton",
-      "league": "Premier League",
-      "nation": "Bélgica",
-      "promo": "RTTK Conference League",
-      "source_type": "leak",
-      "_key": "De Cuyper|RTTK Conference League|88"
-    },
-    {
-      "player": "Doku",
-      "rating": 87,
-      "position": "EI",
-      "club": "Manchester City",
-      "league": "Premier League",
-      "nation": "Bélgica",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Doku|Road to the Knockouts|87"
-    },
-    {
-      "player": "Pedri",
-      "rating": 91,
-      "position": "MC",
-      "club": "FC Barcelona",
-      "league": "LALIGA EA SPORTS",
-      "nation": "España",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Pedri|Road to the Knockouts|91"
-    },
-    {
-      "player": "Carrasco",
-      "rating": 84,
-      "position": "EI",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Carrasco|TOTW|84"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Nuevos Star Performers en sobres: Sabitzer, Nyoni, Baumgartl…",
+      "date": "2026-11-03 20:31"
+    },
+    {
+      "title": "TOTW 8 filtrado: Rodman 88, Rogers 85 y Ayari 83",
+      "date": "2026-11-03 20:31"
+    },
+    {
+      "title": "Road to the Knockouts: filtrados los 30 jugadores y 10+ SBC/OBJ",
+      "date": "2026-11-03 20:31"
+    },
+    {
+      "title": "Galería: tokens con Rango S para Al Ettifaq, Al Fayha y Al Ahli",
+      "date": "2026-11-03 20:31"
+    },
     {
       "title": "Galería: 143 tokens nuevos con Freiburg, Getafe y Sunderland",
       "date": "2026-11-03 12:51"
@@ -454,25 +476,37 @@
     {
       "title": "Predicción TOTW 08: Wilson 90, Fermín y Kerolin Nicoli 86",
       "date": "2026-11-02 19:14"
-    },
-    {
-      "title": "Mejores opciones para la evo Luiz Legacy (David Luiz)",
-      "date": "2026-11-01 21:27"
-    },
-    {
-      "title": "SBC Schuller esperado hoy por unos 35.000",
-      "date": "2026-11-01 16:00"
-    },
-    {
-      "title": "Arciga y Guzmán 82 reciben +1 PS Plata",
-      "date": "2026-11-01 06:52"
-    },
-    {
-      "title": "Loftus-Cheek 84 MCO consigue +1 y +1 PS Plata",
-      "date": "2026-11-01 00:19"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Galería: tokens con Ampadu, Rango S Leeds y St. Louis City SC",
+      "starts": "2026-11-03",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "sbc",
+      "name": "Mejora x2 83+",
+      "starts": "2026-11-03",
+      "ends": "2026-11-09",
+      "detail": "Sobre Oro x2 83+ (intransferible) · 5.500"
+    },
+    {
+      "type": "sbc",
+      "name": "Ethan Ampadu",
+      "starts": "2026-11-03",
+      "ends": "2026-11-09",
+      "detail": "Ampadu 85 MC Ultimate Scream (intransferible) · 22.000"
+    },
+    {
+      "type": "sbc",
+      "name": "Abracadabra",
+      "starts": "2026-11-03",
+      "ends": "",
+      "detail": "Sobre Oro Jumbo + 100 fichas Scream de bonus · 30 fichas Scream"
+    },
     {
       "type": "event",
       "name": "Caducidad fichas La Caza de Aníbal",
@@ -724,56 +758,9 @@
       "starts": "2026-10-29",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Fiesta Boo Hoo",
-      "starts": "2026-10-28",
-      "ends": "",
-      "detail": "Sobre de futbolistas Electro grande · 30 Scream Tokens"
-    },
-    {
-      "type": "event",
-      "name": "Galería: Al Hilal y Denver Summit FC",
-      "starts": "2026-10-28",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "promo",
-      "name": "TOTW 07",
-      "starts": "2026-10-28 18:00",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Actualización de jugabilidad v1.2.0",
-      "starts": "2026-10-28",
-      "ends": "",
-      "detail": ""
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2632,
-      "name": "Infiltración",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-24 19:00",
-      "ends": "2026-11-03 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · LI/LD",
-      "upgrades": [
-        "PlayStyle Anticipación",
-        "PlayStyle Resistencia a la presión",
-        "Media +4",
-        "Agresividad +4"
-      ],
-      "url": "https://www.fut.gg/evolutions/2632-creep-inside/"
-    },
     {
       "id": 2636,
       "name": "Witching Hour",
