@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 03:14",
+  "updated_at": "2026-11-03 12:51",
   "active_promo": {
     "name": "Road to the Knockouts",
     "source_type": "leak"
@@ -229,6 +229,27 @@
   ],
   "events": [
     {
+      "name": "Promo Road to the Knockouts",
+      "starts": "2026-11-06",
+      "ends": "",
+      "source_type": "leak"
+    },
+    {
+      "name": "Caducidad fichas La Caza de Aníbal",
+      "ends": "2026-11-07 19:00",
+      "source_type": "official"
+    },
+    {
+      "name": "Caducidad fichas Fiesta Espectral, Bonus Torneo T2, Canchas Fantasmales y Completista Scream",
+      "ends": "2026-11-06 19:00",
+      "source_type": "official"
+    },
+    {
+      "name": "Caducidad fichas Rush Balas de Plata",
+      "ends": "2026-11-04 19:00",
+      "source_type": "official"
+    },
+    {
       "name": "Mejoras de liga: Serie A + Liga Saudí y MLS + NWSL",
       "starts": "2026-11-02",
       "ends": "2026-12-05",
@@ -268,29 +289,75 @@
       "name": "Galería: North Carolina Courage Rango S",
       "starts": "2026-10-30",
       "source_type": "official"
-    },
-    {
-      "name": "Opción para desactivar ruedas de prensa en Modo Carrera",
-      "starts": "2026-10-29",
-      "source_type": "official"
-    },
-    {
-      "name": "Galería Temporada 1: Rango S con Diomande OTW (85 tokens)",
-      "starts": "2026-10-29",
-      "source_type": "official"
-    },
-    {
-      "name": "Galería: Al Hilal y Denver Summit FC",
-      "starts": "2026-10-28",
-      "source_type": "official"
-    },
-    {
-      "name": "Actualización de jugabilidad v1.2.0",
-      "starts": "2026-10-28",
-      "source_type": "official"
     }
   ],
   "recent_cards": [
+    {
+      "player": "Bonmati",
+      "rating": 91,
+      "position": "MC",
+      "club": "Barcelona",
+      "nation": "España",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Bonmati|Road to the Knockouts|91"
+    },
+    {
+      "player": "Tiago Djaló",
+      "rating": 84,
+      "position": "DFC",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Tiago Djaló|Road to the Knockouts|84"
+    },
+    {
+      "player": "Aleix García",
+      "rating": 85,
+      "position": "MC",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Aleix García|Road to the Knockouts|85"
+    },
+    {
+      "player": "Buendía",
+      "rating": 85,
+      "position": "MCO",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Buendía|Road to the Knockouts|85"
+    },
+    {
+      "player": "Brobbey",
+      "rating": 85,
+      "position": "DC",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Brobbey|Road to the Knockouts|85"
+    },
+    {
+      "player": "Nwaneri",
+      "rating": 85,
+      "position": "MCO",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Nwaneri|Road to the Knockouts|85"
+    },
+    {
+      "player": "Openda",
+      "rating": 85,
+      "position": "EI",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Openda|Road to the Knockouts|85"
+    },
+    {
+      "player": "Calafiori",
+      "rating": 86,
+      "position": "LI",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Calafiori|Road to the Knockouts|86"
+    },
     {
       "player": "Karchaoui",
       "rating": 89,
@@ -361,82 +428,21 @@
       "promo": "TOTW",
       "source_type": "leak",
       "_key": "Carrasco|TOTW|84"
-    },
-    {
-      "player": "Diego Moreira",
-      "rating": 84,
-      "position": "MD",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Diego Moreira|TOTW|84"
-    },
-    {
-      "player": "Kerolin Nicoli",
-      "rating": 86,
-      "position": "MD",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Kerolin Nicoli|TOTW|86"
-    },
-    {
-      "player": "Fermín",
-      "rating": 86,
-      "position": "MCO",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Fermín|TOTW|86"
-    },
-    {
-      "player": "Wilson",
-      "rating": 90,
-      "position": "DC",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Wilson|TOTW|90"
-    },
-    {
-      "player": "Cucurella",
-      "rating": 88,
-      "position": "LI",
-      "club": "Real Madrid",
-      "nation": "España",
-      "source_type": "official",
-      "_key": "Cucurella||88"
-    },
-    {
-      "player": "Guzmán",
-      "rating": 82,
-      "position": "DFC",
-      "club": "Monterrey",
-      "league": "Liga BBVA MX",
-      "nation": "México",
-      "promo": "Showdown",
-      "source_type": "leak",
-      "_key": "Guzmán|Showdown|82"
-    },
-    {
-      "player": "Arciga",
-      "rating": 82,
-      "position": "ED",
-      "club": "Xolos de Tijuana",
-      "league": "Liga BBVA MX",
-      "nation": "México",
-      "promo": "Showdown",
-      "source_type": "leak",
-      "_key": "Arciga|Showdown|82"
-    },
-    {
-      "player": "Loftus-Cheek",
-      "rating": 84,
-      "position": "MCO",
-      "club": "Milan",
-      "league": "Serie A",
-      "nation": "Inglaterra",
-      "source_type": "leak",
-      "_key": "Loftus-Cheek||84"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Galería: 143 tokens nuevos con Freiburg, Getafe y Sunderland",
+      "date": "2026-11-03 12:51"
+    },
+    {
+      "title": "Road to the Knockouts: mejoras de Bonmati 91 filtradas",
+      "date": "2026-11-03 12:51"
+    },
+    {
+      "title": "Road to the Knockouts: semana UEFA con 30 jugadores desde el viernes",
+      "date": "2026-11-03 12:51"
+    },
     {
       "title": "Road to the Knockouts Team 1 filtrado: Pedri, Doku, Bellingham",
       "date": "2026-11-03 03:14"
@@ -464,21 +470,30 @@
     {
       "title": "Loftus-Cheek 84 MCO consigue +1 y +1 PS Plata",
       "date": "2026-11-01 00:19"
-    },
-    {
-      "title": "Manzambi 86 MC consigue +1 con 4 inicios y 3 G/A",
-      "date": "2026-11-01 00:19"
-    },
-    {
-      "title": "Evo David Luiz Inspired llegaría mañana",
-      "date": "2026-11-01 00:19"
-    },
-    {
-      "title": "Savinho y Rodrigo Mora consiguen +1 con victorias en liga",
-      "date": "2026-10-31 20:56"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Caducidad fichas La Caza de Aníbal",
+      "starts": "2026-11-03",
+      "ends": "2026-11-07 19:00",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Caducidad fichas Fiesta Espectral, Bonus Torneo T2, Canchas Fantasmales y Completista Scream",
+      "starts": "2026-11-03",
+      "ends": "2026-11-06 19:00",
+      "detail": ""
+    },
+    {
+      "type": "event",
+      "name": "Caducidad fichas Rush Balas de Plata",
+      "starts": "2026-11-03",
+      "ends": "2026-11-04 19:00",
+      "detail": ""
+    },
     {
       "type": "sbc",
       "name": "1 de 3 Elección de futbolista Oro 79+",
@@ -735,27 +750,6 @@
       "type": "event",
       "name": "Actualización de jugabilidad v1.2.0",
       "starts": "2026-10-28",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Votación POTM octubre LaLiga y Liga F",
-      "starts": "2026-10-28",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "evolution",
-      "name": "David Luiz: Un Héroe Nacional",
-      "starts": "2026-11-01",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "evolution",
-      "name": "David Luiz: El Campeón",
-      "starts": "2026-11-01",
       "ends": "",
       "detail": ""
     }
