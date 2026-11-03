@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-02 19:14",
+  "updated_at": "2026-11-03 03:14",
   "active_promo": {
-    "name": "TOTW 08",
+    "name": "Road to the Knockouts",
     "source_type": "leak"
   },
   "objectives": [
@@ -83,6 +83,14 @@
   ],
   "sbcs": [
     {
+      "name": "1 de 3 Elección de futbolista Oro 79+",
+      "cost": "2.500",
+      "reward": "Elección de futbolista Oro 79+ (intransferible)",
+      "starts": "2026-11-02",
+      "ends": "2026-11-08",
+      "source_type": "official"
+    },
+    {
       "name": "Mejora de Héroe básico máx. 88",
       "cost": "140.000",
       "reward": "Sobre con 1 Héroe básico GRL 88 o inferior",
@@ -144,14 +152,6 @@
       "name": "Mejora de Héroe Base máx. 88",
       "reward": "Sobre con Héroe Base máx. 88",
       "source_type": "leak"
-    },
-    {
-      "name": "Bundesliga y Google Pixel Frauen-Bundesliga",
-      "cost": "2 x 2.500 puntos",
-      "reward": "Sobre de recompensa por desafío (≈3 x 84 + 1 bronce)",
-      "starts": "2026-10-28",
-      "ends": "2026-11-03",
-      "source_type": "official"
     },
     {
       "name": "Fiesta Boo Hoo",
@@ -292,6 +292,69 @@
   ],
   "recent_cards": [
     {
+      "player": "Karchaoui",
+      "rating": 89,
+      "position": "MC",
+      "club": "PSG",
+      "nation": "Francia",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Karchaoui|Road to the Knockouts|89"
+    },
+    {
+      "player": "Aitana Bonmatí",
+      "rating": 91,
+      "position": "MC",
+      "club": "FC Barcelona",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Aitana Bonmatí|Road to the Knockouts|91"
+    },
+    {
+      "player": "Bellingham",
+      "rating": 92,
+      "position": "MCO",
+      "club": "Real Madrid",
+      "league": "LALIGA EA SPORTS",
+      "nation": "Inglaterra",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Bellingham|Road to the Knockouts|92"
+    },
+    {
+      "player": "De Cuyper",
+      "rating": 88,
+      "position": "EI",
+      "club": "Brighton",
+      "league": "Premier League",
+      "nation": "Bélgica",
+      "promo": "RTTK Conference League",
+      "source_type": "leak",
+      "_key": "De Cuyper|RTTK Conference League|88"
+    },
+    {
+      "player": "Doku",
+      "rating": 87,
+      "position": "EI",
+      "club": "Manchester City",
+      "league": "Premier League",
+      "nation": "Bélgica",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Doku|Road to the Knockouts|87"
+    },
+    {
+      "player": "Pedri",
+      "rating": 91,
+      "position": "MC",
+      "club": "FC Barcelona",
+      "league": "LALIGA EA SPORTS",
+      "nation": "España",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Pedri|Road to the Knockouts|91"
+    },
+    {
       "player": "Carrasco",
       "rating": 84,
       "position": "EI",
@@ -371,68 +434,13 @@
       "nation": "Inglaterra",
       "source_type": "leak",
       "_key": "Loftus-Cheek||84"
-    },
-    {
-      "player": "Manzambi",
-      "rating": 86,
-      "position": "MC",
-      "club": "Aston Villa",
-      "league": "Premier League",
-      "nation": "Suiza",
-      "source_type": "leak",
-      "_key": "Manzambi||86"
-    },
-    {
-      "player": "Jill Scott",
-      "rating": 87,
-      "position": "DFC",
-      "nation": "Inglaterra",
-      "promo": "Scream",
-      "source_type": "official",
-      "_key": "Jill Scott|Scream|87"
-    },
-    {
-      "player": "Rodrigo Mora",
-      "rating": 84,
-      "position": "CAM",
-      "club": "Roma",
-      "league": "Serie A",
-      "nation": "Portugal",
-      "source_type": "leak",
-      "_key": "Rodrigo Mora||84"
-    },
-    {
-      "player": "Savinho",
-      "rating": 84,
-      "position": "RW",
-      "club": "Tottenham",
-      "league": "Premier League",
-      "nation": "Brasil",
-      "source_type": "leak",
-      "_key": "Savinho||84"
-    },
-    {
-      "player": "Jonny",
-      "club": "Alavés",
-      "nation": "España",
-      "position": "LI",
-      "rating": 85,
-      "promo": "Ultimate Scream",
-      "source_type": "official",
-      "_key": "Jonny|Ultimate Scream|85"
-    },
-    {
-      "player": "Lacroix",
-      "club": "Chelsea",
-      "league": "Premier League",
-      "nation": "Francia",
-      "position": "DFC",
-      "rating": 84,
-      "source_type": "leak",
-      "_key": "Lacroix||84"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Road to the Knockouts Team 1 filtrado: Pedri, Doku, Bellingham",
+      "date": "2026-11-03 03:14"
+    },
     {
       "title": "Filtrada nueva evolución de portero máx. 80/81",
       "date": "2026-11-02 19:14"
@@ -468,13 +476,16 @@
     {
       "title": "Savinho y Rodrigo Mora consiguen +1 con victorias en liga",
       "date": "2026-10-31 20:56"
-    },
-    {
-      "title": "Ultimate Scream T2 Guaranteed llegará pronto a la Tienda de tokens",
-      "date": "2026-10-31 20:56"
     }
   ],
   "calendar": [
+    {
+      "type": "sbc",
+      "name": "1 de 3 Elección de futbolista Oro 79+",
+      "starts": "2026-11-02",
+      "ends": "2026-11-08",
+      "detail": "Elección de futbolista Oro 79+ (intransferible) · 2.500"
+    },
     {
       "type": "event",
       "name": "Mejoras de liga: Serie A + Liga Saudí y MLS + NWSL",
@@ -698,13 +709,6 @@
       "starts": "2026-10-29",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "sbc",
-      "name": "Bundesliga y Google Pixel Frauen-Bundesliga",
-      "starts": "2026-10-28",
-      "ends": "2026-11-03",
-      "detail": "Sobre de recompensa por desafío (≈3 x 84 + 1 bronce) · 2 x 2.500 puntos"
     },
     {
       "type": "sbc",
