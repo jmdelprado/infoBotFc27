@@ -1,10 +1,32 @@
 {
-  "updated_at": "2026-11-04 13:01",
+  "updated_at": "2026-11-04 20:43",
   "active_promo": {
-    "name": "Road to the Knockouts",
-    "source_type": "leak"
+    "name": "Team of the Week 08",
+    "start": "2026-11-04",
+    "source_type": "official"
   },
   "objectives": [
+    {
+      "name": "Marcar 10 goles de cabeza",
+      "reward": "50 fichas Scream",
+      "source_type": "official"
+    },
+    {
+      "name": "5 partidos bonus Torneo Eliminación T2",
+      "reward": "250 fichas Scream",
+      "source_type": "official"
+    },
+    {
+      "name": "6 SBC Completista Halloween",
+      "reward": "280 fichas Scream",
+      "source_type": "official"
+    },
+    {
+      "name": "Fiesta Espectral: 13 partidos (930 fichas)",
+      "reward": "450 + 330 + 150 fichas Scream",
+      "ends": "2026-11-06",
+      "source_type": "official"
+    },
     {
       "name": "Camiseta Movember: jugar 1 partido",
       "reward": "Camiseta exclusiva",
@@ -51,26 +73,6 @@
       "name": "Carrera en vivo: La Experiencia Manda",
       "reward": "1000 SP adicionales para el Pase (total de desafíos)",
       "starts": "2026-10-26",
-      "source_type": "official"
-    },
-    {
-      "name": "Fuerza Bruta (Rush): ganar 3, asistir 3, 2 goles con defensa",
-      "reward": "190 Scream Tokens + 50 SP + préstamos Lukeba 85 y Chong 85 (13 días)",
-      "starts": "2026-10-24",
-      "source_type": "official"
-    },
-    {
-      "name": "Jeremiah St. Juste Legado FC: objetivo Completista",
-      "reward": "St. Juste 84 DFC Legado FC (intransferible)",
-      "starts": "2026-10-24",
-      "ends": "2026-12-03",
-      "source_type": "official"
-    },
-    {
-      "name": "Axel Witsel Legado FC: completista de Eliminatoria diaria",
-      "reward": "Witsel 84 MCD Legado FC (intransferible)",
-      "starts": "2026-10-24",
-      "ends": "2026-12-03",
       "source_type": "official"
     }
   ],
@@ -233,15 +235,21 @@
   ],
   "events": [
     {
-      "name": "Jesús de Miguel retirado de sobres",
-      "starts": "2026-11-03",
-      "source_type": "official"
-    },
-    {
       "name": "Promo Road to the Knockouts",
       "starts": "2026-11-06",
       "ends": "",
-      "source_type": "leak"
+      "source_type": "official"
+    },
+    {
+      "name": "Hall of FUT básico (tienda)",
+      "starts": "2026-11-04",
+      "ends": "2026-12-03",
+      "source_type": "official"
+    },
+    {
+      "name": "Jesús de Miguel retirado de sobres",
+      "starts": "2026-11-03",
+      "source_type": "official"
     },
     {
       "name": "Caducidad fichas La Caza de Aníbal",
@@ -251,11 +259,6 @@
     {
       "name": "Caducidad fichas Fiesta Espectral, Bonus Torneo T2, Canchas Fantasmales y Completista Scream",
       "ends": "2026-11-06 19:00",
-      "source_type": "official"
-    },
-    {
-      "name": "Caducidad fichas Rush Balas de Plata",
-      "ends": "2026-11-04 19:00",
       "source_type": "official"
     },
     {
@@ -297,146 +300,157 @@
   ],
   "recent_cards": [
     {
-      "player": "Weah",
-      "rating": 85,
-      "position": "MD",
-      "club": "Marsella",
-      "nation": "Estados Unidos",
+      "player": "Luis Díaz",
+      "rating": 90,
+      "position": "LM",
+      "club": "Bayern",
       "promo": "Road to the Knockouts",
       "source_type": "leak",
-      "_key": "Weah|Road to the Knockouts|85"
-    },
-    {
-      "player": "Bellingham",
-      "rating": 91,
-      "position": "MCO",
-      "club": "Real Madrid",
-      "nation": "Inglaterra",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Bellingham|Road to the Knockouts|91"
-    },
-    {
-      "player": "Lukaku",
-      "rating": 87,
-      "position": "DC",
-      "club": "Fenerbahçe",
-      "nation": "Bélgica",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Lukaku|Road to the Knockouts|87"
+      "_key": "Luis Díaz|Road to the Knockouts|90"
     },
     {
       "player": "Aitana Bonmatí",
       "rating": 90,
-      "position": "MC",
-      "club": "FC Barcelona",
-      "nation": "España",
+      "position": "CM",
+      "club": "Barcelona",
       "promo": "Road to the Knockouts",
       "source_type": "leak",
       "_key": "Aitana Bonmatí|Road to the Knockouts|90"
     },
     {
-      "player": "Chawinga",
-      "rating": 89,
-      "position": "EI",
-      "club": "Lyon",
-      "nation": "Malaui",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Chawinga|Road to the Knockouts|89"
-    },
-    {
       "player": "Dembélé",
       "rating": 91,
-      "position": "DC",
+      "position": "ST",
       "club": "PSG",
-      "nation": "Francia",
       "promo": "Road to the Knockouts",
       "source_type": "leak",
       "_key": "Dembélé|Road to the Knockouts|91"
     },
     {
-      "player": "Rafael Leão",
-      "rating": 87,
-      "position": "EI",
-      "club": "Galatasaray",
-      "nation": "Portugal",
+      "player": "Pedri",
+      "rating": 91,
+      "position": "CM",
+      "club": "Barcelona",
       "promo": "Road to the Knockouts",
       "source_type": "leak",
-      "_key": "Rafael Leão|Road to the Knockouts|87"
+      "_key": "Pedri|Road to the Knockouts|91"
     },
     {
-      "player": "Rogers",
-      "rating": 85,
-      "position": "MCO",
-      "promo": "TOTW 8",
+      "player": "Bellingham",
+      "rating": 91,
+      "position": "CAM",
+      "club": "Real Madrid",
+      "promo": "Road to the Knockouts",
       "source_type": "leak",
-      "_key": "Rogers|TOTW 8|85"
+      "_key": "Bellingham|Road to the Knockouts|91"
     },
     {
-      "player": "Unai Simón",
+      "player": "Rodrigo Mora",
+      "rating": 84,
+      "position": "MCO",
+      "source_type": "official",
+      "_key": "Rodrigo Mora||84"
+    },
+    {
+      "player": "Sávio",
+      "rating": 84,
+      "position": "ED",
+      "source_type": "official",
+      "_key": "Sávio||84"
+    },
+    {
+      "player": "Lacroix",
+      "rating": 84,
+      "position": "DFC",
+      "source_type": "official",
+      "_key": "Lacroix||84"
+    },
+    {
+      "player": "Lammens",
       "rating": 86,
       "position": "POR",
-      "promo": "TOTW 8",
+      "club": "Manchester United",
+      "nation": "Bélgica",
+      "league": "Premier League",
+      "promo": "Road to the Knockouts",
       "source_type": "leak",
-      "_key": "Unai Simón|TOTW 8|86"
+      "_key": "Lammens|Road to the Knockouts|86"
     },
     {
-      "player": "Fermín",
-      "rating": 86,
-      "position": "MCO",
-      "promo": "TOTW 8",
-      "source_type": "leak",
-      "_key": "Fermín|TOTW 8|86"
-    },
-    {
-      "player": "Kerolin Nicoli",
-      "rating": 86,
-      "position": "ED",
-      "promo": "TOTW 8",
-      "source_type": "leak",
-      "_key": "Kerolin Nicoli|TOTW 8|86"
-    },
-    {
-      "player": "Rodman",
-      "rating": 88,
-      "position": "EI",
-      "promo": "TOTW 8",
-      "source_type": "leak",
-      "_key": "Rodman|TOTW 8|88"
-    },
-    {
-      "player": "Ethan Ampadu",
+      "player": "Gabri Veiga",
       "rating": 85,
       "position": "MC",
-      "promo": "Ultimate Scream",
-      "club": "Leeds United",
+      "club": "Oporto",
+      "nation": "España",
+      "league": "Liga Portugal",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Gabri Veiga|Road to the Knockouts|85"
+    },
+    {
+      "player": "Doku",
+      "rating": 87,
+      "position": "EI",
+      "club": "Manchester City",
+      "nation": "Bélgica",
       "league": "Premier League",
-      "nation": "Gales",
-      "source_type": "official",
-      "_key": "Ethan Ampadu|Ultimate Scream|85"
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Doku|Road to the Knockouts|87"
     },
     {
-      "player": "Lynch",
-      "rating": 85,
-      "position": "GK",
-      "club": "Fleetwood",
-      "promo": "Star Performers",
+      "player": "Bastoni",
+      "rating": 88,
+      "position": "DFC",
+      "nation": "Italia",
+      "league": "Serie A",
+      "promo": "Road to the Knockouts",
       "source_type": "leak",
-      "_key": "Lynch|Star Performers|85"
+      "_key": "Bastoni|Road to the Knockouts|88"
     },
     {
-      "player": "Ta Bi",
+      "player": "Camara",
       "rating": 85,
-      "position": "RM",
-      "club": "Sunderland",
-      "promo": "Star Performers",
+      "position": "MC",
+      "club": "Mónaco",
+      "nation": "Senegal",
+      "league": "Ligue 1",
+      "promo": "Road to the Knockouts",
       "source_type": "leak",
-      "_key": "Ta Bi|Star Performers|85"
+      "_key": "Camara|Road to the Knockouts|85"
+    },
+    {
+      "player": "Ginter",
+      "rating": 86,
+      "position": "DFC",
+      "club": "Friburgo",
+      "nation": "Alemania",
+      "league": "Bundesliga",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Ginter|Road to the Knockouts|86"
+    },
+    {
+      "player": "Diogo Travassos",
+      "rating": 85,
+      "position": "LD",
+      "club": "Braga",
+      "nation": "Portugal",
+      "league": "Liga Portugal",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Diogo Travassos|Road to the Knockouts|85"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "RTTK: filtrado el equipo completo con Díaz 90 y Chawinga 89",
+      "date": "2026-11-04 20:43"
+    },
+    {
+      "title": "RTTK: cartas oficiales filtradas de Doku, Bastoni, Lammens y más",
+      "date": "2026-11-04 20:42"
+    },
     {
       "title": "Filtrada nueva evolución de MCD/MC máx. 81",
       "date": "2026-11-04 13:01"
@@ -468,17 +482,65 @@
     {
       "title": "Galería: 143 tokens nuevos con Freiburg, Getafe y Sunderland",
       "date": "2026-11-03 12:51"
-    },
-    {
-      "title": "Road to the Knockouts: mejoras de Bonmati 91 filtradas",
-      "date": "2026-11-03 12:51"
-    },
-    {
-      "title": "Road to the Knockouts: semana UEFA con 30 jugadores desde el viernes",
-      "date": "2026-11-03 12:51"
     }
   ],
   "calendar": [
+    {
+      "type": "promo",
+      "name": "Team of the Week 08",
+      "starts": "2026-11-04",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "promo",
+      "name": "Road to the Knockouts",
+      "starts": "2026-11-06",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "card",
+      "name": "Actualizados Lacroix, Sávio y Rodrigo Mora (84)",
+      "starts": "2026-11-04",
+      "ends": "",
+      "detail": ""
+    },
+    {
+      "type": "objective",
+      "name": "Marcar 10 goles de cabeza",
+      "starts": "2026-11-04",
+      "ends": "",
+      "detail": "50 fichas Scream"
+    },
+    {
+      "type": "objective",
+      "name": "5 partidos bonus Torneo Eliminación T2",
+      "starts": "2026-11-04",
+      "ends": "",
+      "detail": "250 fichas Scream"
+    },
+    {
+      "type": "objective",
+      "name": "6 SBC Completista Halloween",
+      "starts": "2026-11-04",
+      "ends": "",
+      "detail": "280 fichas Scream"
+    },
+    {
+      "type": "objective",
+      "name": "Fiesta Espectral: 13 partidos (930 fichas)",
+      "starts": "2026-11-04",
+      "ends": "2026-11-06",
+      "detail": "450 + 330 + 150 fichas Scream"
+    },
+    {
+      "type": "event",
+      "name": "Hall of FUT básico (tienda)",
+      "starts": "2026-11-04",
+      "ends": "2026-12-03",
+      "detail": ""
+    },
     {
       "type": "event",
       "name": "Jesús de Miguel retirado de sobres",
@@ -526,13 +588,6 @@
       "name": "Caducidad fichas Fiesta Espectral, Bonus Torneo T2, Canchas Fantasmales y Completista Scream",
       "starts": "2026-11-03",
       "ends": "2026-11-06 19:00",
-      "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Caducidad fichas Rush Balas de Plata",
-      "starts": "2026-11-03",
-      "ends": "2026-11-04 19:00",
       "detail": ""
     },
     {
@@ -709,77 +764,9 @@
       "starts": "2026-10-31",
       "ends": "",
       "detail": ""
-    },
-    {
-      "type": "mode",
-      "name": "Fiesta espectral",
-      "starts": "2026-10-30",
-      "ends": "",
-      "detail": "200 fichas Ultimate Scream"
-    },
-    {
-      "type": "promo",
-      "name": "Ultimate Scream Equipo 2",
-      "starts": "2026-10-30 19:00",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "event",
-      "name": "Galería: North Carolina Courage Rango S",
-      "starts": "2026-10-30",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "objective",
-      "name": "Manager en vivo: 3 desafíos semanales (Traspasos libres, Debutantes, Cree y…)",
-      "starts": "2026-10-30",
-      "ends": "",
-      "detail": "1000 SP"
-    },
-    {
-      "type": "event",
-      "name": "Opción para desactivar ruedas de prensa en Modo Carrera",
-      "starts": "2026-10-29",
-      "ends": "",
-      "detail": ""
-    },
-    {
-      "type": "mode",
-      "name": "Recompensas semanales Division Rivals",
-      "starts": "2026-10-29",
-      "ends": "",
-      "detail": "Sobre Oro 84+, sobre Oro x5 83+, 2 elecciones de artículo y 37.500 monedas (ejemplo de captura)"
-    },
-    {
-      "type": "event",
-      "name": "Galería Temporada 1: Rango S con Diomande OTW (85 tokens)",
-      "starts": "2026-10-29",
-      "ends": "",
-      "detail": ""
     }
   ],
   "evolutions_feed": [
-    {
-      "id": 2636,
-      "name": "Witching Hour",
-      "premium": false,
-      "season_pass": false,
-      "sp_level": null,
-      "starts": "2026-10-25 19:00",
-      "ends": "2026-11-04 19:00",
-      "free": true,
-      "cost": "Gratis",
-      "requirements": "Media ≤80 · MC/MCO",
-      "upgrades": [
-        "Pie malo +1 ⭐",
-        "PlayStyle Desequilibrante",
-        "Media +4",
-        "Agilidad +4"
-      ],
-      "url": "https://www.fut.gg/evolutions/2636-witching-hour/"
-    },
     {
       "id": 2639,
       "name": "Constructor de huesos",
@@ -967,6 +954,25 @@
         "Rareza Ultimate Scream Retro 20"
       ],
       "url": "https://www.fut.gg/evolutions/2625-ultimate-scream-retro-20/"
+    },
+    {
+      "id": 2648,
+      "name": "Guardia Luminoso",
+      "premium": false,
+      "season_pass": false,
+      "sp_level": null,
+      "starts": "2026-11-04 19:00",
+      "ends": "2026-11-26 19:00",
+      "free": true,
+      "cost": "Gratis",
+      "requirements": "Media ≤74 · DFC",
+      "upgrades": [
+        "Pie malo +2 ⭐",
+        "PlayStyle Interceptación",
+        "PlayStyle Fortaleza aérea",
+        "Media +40"
+      ],
+      "url": "https://www.fut.gg/evolutions/2648-glow-guard/"
     },
     {
       "id": 2637,
