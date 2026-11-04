@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 20:31",
+  "updated_at": "2026-11-04 01:35",
   "active_promo": {
     "name": "Star Performers",
     "source_type": "leak"
@@ -15,13 +15,6 @@
       "name": "Camiseta Liga BBVA MX Día de los Muertos",
       "reward": "Camiseta exclusiva",
       "starts": "2026-11-01",
-      "source_type": "official"
-    },
-    {
-      "name": "Rush Balas de plata: ganar 3, marcar 4 con 1 atacante, asistir 3",
-      "reward": "190 Scream Tokens",
-      "starts": "2026-11-01",
-      "ends": "2026-11-04",
       "source_type": "official"
     },
     {
@@ -240,6 +233,11 @@
   ],
   "events": [
     {
+      "name": "Jesús de Miguel retirado de sobres",
+      "starts": "2026-11-03",
+      "source_type": "official"
+    },
+    {
       "name": "Promo Road to the Knockouts",
       "starts": "2026-11-06",
       "ends": "",
@@ -295,14 +293,49 @@
       "starts": "2026-10-30",
       "ends": "2026-11-13",
       "source_type": "official"
-    },
-    {
-      "name": "Galería: North Carolina Courage Rango S",
-      "starts": "2026-10-30",
-      "source_type": "official"
     }
   ],
   "recent_cards": [
+    {
+      "player": "Rogers",
+      "rating": 85,
+      "position": "MCO",
+      "promo": "TOTW 8",
+      "source_type": "leak",
+      "_key": "Rogers|TOTW 8|85"
+    },
+    {
+      "player": "Unai Simón",
+      "rating": 86,
+      "position": "POR",
+      "promo": "TOTW 8",
+      "source_type": "leak",
+      "_key": "Unai Simón|TOTW 8|86"
+    },
+    {
+      "player": "Fermín",
+      "rating": 86,
+      "position": "MCO",
+      "promo": "TOTW 8",
+      "source_type": "leak",
+      "_key": "Fermín|TOTW 8|86"
+    },
+    {
+      "player": "Kerolin Nicoli",
+      "rating": 86,
+      "position": "ED",
+      "promo": "TOTW 8",
+      "source_type": "leak",
+      "_key": "Kerolin Nicoli|TOTW 8|86"
+    },
+    {
+      "player": "Rodman",
+      "rating": 88,
+      "position": "EI",
+      "promo": "TOTW 8",
+      "source_type": "leak",
+      "_key": "Rodman|TOTW 8|88"
+    },
     {
       "player": "Ethan Ampadu",
       "rating": 85,
@@ -394,49 +427,13 @@
       "promo": "Road to the Knockouts",
       "source_type": "leak",
       "_key": "Bonmati|Road to the Knockouts|91"
-    },
-    {
-      "player": "Tiago Djaló",
-      "rating": 84,
-      "position": "DFC",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Tiago Djaló|Road to the Knockouts|84"
-    },
-    {
-      "player": "Aleix García",
-      "rating": 85,
-      "position": "MC",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Aleix García|Road to the Knockouts|85"
-    },
-    {
-      "player": "Buendía",
-      "rating": 85,
-      "position": "MCO",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Buendía|Road to the Knockouts|85"
-    },
-    {
-      "player": "Brobbey",
-      "rating": 85,
-      "position": "DC",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Brobbey|Road to the Knockouts|85"
-    },
-    {
-      "player": "Nwaneri",
-      "rating": 85,
-      "position": "MCO",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Nwaneri|Road to the Knockouts|85"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "TOTW 8 filtrado: cartas oficiales con Rodman 88",
+      "date": "2026-11-04 01:35"
+    },
     {
       "title": "Nuevos Star Performers en sobres: Sabitzer, Nyoni, Baumgartl…",
       "date": "2026-11-03 20:31"
@@ -472,13 +469,16 @@
     {
       "title": "Filtrada nueva evolución de portero máx. 80/81",
       "date": "2026-11-02 19:14"
-    },
-    {
-      "title": "Predicción TOTW 08: Wilson 90, Fermín y Kerolin Nicoli 86",
-      "date": "2026-11-02 19:14"
     }
   ],
   "calendar": [
+    {
+      "type": "event",
+      "name": "Jesús de Miguel retirado de sobres",
+      "starts": "2026-11-03",
+      "ends": "",
+      "detail": ""
+    },
     {
       "type": "event",
       "name": "Galería: tokens con Ampadu, Rango S Leeds y St. Louis City SC",
@@ -576,13 +576,6 @@
       "starts": "2026-11-01",
       "ends": "",
       "detail": "Camiseta exclusiva"
-    },
-    {
-      "type": "objective",
-      "name": "Rush Balas de plata: ganar 3, marcar 4 con 1 atacante, asistir 3",
-      "starts": "2026-11-01",
-      "ends": "2026-11-04",
-      "detail": "190 Scream Tokens"
     },
     {
       "type": "sbc",
