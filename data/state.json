@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-04 01:35",
+  "updated_at": "2026-11-04 13:01",
   "active_promo": {
-    "name": "Star Performers",
+    "name": "Road to the Knockouts",
     "source_type": "leak"
   },
   "objectives": [
@@ -167,6 +167,11 @@
   ],
   "evolutions": [
     {
+      "name": "Evolución MCD/MC máx. 81",
+      "upgrades": "Mejora de estadísticas",
+      "source_type": "leak"
+    },
+    {
       "name": "Evolución POR máx. 80/81",
       "upgrades": "Mejora de stats y PlayStyles",
       "source_type": "leak"
@@ -222,11 +227,6 @@
     },
     {
       "name": "David Luiz: Un Héroe Nacional",
-      "starts": "2026-11-01",
-      "source_type": "official"
-    },
-    {
-      "name": "David Luiz: El Campeón",
       "starts": "2026-11-01",
       "source_type": "official"
     }
@@ -297,6 +297,76 @@
   ],
   "recent_cards": [
     {
+      "player": "Weah",
+      "rating": 85,
+      "position": "MD",
+      "club": "Marsella",
+      "nation": "Estados Unidos",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Weah|Road to the Knockouts|85"
+    },
+    {
+      "player": "Bellingham",
+      "rating": 91,
+      "position": "MCO",
+      "club": "Real Madrid",
+      "nation": "Inglaterra",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Bellingham|Road to the Knockouts|91"
+    },
+    {
+      "player": "Lukaku",
+      "rating": 87,
+      "position": "DC",
+      "club": "Fenerbahçe",
+      "nation": "Bélgica",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Lukaku|Road to the Knockouts|87"
+    },
+    {
+      "player": "Aitana Bonmatí",
+      "rating": 90,
+      "position": "MC",
+      "club": "FC Barcelona",
+      "nation": "España",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Aitana Bonmatí|Road to the Knockouts|90"
+    },
+    {
+      "player": "Chawinga",
+      "rating": 89,
+      "position": "EI",
+      "club": "Lyon",
+      "nation": "Malaui",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Chawinga|Road to the Knockouts|89"
+    },
+    {
+      "player": "Dembélé",
+      "rating": 91,
+      "position": "DC",
+      "club": "PSG",
+      "nation": "Francia",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Dembélé|Road to the Knockouts|91"
+    },
+    {
+      "player": "Rafael Leão",
+      "rating": 87,
+      "position": "EI",
+      "club": "Galatasaray",
+      "nation": "Portugal",
+      "promo": "Road to the Knockouts",
+      "source_type": "leak",
+      "_key": "Rafael Leão|Road to the Knockouts|87"
+    },
+    {
       "player": "Rogers",
       "rating": 85,
       "position": "MCO",
@@ -364,72 +434,17 @@
       "promo": "Star Performers",
       "source_type": "leak",
       "_key": "Ta Bi|Star Performers|85"
-    },
-    {
-      "player": "Baumgartl",
-      "rating": 85,
-      "position": "CB",
-      "promo": "Star Performers",
-      "source_type": "leak",
-      "_key": "Baumgartl|Star Performers|85"
-    },
-    {
-      "player": "Nyoni",
-      "rating": 86,
-      "position": "CM",
-      "club": "Liverpool",
-      "promo": "Star Performers",
-      "source_type": "leak",
-      "_key": "Nyoni|Star Performers|86"
-    },
-    {
-      "player": "Sabitzer",
-      "rating": 87,
-      "position": "CM",
-      "club": "Borussia Dortmund",
-      "promo": "Star Performers",
-      "source_type": "leak",
-      "_key": "Sabitzer|Star Performers|87"
-    },
-    {
-      "player": "Ayari",
-      "rating": 83,
-      "position": "CDM",
-      "club": "Brighton",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Ayari|TOTW|83"
-    },
-    {
-      "player": "Rogers",
-      "rating": 85,
-      "position": "CAM",
-      "club": "Chelsea",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Rogers|TOTW|85"
-    },
-    {
-      "player": "Rodman",
-      "rating": 88,
-      "position": "LM",
-      "club": "Washington Spirit",
-      "promo": "TOTW",
-      "source_type": "leak",
-      "_key": "Rodman|TOTW|88"
-    },
-    {
-      "player": "Bonmati",
-      "rating": 91,
-      "position": "MC",
-      "club": "Barcelona",
-      "nation": "España",
-      "promo": "Road to the Knockouts",
-      "source_type": "leak",
-      "_key": "Bonmati|Road to the Knockouts|91"
     }
   ],
   "recent_leaks": [
+    {
+      "title": "Filtrada nueva evolución de MCD/MC máx. 81",
+      "date": "2026-11-04 13:01"
+    },
+    {
+      "title": "Road to the Knockouts: nuevas cartas filtradas de Leão, Dembélé y más",
+      "date": "2026-11-04 13:01"
+    },
     {
       "title": "TOTW 8 filtrado: cartas oficiales con Rodman 88",
       "date": "2026-11-04 01:35"
@@ -461,14 +476,6 @@
     {
       "title": "Road to the Knockouts: semana UEFA con 30 jugadores desde el viernes",
       "date": "2026-11-03 12:51"
-    },
-    {
-      "title": "Road to the Knockouts Team 1 filtrado: Pedri, Doku, Bellingham",
-      "date": "2026-11-03 03:14"
-    },
-    {
-      "title": "Filtrada nueva evolución de portero máx. 80/81",
-      "date": "2026-11-02 19:14"
     }
   ],
   "calendar": [
