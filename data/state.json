@@ -149,22 +149,6 @@
       "reward": "Sobre grande Oro y 30 fichas Scream",
       "starts": "2026-10-30",
       "source_type": "official"
-    },
-    {
-      "name": "Mejora TOTW 1-7 81+",
-      "cost": "22.000",
-      "reward": "Sobre futbolista TOTW E1-7 81+ (intransferible)",
-      "starts": "2026-10-30",
-      "ends": "2026-11-05",
-      "source_type": "official"
-    },
-    {
-      "name": "Reijnders",
-      "cost": "60.000",
-      "reward": "Reijnders 85 MCD Ultimate Scream (intransferible)",
-      "starts": "2026-10-30",
-      "ends": "2026-11-05",
-      "source_type": "official"
     }
   ],
   "evolutions": [
@@ -743,20 +727,6 @@
       "starts": "2026-10-30",
       "ends": "",
       "detail": "Sobre «Liga BBVA MX ha vuelto» (intransferible)"
-    },
-    {
-      "type": "sbc",
-      "name": "Mejora TOTW 1-7 81+",
-      "starts": "2026-10-30",
-      "ends": "2026-11-05",
-      "detail": "Sobre futbolista TOTW E1-7 81+ (intransferible) · 22.000"
-    },
-    {
-      "type": "sbc",
-      "name": "Reijnders",
-      "starts": "2026-10-30",
-      "ends": "2026-11-05",
-      "detail": "Reijnders 85 MCD Ultimate Scream (intransferible) · 60.000"
     },
     {
       "type": "objective",
