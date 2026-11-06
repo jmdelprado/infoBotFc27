@@ -1,9 +1,7 @@
 name: InfoBot
 
 on:
-  schedule:
-    - cron: "7 */4 * * *"   # cada 4 horas (minuto 7 para evitar la congestión de la hora en punto)
-    - cron: "0 20 * * *"    # resumen diario (22:00 en España en verano, 21:00 en invierno)
+  # La ejecución programada vive ahora en CircleCI (.circleci/config.yml). Aquí solo queda el lanzamiento manual.
   workflow_dispatch:
     inputs:
       mode:

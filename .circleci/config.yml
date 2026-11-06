@@ -1,0 +1,87 @@
+version: 2.1
+
+# InfoBot en CircleCI (sustituye a GitHub Actions).
+# Programación: un único "Schedule trigger" en CircleCI cada 4 horas al minuto 7 (00:07, 04:07 … 20:07 UTC).
+# Cada ejecución hace el ciclo normal y, a partir de las 20:00 UTC, también el resumen diario
+# (el propio bot evita enviarlo dos veces en el mismo día).
+# Secretos (Project Settings → Environment Variables): X_COOKIES, CLAUDE_CODE_OAUTH_TOKEN,
+# TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL, TELEGRAM_OWNER_CHAT_ID y GH_PUSH_TOKEN (para guardar el estado en GitHub).
+
+parameters:
+  mode:
+    type: enum
+    enum: [auto, run, daily, check]
+    default: auto
+
+jobs:
+  bot:
+    docker:
+      - image: cimg/python:3.12-node
+    resource_class: medium
+    environment:
+      X_USERNAME: infobotfc
+      UV_LINK_MODE: copy
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - deps-v1-{{ checksum "uv.lock" }}
+
+      - run:
+          name: Instalar dependencias
+          command: |
+            curl -LsSf https://astral.sh/uv/install.sh | sh
+            export PATH="$HOME/.local/bin:$PATH"
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$BASH_ENV"
+            uv sync --frozen
+            sudo npm install -g @anthropic-ai/claude-code
+            sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
+            uv run playwright install --with-deps chromium
+
+      - save_cache:
+          key: deps-v1-{{ checksum "uv.lock" }}
+          paths:
+            - ~/.cache/uv
+            - ~/.cache/ms-playwright
+
+      - run:
+          name: Comprobar secretos (solo dice si existen, nunca su valor)
+          command: |
+            for v in X_COOKIES CLAUDE_CODE_OAUTH_TOKEN TELEGRAM_BOT_TOKEN TELEGRAM_CHANNEL GH_PUSH_TOKEN; do
+              val="${!v}"
+              if [ -n "$val" ]; then echo "✅ $v definido (${#val} caracteres)"; else echo "❌ $v VACÍO o no existe"; fi
+            done
+
+      - run:
+          name: Ejecutar InfoBot (<< pipeline.parameters.mode >>)
+          no_output_timeout: 25m
+          command: |
+            # El token de Claude también puede llevar un salto de línea al pegarlo
+            export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
+            MODE="<< pipeline.parameters.mode >>"
+            if [ "$MODE" = "auto" ]; then
+              uv run python -m infobot run
+              if [ "$(date -u +%H)" -ge 20 ]; then uv run python -m infobot daily; fi
+            else
+              uv run python -m infobot "$MODE"
+            fi
+
+      - run:
+          name: Guardar estado
+          when: always
+          command: |
+            [ "<< pipeline.parameters.mode >>" = "check" ] && exit 0
+            git config user.name "infobot"
+            git config user.email "infobot@users.noreply.github.com"
+            for f in data/infobot.db data/state.json data/translations.json; do [ -f "$f" ] && git add "$f"; done
+            if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+            git commit -m "chore(data): estado $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+            REMOTE="https://x-access-token:${GH_PUSH_TOKEN}@github.com/jmdelprado/infoBotFc27.git"
+            git pull --rebase "$REMOTE" main
+            git push "$REMOTE" HEAD:main
+
+workflows:
+  infobot:
+    jobs:
+      - bot
