@@ -248,8 +248,18 @@ class DB:
         self.conn.commit()
 
     def dirty_stories(self) -> list[Item]:
-        rows = self.conn.execute("SELECT * FROM stories WHERE dirty=1 ORDER BY updated_at").fetchall()
+        rows = self.conn.execute("SELECT * FROM stories WHERE dirty=1 AND closed=0 ORDER BY updated_at").fetchall()
         return [self._row_to_item(r) for r in rows]
+
+    def published_stories(self) -> list[Item]:
+        """Fichas que tienen su mensaje en el grupo (abiertas o cerradas)."""
+        rows = self.conn.execute("SELECT * FROM stories WHERE message_ids_json != '[]'").fetchall()
+        return [self._row_to_item(r) for r in rows]
+
+    def remove_story_messages(self, story_id: int) -> None:
+        """La ficha ya no tiene mensaje en el grupo (caducada) y no se vuelve a publicar."""
+        self.conn.execute("UPDATE stories SET message_ids_json='[]', closed=1, dirty=0 WHERE id=?", (story_id,))
+        self.conn.commit()
 
     def story_message_ids(self, story_id: int) -> list[int]:
         row = self.conn.execute("SELECT message_ids_json FROM stories WHERE id=?", (story_id,)).fetchone()

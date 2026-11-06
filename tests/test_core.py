@@ -385,3 +385,28 @@ def test_db_migrates_leak_to_none(tmp_path):
     con.close()
     db = DB(path)
     assert db.conn.execute("SELECT source_type FROM items").fetchone()[0] == "none"
+
+
+def test_expired_stories_are_deleted_from_group(tmp_path):
+    from infobot.outbox import Outbox
+    from infobot.pipeline import apply_to_story, remove_expired_stories, story_end
+
+    db = DB(":memory:")
+    pub = Outbox(tmp_path)
+    promo = apply_to_story(db, _item(title="Promo vieja", extra={"promo": {"name": "X", "end": "2000-01-01 19:00"}}))
+    sbc = apply_to_story(db, _item(kind="sbc", title="SBC vivo",
+                                   extra={"sbcs": [{"name": "A", "ends": "2000-01-01"}, {"name": "B", "ends": "2099-01-01"}]}))
+    nodate = apply_to_story(db, _item(title="Sin fecha"))
+    ids = {}
+    for st in (promo, sbc, nodate):
+        ids[st.id] = [pub.send_message(st.title)]
+        db.mark_story_published(st.id, ids[st.id])
+    assert story_end(db.get_story(sbc.id)).year == 2099  # cuenta la fecha de fin más tardía
+    assert remove_expired_stories(db, pub, "Europe/Madrid") == 1
+    alive = {e["id"] for e in pub.entries}
+    assert ids[promo.id][0] not in alive and ids[sbc.id][0] in alive and ids[nodate.id][0] in alive
+    assert db.story_message_ids(promo.id) == [] and promo.id not in [s.id for s in db.open_stories()]
+    # Aunque llegue una novedad sobre ella, una ficha caducada no se vuelve a publicar
+    db.conn.execute("UPDATE stories SET dirty=1 WHERE id=?", (promo.id,))
+    assert promo.id not in [s.id for s in db.dirty_stories()]
+

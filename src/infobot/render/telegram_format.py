@@ -124,6 +124,7 @@ def pinned_message(state: dict[str, Any], title: str = "InfoBot FC 27") -> str:
         "🗂️ <b>Un tema = un mensaje</b>, cada uno en su sección:",
         "🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos",
         "Cuando hay novedades, el mensaje del tema se vuelve a publicar completo abajo (y se borra el anterior).",
+        "Cuando algo caduca, su mensaje se borra: lo que ves en el grupo está vigente.",
         "",
         "✅ <b>OFICIAL</b> → ya está en el juego, lo ha anunciado EA o son los datos definitivos.",
         "🔮 <b>PREDICCIÓN</b> → medias, PS o mejoras estimadas.",

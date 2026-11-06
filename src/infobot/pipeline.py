@@ -75,11 +75,36 @@ def ensure_media(db: DB, tweets: list[Tweet]) -> None:
 
 # ---------- 2. Analizar ----------
 
-def _story_end(story: Item) -> datetime | None:
+def story_end(story: Item) -> datetime | None:
+    """Fin de la ficha: la fecha de fin más tardía que se conozca (del tema, de la promo, de sus SBC,
+    objetivos, evoluciones, modos o eventos). None si no se conoce ninguna."""
     from .state import _parse_date
 
     ex = story.extra
-    return _parse_date(ex.get("ends") or (ex.get("promo") or {}).get("end"))
+    values = [ex.get("ends"), (ex.get("promo") or {}).get("end")]
+    for key in ("objectives", "sbcs", "evolutions", "modes", "events"):
+        values += [x.get("ends") or x.get("end") for x in ex.get(key) or []]
+    dates = [d for d in (_parse_date(v) for v in values if v) if d]
+    return max(dates) if dates else None
+
+
+def remove_expired_stories(db: DB, pub, tz: str) -> int:
+    """Borra del grupo el mensaje de las fichas caducadas (igual que salen del calendario)."""
+    now = datetime.now(ZoneInfo(tz)).replace(tzinfo=None)
+    removed = 0
+    for st in db.published_stories():
+        end = story_end(st)
+        if not end or end > now:
+            continue
+        for mid in db.story_message_ids(st.id):
+            try:
+                pub.delete_message(int(mid))
+            except Exception as e:  # noqa: BLE001 - p. ej. ya borrado a mano
+                log.info("No se pudo borrar la ficha caducada (%s): %s", mid, e)
+        db.remove_story_messages(st.id)
+        log.info("Ficha caducada y borrada del grupo: %s", st.title)
+        removed += 1
+    return removed
 
 
 def close_stale_stories(db: DB, tz: str) -> None:
@@ -88,7 +113,7 @@ def close_stale_stories(db: DB, tz: str) -> None:
     now_local = datetime.now(ZoneInfo(tz)).replace(tzinfo=None)
     now = datetime.now(timezone.utc)
     for st in db.open_stories():
-        end = _story_end(st)
+        end = story_end(st)
         updated = datetime.fromisoformat(db.story_updated_at(st.id) or now.isoformat())
         if (end and end < now_local) or now - updated > STORY_MAX_IDLE:
             db.close_story(st.id)
@@ -359,6 +384,7 @@ def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None
             state = merge(state, item, cfg.timezone)
             db.conn.execute("UPDATE items SET posted=1 WHERE id=?", (item.id,))
         db.conn.commit()
+        summary["expired"] = remove_expired_stories(db, pub, cfg.timezone)
         sections = Sections(db, pub, dry_run)
         with CoverRenderer() as renderer:
             for story in db.dirty_stories():
