@@ -24,6 +24,15 @@ jobs:
     steps:
       - checkout
 
+      # Copia del estado guardada en CircleCI por la última ejecución (respaldo por si falla el push a GitHub)
+      - restore_cache:
+          keys:
+            - state-v1-
+      - run:
+          name: Recuperar estado
+          command: |
+            if [ -d ~/state ]; then cp -v ~/state/* data/ 2>/dev/null || true; else echo "Sin copia en CircleCI; se usa la del repo"; fi
+
       - restore_cache:
           keys:
             - deps-v1-{{ checksum "uv.lock" }}
@@ -68,7 +77,21 @@ jobs:
             fi
 
       - run:
-          name: Guardar estado
+          name: Copiar estado para CircleCI
+          when: always
+          command: |
+            mkdir -p ~/state
+            for f in data/infobot.db data/state.json data/translations.json; do [ -f "$f" ] && cp "$f" ~/state/; done
+            ls -la ~/state
+
+      - save_cache:
+          when: always
+          key: state-v1-{{ epoch }}
+          paths:
+            - ~/state
+
+      - run:
+          name: Guardar estado en GitHub
           when: always
           command: |
             [ "<< pipeline.parameters.mode >>" = "check" ] && exit 0
