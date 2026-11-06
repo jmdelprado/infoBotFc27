@@ -101,8 +101,9 @@ jobs:
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
             git commit -m "chore(data): estado $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
             REMOTE="https://x-access-token:${GH_PUSH_TOKEN}@github.com/jmdelprado/infoBotFc27.git"
-            git pull --rebase "$REMOTE" main
-            git push "$REMOTE" HEAD:main
+            git pull --rebase "$REMOTE" main || true
+            # El estado ya está guardado en la caché de CircleCI: si GitHub rechaza el push, solo se avisa
+            git push "$REMOTE" HEAD:main || echo "⚠️ GitHub rechazó el push (revisa el permiso Contents del token); el estado sigue guardado en CircleCI"
 
 workflows:
   infobot:
