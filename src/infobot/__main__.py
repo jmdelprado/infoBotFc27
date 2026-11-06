@@ -5,6 +5,7 @@
     python -m infobot preview [--claude]      vista previa con tweets de ejemplo (out/preview.html)
     python -m infobot setup [--dry-run]       crea las secciones del grupo y publica bienvenida, estado y calendario
     python -m infobot check                   comprueba la configuración y las credenciales
+    python -m infobot rebuild --yes           vacía el grupo y lo rehace con una ficha por tema (últimos 7 días)
 """
 
 from __future__ import annotations
@@ -138,6 +139,9 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("evocal", help="publica ahora el calendario de evoluciones")
     rs = sub.add_parser("reset", help="borra todo el contenido del grupo y empieza de cero")
     rs.add_argument("--yes", action="store_true", help="confirmación obligatoria")
+    rb = sub.add_parser("rebuild", help="vacía el grupo y lo rehace con una ficha por tema (últimos 7 días)")
+    rb.add_argument("--yes", action="store_true", help="confirmación obligatoria")
+    rb.add_argument("--days", type=int, default=7)
     st = sub.add_parser("setup")
     st.add_argument("--dry-run", action="store_true")
     sub.add_parser("channel-id")
@@ -159,6 +163,11 @@ def main(argv: list[str] | None = None) -> int:
                 print("Esto borra TODO el contenido del grupo. Repite con --yes para confirmar.")
                 return 1
             res = pipeline.reset_group(cfg)
+        elif args.cmd == "rebuild":
+            if not args.yes:
+                print("Esto borra TODO el contenido del grupo y lo rehace con fichas. Repite con --yes para confirmar.")
+                return 1
+            res = pipeline.rebuild(cfg, days=args.days)
         elif args.cmd == "setup":
             res = pipeline.setup(cfg, dry_run=args.dry_run)
         elif args.cmd == "run":

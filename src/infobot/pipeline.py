@@ -25,6 +25,7 @@ log = logging.getLogger(__name__)
 DB_PATH = DATA_DIR / "infobot.db"
 STATE_PATH = DATA_DIR / "state.json"
 MAX_TWEET_AGE = timedelta(days=3)
+STORY_MAX_IDLE = timedelta(days=10)  # una ficha sin novedades en 10 días se cierra
 
 
 def make_publisher(cfg: Config, dry_run: bool):
@@ -74,10 +75,46 @@ def ensure_media(db: DB, tweets: list[Tweet]) -> None:
 
 # ---------- 2. Analizar ----------
 
-def recent_titles(db: DB, days: int = 4) -> list[str]:
-    since = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat(timespec="seconds")
-    rows = db.conn.execute("SELECT title FROM items WHERE created_at >= ? ORDER BY id", (since,)).fetchall()
-    return [r["title"] for r in rows]
+def _story_end(story: Item) -> datetime | None:
+    from .state import _parse_date
+
+    ex = story.extra
+    return _parse_date(ex.get("ends") or (ex.get("promo") or {}).get("end"))
+
+
+def close_stale_stories(db: DB, tz: str) -> None:
+    """Cierra las fichas cuyo tema ya terminó o que llevan 10 días sin novedades:
+    lo que llegue después sobre ese tema abre una ficha nueva."""
+    now_local = datetime.now(ZoneInfo(tz)).replace(tzinfo=None)
+    now = datetime.now(timezone.utc)
+    for st in db.open_stories():
+        end = _story_end(st)
+        updated = datetime.fromisoformat(db.story_updated_at(st.id) or now.isoformat())
+        if (end and end < now_local) or now - updated > STORY_MAX_IDLE:
+            db.close_story(st.id)
+            log.info("Ficha cerrada: %s", st.title)
+
+
+def open_stories(db: DB, limit: int = 30) -> list[Item]:
+    return db.open_stories()[:limit]
+
+
+def apply_to_story(db: DB, item: Item) -> Item:
+    """Guarda la novedad en su ficha (o en una nueva). Claude ya devuelve la ficha completa y actualizada;
+    aquí se acumulan los tweets y las imágenes y se evita que lo oficial vuelva atrás."""
+    old = db.get_story(item.story_id) if item.story_id else None
+    story = Item(
+        kind=old.kind if old else item.kind,  # la ficha no cambia de sección
+        source_type="official" if old and old.source_type == "official" else item.source_type,
+        title=item.title, summary=item.summary, details=item.details, key_facts=item.key_facts,
+        tweet_ids=list(dict.fromkeys((old.tweet_ids if old else []) + item.tweet_ids)),
+        images=list(dict.fromkeys(item.images + (old.images if old else []))),
+        extra={**(old.extra if old else {}), **item.extra},
+        id=old.id if old else None,
+    )
+    db.save_story(story)
+    item.story_id = story.id
+    return story
 
 
 def analyze_pending(db: DB, cfg: Config, state: dict[str, Any]) -> list[Item]:
@@ -85,15 +122,19 @@ def analyze_pending(db: DB, cfg: Config, state: dict[str, Any]) -> list[Item]:
     if not pending:
         return []
     ensure_media(db, pending)
+    close_stale_stories(db, cfg.timezone)
     created: list[Item] = []
-    for batch, result, error in analyzer.analyze(cfg, pending, state, recent_titles(db)):
+    for batch, result, error in analyzer.analyze(cfg, pending, state, lambda: open_stories(db)):
         if error is not None:
             db.bump_attempts([t.id for t in batch])
             continue
         items, ignored, missing = result
         for it in items:
+            existing = it.story_id is not None
+            story = apply_to_story(db, it)
             db.add_item(it)
             created.append(it)
+            log.info("Ficha %s: %s", "actualizada" if existing else "nueva", story.title)
         db.mark_tweets([i for it in items for i in it.tweet_ids], "done")
         db.mark_tweets(list(ignored), "ignored")
         if missing:
@@ -148,24 +189,30 @@ class Sections:
 
 
 def _hydrate(db: DB, item: Item) -> None:
-    tweets = db.get_tweets(item.tweet_ids)
+    tweets = sorted(db.get_tweets(item.tweet_ids), key=lambda t: t.created_at)
     item.urls = [t.url for t in tweets]
     item.accounts = sorted({t.account for t in tweets})
     if any(not (MEDIA_DIR / n).exists() for n in item.images):
         download_media(tweets)
 
 
-def publish_item(pub, renderer: CoverRenderer, item: Item, cfg: Config, sections: Sections) -> list[int]:
-    """Filtraciones: portada + imágenes + texto en la sección de su tipo.
-    Lo oficial no se publica como mensaje: solo entra en el calendario (devuelve [])."""
-    key = topic_for(item.kind, item.source_type)
-    if key is None:
-        return []
-    cover = renderer.render(item_cover_html(item, cfg.channel_title), OUT_DIR / "covers" / f"item_{item.id}.png")
-    photos = [cover] + [MEDIA_DIR / n for n in item.images if (MEDIA_DIR / n).exists()][:9]
-    ids = sections.send(key, pub.send_album, photos, fmt.caption(item))
-    for chunk in fmt.split_html(fmt.item_message(item, cfg.show_source_link)):
+def publish_story(db: DB, pub, renderer: CoverRenderer, story: Item, cfg: Config, sections: Sections,
+                  dry_run: bool) -> list[int]:
+    """Publica la ficha completa (portada + imágenes + texto) en la sección de su tipo y borra la versión
+    anterior: cada tema existe una sola vez en el grupo y la novedad aparece abajo, como mensaje nuevo."""
+    key = topic_for(story.kind)
+    cover = renderer.render(item_cover_html(story, cfg.channel_title), OUT_DIR / "covers" / f"story_{story.id}.png")
+    photos = [cover] + [MEDIA_DIR / n for n in story.images if (MEDIA_DIR / n).exists()][:9]
+    ids = sections.send(key, pub.send_album, photos, fmt.caption(story))
+    for chunk in fmt.split_html(fmt.story_message(story, cfg.show_source_link)):
         ids.append(sections.send(key, pub.send_message, chunk, reply_to=ids[0]))
+    for mid in db.story_message_ids(story.id):
+        try:
+            pub.delete_message(int(mid))
+        except Exception as e:  # noqa: BLE001 - p. ej. ya borrado a mano
+            log.info("No se pudo borrar la versión anterior de la ficha (%s): %s", mid, e)
+    if not dry_run:
+        db.mark_story_published(story.id, ids)
     return ids
 
 
@@ -307,15 +354,16 @@ def run(cfg: Config, *, dry_run: bool = False, tweets: list[Tweet] | None = None
         else:
             summary["items"] = len(analyze_pending(db, cfg, state))
 
-        to_post = db.unposted_items()
+        # Las novedades alimentan el estado (calendario, mensaje fijado); lo que se publica son las fichas
+        for item in db.unposted_items():
+            state = merge(state, item, cfg.timezone)
+            db.conn.execute("UPDATE items SET posted=1 WHERE id=?", (item.id,))
+        db.conn.commit()
         sections = Sections(db, pub, dry_run)
         with CoverRenderer() as renderer:
-            for item in to_post:
-                _hydrate(db, item)
-                ids = publish_item(pub, renderer, item, cfg, sections)
-                if not dry_run:
-                    db.mark_item_posted(item.id, ids)
-                state = merge(state, item, cfg.timezone)
+            for story in db.dirty_stories():
+                _hydrate(db, story)
+                publish_story(db, pub, renderer, story, cfg, sections, dry_run)
                 summary["posted"] += 1
             update_pinned(db, pub, state, cfg, dry_run)  # guía de General (si no cambia, Telegram lo ignora)
             # El calendario se revisa siempre: también cambia cuando algo caduca o cambia el día
@@ -341,9 +389,8 @@ def daily(cfg: Config, *, dry_run: bool = False, db_path: Path = DB_PATH, force:
         last = db.get_meta("last_daily_at")
         if last and not force and now - datetime.fromisoformat(last) < timedelta(hours=20):
             return {"daily": "ya enviado"}
-        # El resumen diario recoge las filtraciones (lo oficial ya está en el calendario)
-        items = [i for i in db.items_since((now - timedelta(hours=24)).isoformat(timespec="seconds"))
-                 if i.source_type == "leak"]
+        # El resumen diario recoge las fichas creadas o actualizadas en las últimas 24 h
+        items = db.stories_updated_since((now - timedelta(hours=24)).isoformat(timespec="seconds"))
         if not items:
             return {"daily": "sin novedades"}
         sections = Sections(db, pub, dry_run)
@@ -367,8 +414,14 @@ WELCOME = """👋 <b>Bienvenido a InfoBot FC 27</b>
 
 Todas las novedades de EA SPORTS FC 27 Ultimate Team, al momento y en español, ordenadas por secciones:
 
-✅ <b>📅 Calendario</b>: solo lo OFICIAL, con inicio y fin de las próximas 2 semanas
-🕵️ <b>Filtraciones</b> por secciones: 🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos
+🗂️ <b>Un tema = un mensaje</b>, por secciones: 🔥 Promos · 🃏 Cartas · 🎯 Objetivos · 🧩 SBC · 🧬 Evoluciones · 📢 Eventos
+Cuando hay novedades, el mensaje del tema se vuelve a publicar completo abajo.
+
+✅ <b>OFICIAL</b>: ya en el juego, anunciado por EA o datos definitivos
+🔮 <b>PREDICCIÓN</b>: medias, PS o mejoras estimadas
+Sin etiqueta: información de fuentes fiables, se da por hecho
+
+📅 <b>Calendario</b>: lo oficial, con inicio y fin de las próximas 2 semanas
 🗞️ Resumen diario cada noche
 
 Se actualiza solo cada 4 horas. 📌 Arriba tienes fijado el estado actual."""
@@ -452,3 +505,23 @@ def publish_evo_calendar(cfg: Config, *, db_path: Path = DB_PATH, state_path: Pa
         return {"evo_calendar_published": done, "evolutions": len(state.get("evolutions_feed") or [])}
     finally:
         db.close()
+
+
+def rebuild(cfg: Config, *, days: int = 7, db_path: Path = DB_PATH, state_path: Path = STATE_PATH) -> dict:
+    """Empieza de cero con fichas: vacía el grupo (reset) y vuelve a analizar los tweets de los últimos `days` días,
+    agrupándolos en una ficha por tema."""
+    db = DB(db_path)
+    since = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat(timespec="seconds")
+    rows = db.conn.execute("SELECT * FROM tweets WHERE status='done' AND created_at >= ? ORDER BY created_at",
+                           (since,)).fetchall()
+    tweets = [db._row_to_tweet(r) for r in rows]
+    db.close()
+    res = reset_group(cfg, db_path=db_path, state_path=state_path)
+    db = DB(db_path)
+    for t in tweets:
+        t.local_media = []
+        db.add_tweet(t, status="pending")
+    db.set_meta("first_run_at", datetime.now(timezone.utc).isoformat(timespec="seconds"))
+    db.close()
+    log.info("Reanalizando %d tweets de los últimos %d días", len(tweets), days)
+    return {**res, "reanalyzed_tweets": len(tweets), **run(cfg, db_path=db_path, state_path=state_path)}

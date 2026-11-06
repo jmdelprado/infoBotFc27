@@ -32,34 +32,37 @@ TOPICS = {
 
 
 TOPIC_INTROS = {
-    "promo": "🕵️ Aquí aparecen las <b>filtraciones de promos y equipos</b>: qué se espera, cuándo y con qué cartas.",
-    "card": "🕵️ Aquí aparecen las <b>cartas filtradas</b>: media, posición, club y promo antes de que salgan.",
-    "objective": "🕵️ Aquí aparecen los <b>objetivos filtrados</b>: qué habrá que hacer y sus recompensas.",
-    "sbc": "🕵️ Aquí aparecen los <b>SBC filtrados</b>: requisitos, coste estimado y recompensa.",
-    "evolution": "🕵️ Aquí aparecen las <b>evoluciones filtradas</b>: requisitos, coste y mejoras.",
-    "event": "🕵️ Aquí aparecen otras <b>filtraciones y rumores</b>: modos, eventos, tienda, TOTW…",
+    "promo": "🔥 Aquí está cada <b>promo y equipo</b> en un único mensaje: fechas, equipos y todas sus cartas. "
+             "Cuando hay novedades, el mensaje se vuelve a publicar completo abajo.",
+    "card": "🃏 Aquí están las <b>cartas sueltas</b> (mejoras, cartas de jugador, recompensas): media, posición y club.",
+    "objective": "🎯 Aquí están los <b>objetivos</b>: qué hay que hacer y sus recompensas.",
+    "sbc": "🧩 Aquí están los <b>SBC</b>: requisitos, coste y recompensa.",
+    "evolution": "🧬 Aquí están las <b>evoluciones</b>: requisitos, coste y mejoras.",
+    "event": "📢 Aquí está <b>todo lo demás</b>: modos de juego, tienda, galería, mantenimientos…",
     "calendar": "✅ Aquí está el <b>calendario OFICIAL</b>: todo lo que ya está en el juego o ha confirmado EA, "
                 "con su inicio y su fin en las próximas dos semanas. Se actualiza solo.",
     "evocal": "✅ Aquí está el <b>calendario de evoluciones</b>: todas las evoluciones activas de los próximos 30 días "
               "con su plazo y cuándo terminan. ⭐ <b>VIP</b> = pase premium. Datos oficiales del juego vía FUT.GG.",
-    "daily": "Aquí aparece cada noche el <b>resumen del día</b> con todas las filtraciones.",
+    "daily": "🗞️ Aquí aparece cada noche el <b>resumen del día</b>: todo lo que ha cambiado en las últimas 24 horas.",
 }
 
 
-def topic_for(kind: str, source_type: str) -> str | None:
-    """Sección de una novedad.
-
-    - Filtraciones: a la sección de su tipo (Promos, Cartas, Objetivos, SBC, Evoluciones, Eventos).
-    - Oficial: None → no se publica como mensaje; solo alimenta el Calendario.
-    """
-    if source_type == "official":
-        return None
+def topic_for(kind: str) -> str:
+    """Sección de una ficha: la de su tipo (Promos, Cartas, Objetivos, SBC, Evoluciones); el resto, Eventos."""
     return kind if kind in TOPICS and kind not in ("calendar", "evocal", "daily") else "event"
 
+
+# Etiqueta de cada ficha. "none" = sin etiqueta: las fuentes son fiables y se da por hecho.
 SOURCE_TYPES = {
     "official": {"emoji": "✅", "label": "OFICIAL", "tag": "Oficial"},
-    "leak": {"emoji": "🕵️", "label": "FILTRACIÓN", "tag": "Filtracion"},
+    "prediction": {"emoji": "🔮", "label": "PREDICCIÓN", "tag": "Prediccion"},
+    "none": {"emoji": "", "label": "", "tag": ""},
 }
+
+
+def normalize_source(value: str | None) -> str:
+    """Las antiguas "leak" (filtración) pasan a "none"."""
+    return value if value in SOURCE_TYPES else "none"
 
 
 @dataclass
@@ -87,6 +90,7 @@ class Item:
     images: list[str]
     extra: dict[str, Any] = field(default_factory=dict)  # promo, cards, objectives, sbcs
     id: int | None = None
+    story_id: int | None = None  # ficha a la que pertenece (en las fichas, su propio id)
     accounts: list[str] = field(default_factory=list)
     urls: list[str] = field(default_factory=list)
 
@@ -96,7 +100,7 @@ class Item:
 
     @property
     def source_meta(self) -> dict[str, str]:
-        return SOURCE_TYPES.get(self.source_type, SOURCE_TYPES["leak"])
+        return SOURCE_TYPES[normalize_source(self.source_type)]
 
     @classmethod
     def from_analysis(cls, data: dict[str, Any]) -> "Item":
@@ -104,7 +108,7 @@ class Item:
                                        "starts", "ends") if data.get(k)}
         return cls(
             kind=data["kind"],
-            source_type=data["source_type"],
+            source_type=normalize_source(data["source_type"]),
             title=data["title"].strip(),
             summary=data["summary"].strip(),
             details=data.get("details", "").strip(),
@@ -112,4 +116,5 @@ class Item:
             tweet_ids=[str(t) for t in data["tweet_ids"]],
             images=data.get("images", []),
             extra=extra,
+            story_id=int(data.get("story_id") or 0) or None,
         )

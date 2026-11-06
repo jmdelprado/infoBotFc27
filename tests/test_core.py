@@ -77,24 +77,39 @@ def test_validate_filters_and_detects_missing():
     assert missing == {"3"}  # el de tipo inválido se reintentará
 
 
-def test_build_prompt_contains_tweets_and_images():
-    p = analyzer._build_prompt([tweet("7", ["7_0.jpg"])], empty_state(), ["Ya publicado"], "Europe/Madrid")
-    assert "tweet_id: 7" in p and "7_0.jpg" in p and "Ya publicado" in p
+def test_build_prompt_contains_tweets_images_and_open_stories():
+    story = _item(title="Road to the Knockouts", id=42, extra={"cards": [{"player": "Pedri", "rating": 90}]})
+    p = analyzer._build_prompt([tweet("7", ["7_0.jpg"])], empty_state(), [story], "Europe/Madrid")
+    assert "tweet_id: 7" in p and "7_0.jpg" in p
+    assert '"story_id": 42' in p and "Road to the Knockouts" in p and "Pedri" in p
+
+
+def test_validate_unknown_story_id_becomes_new_story():
+    tweets = [tweet("1"), tweet("2")]
+    result = {"ignored_tweet_ids": [], "items": [
+        {"story_id": 5, "kind": "promo", "source_type": "none", "title": "A", "summary": "", "details": "",
+         "key_facts": [], "tweet_ids": ["1"], "images": []},
+        {"story_id": 99, "kind": "sbc", "source_type": "prediction", "title": "B", "summary": "", "details": "",
+         "key_facts": [], "tweet_ids": ["2"], "images": []},
+    ]}
+    items, _, _ = analyzer.validate(result, tweets, story_ids={5})
+    assert [i.story_id for i in items] == [5, None]
+    assert [i.source_type for i in items] == ["none", "prediction"]
 
 
 # --- estado ---
 def _item(**kw) -> Item:
-    base = dict(kind="promo", source_type="leak", title="t", summary="s", details="", key_facts=[], tweet_ids=["1"], images=[])
+    base = dict(kind="promo", source_type="none", title="t", summary="s", details="", key_facts=[], tweet_ids=["1"], images=[])
     base.update(kw)
     return Item(**base)
 
 
-def test_state_merge_official_overrides_leak_but_not_reverse():
+def test_state_merge_official_overrides_unlabeled_but_not_reverse():
     st = merge(empty_state(), _item(extra={"promo": {"name": "Heroes"}}))
-    assert st["active_promo"]["source_type"] == "leak"
+    assert st["active_promo"]["source_type"] == "none"
     st = merge(st, _item(source_type="official", extra={"promo": {"name": "Heroes", "end": "2099-01-01"}}))
     assert st["active_promo"]["source_type"] == "official"
-    st = merge(st, _item(source_type="leak", extra={"promo": {"name": "Heroes", "end": "2000-01-01"}}))
+    st = merge(st, _item(source_type="prediction", extra={"promo": {"name": "Heroes", "end": "2000-01-01"}}))
     assert st["active_promo"]["end"] == "2099-01-01"
 
 
@@ -115,15 +130,31 @@ def test_state_cards_dedup():
 
 
 # --- formato Telegram ---
-def test_item_message_escapes_and_tags():
+def test_story_message_escapes_labels_and_cards():
     it = _item(kind="sbc", source_type="official", title="A <b> & B", summary="x", details="línea 1\nlínea 2",
-               key_facts=[{"label": "Media", "value": "84"}])
+               key_facts=[{"label": "Media", "value": "84"}],
+               extra={"cards": [{"player": "Pedri", "rating": 88, "position": "MC"},
+                                {"player": "Doku", "rating": 90, "position": "EI", "predicted": True}]})
     it.urls = ["https://x.com/JuniorSintress/status/1"]
-    html = fmt.item_message(it)
-    assert "A &lt;b&gt; &amp; B" in html
-    assert "#SBC #Oficial #FC27" in html
-    assert "<blockquote expandable>" in html
-    assert "@JuniorSintress" in html
+    html = fmt.story_message(it)
+    assert "A &lt;B&gt; &amp; B" in html  # el título va en mayúsculas
+    assert "✅ OFICIAL" in html and "#SBC #FC27" in html
+    assert "<blockquote expandable>" in html and "@JuniorSintress" in html
+    assert html.index("Doku 90") < html.index("Pedri 88")  # ordenadas por media
+    assert "Doku 90 EI</b> 🔮" in html and "🔮 = predicción" in html
+    assert "actualiz" not in html.lower()
+
+
+def test_no_leak_wording_anywhere():
+    from infobot import models, pipeline
+
+    plain = _item(kind="promo", title="Heroes", summary="s")
+    texts = [fmt.story_message(plain), fmt.caption(plain), fmt.pinned_message(empty_state()), pipeline.WELCOME,
+             fmt.daily_message([plain], "01/01/2026"), *models.TOPIC_INTROS.values()]
+    for t in texts:
+        assert "filtr" not in t.lower() and "🕵" not in t
+    assert "OFICIAL" not in fmt.story_message(plain) and "PREDICCIÓN" not in fmt.story_message(plain)
+    assert "🔮 PREDICCIÓN" in fmt.caption(_item(source_type="prediction"))
 
 
 def test_split_html_respects_limit_and_blockquotes():
@@ -136,9 +167,9 @@ def test_split_html_respects_limit_and_blockquotes():
 
 
 def test_pinned_and_daily_render():
-    st = merge(empty_state(), _item(title="Heroes llegaría el viernes", extra={"promo": {"name": "Heroes"}}))
+    st = merge(empty_state(), _item(title="Heroes", extra={"promo": {"name": "Heroes"}}))
     html = fmt.pinned_message(st)
-    assert "Calendario" in html and "Heroes llegaría el viernes" in html
+    assert "Calendario" in html and "Heroes" in html
     assert len(fmt.pinned_message(empty_state())) < 4096
     d = fmt.daily_message([_item(title="Uno"), _item(kind="sbc", title="Dos", source_type="official")], "23/10/2026")
     assert "Uno" in d and "Dos" in d and "#ResumenDiario" in d
@@ -167,7 +198,7 @@ def test_pipeline_fixture_dry_run(tmp_path, monkeypatch):
     analysis = load_fixture_analysis()
     res = pipeline.run(cfg(), dry_run=True, tweets=load_fixture_tweets(), analysis_override=analysis,
                        db_path=tmp_path / "x.db", state_path=tmp_path / "state.json")
-    assert res["posted"] == 5  # 1 filtración publicada + 4 oficiales que solo van al calendario
+    assert res["posted"] == 5  # 5 fichas nuevas, una por tema (también las oficiales)
     assert not (tmp_path / "state.json").exists()  # en dry-run no se guarda el estado
 
 
@@ -175,13 +206,10 @@ def test_pipeline_fixture_dry_run(tmp_path, monkeypatch):
 def test_topic_routing():
     from infobot.models import topic_for
 
-    # Filtraciones: a la sección de su tipo
-    assert topic_for("sbc", "leak") == "sbc"
-    assert topic_for("evolution", "leak") == "evolution"
-    assert topic_for("mode", "leak") == "event"
-    assert topic_for("raro", "leak") == "event"
-    # Oficial: no se publica como mensaje, solo va al calendario
-    assert topic_for("sbc", "official") is None
+    assert topic_for("sbc") == "sbc"
+    assert topic_for("evolution") == "evolution"
+    assert topic_for("mode") == "event"
+    assert topic_for("raro") == "event"
 
 
 def test_state_evolutions_and_future_promo():
@@ -198,15 +226,15 @@ def test_calendar_only_official_and_split():
 
     now = datetime(2026, 10, 23, 12, 0)
     st = merge(empty_state(), _item(kind="sbc", source_type="official",
-                                    extra={"sbcs": [{"name": "Woltemade", "ends": "2026-10-24 19:00"}]}))
-    st = merge(st, _item(kind="sbc", source_type="leak", extra={"sbcs": [{"name": "Filtrado", "ends": "2026-10-30"}]}))
+                                    extra={"sbcs": [{"name": "Woltemade", "starts": "2026-10-22", "ends": "2026-10-24 19:00"}]}))
+    st = merge(st, _item(kind="sbc", source_type="none", extra={"sbcs": [{"name": "Filtrado", "ends": "2026-10-30"}]}))
     st = merge(st, _item(kind="mode", source_type="official",
                          extra={"modes": [{"name": "Torneo", "starts": "2026-10-25 18:00", "ends": "2026-10-27"}]}))
     st = merge(st, _item(kind="event", source_type="official",
                          extra={"events": [{"name": "Lejano", "starts": "2026-12-01"}]}))
     st["calendar"].append({"type": "sbc", "name": "Caducado", "starts": "", "ends": "2026-10-01", "detail": ""})
     names = [e.name for e in entries_from_state(st)]
-    assert "Filtrado" not in names  # las filtraciones nunca entran en el calendario
+    assert "Filtrado" not in names  # solo lo oficial entra en el calendario
     active, soon, later = split(entries_from_state(st), now)
     assert [e.name for e in active] == ["Woltemade"]
     assert [e.name for e in soon] == ["Torneo"]
@@ -284,3 +312,76 @@ def test_futgg_normalize_filters_and_marks_premium():
     assert [e["name"] for e in evos] == ["Speed Bump", "Dual Identity"]
     assert evos[0]["requirements"] == "Media ≤80 · DFC" and evos[0]["upgrades"] == ["Overall +10"]
     assert evos[1]["premium"] and evos[1]["sp_level"] == 14
+
+
+# --- fichas: un tema = un mensaje ---
+def test_apply_to_story_creates_then_completes_same_story():
+    from infobot.pipeline import apply_to_story
+
+    db = DB(":memory:")
+    first = _item(kind="promo", source_type="official", title="RTTK", tweet_ids=["1"], images=["1_0.jpg"],
+                  extra={"cards": [{"player": "Pedri", "rating": 90}]})
+    story = apply_to_story(db, first)
+    assert first.story_id == story.id and len(db.open_stories()) == 1
+    upd = _item(kind="card", source_type="none", title="Road to the Knockouts", tweet_ids=["2"], images=["2_0.jpg"],
+                extra={"cards": [{"player": "Pedri", "rating": 90}, {"player": "Doku", "rating": 89}]},
+                story_id=story.id)
+    story2 = apply_to_story(db, upd)
+    assert story2.id == story.id and len(db.open_stories()) == 1
+    saved = db.get_story(story.id)
+    assert saved.kind == "promo"  # no cambia de sección
+    assert saved.source_type == "official"  # lo oficial no vuelve atrás
+    assert saved.title == "Road to the Knockouts" and len(saved.extra["cards"]) == 2
+    assert saved.tweet_ids == ["1", "2"] and saved.images == ["2_0.jpg", "1_0.jpg"]
+    assert [s.id for s in db.dirty_stories()] == [story.id]
+
+
+def test_publish_story_replaces_previous_message(tmp_path):
+    from infobot.outbox import Outbox
+    from infobot.pipeline import Sections, apply_to_story, publish_story
+
+    class FakeRenderer:
+        def render(self, html, dest, full_page=False, width=1280):
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(b"png")
+            return dest
+
+    import infobot.pipeline as pl
+    pl.OUT_DIR = tmp_path
+    db = DB(":memory:")
+    pub = Outbox(tmp_path)
+    sections = Sections(db, pub, dry_run=False)
+    story = apply_to_story(db, _item(title="TOTW 8", tweet_ids=["1"]))
+    first_ids = publish_story(db, pub, FakeRenderer(), story, cfg(), sections, dry_run=False)
+    assert db.dirty_stories() == []
+    story = apply_to_story(db, _item(title="TOTW 8", summary="completo", tweet_ids=["2"], story_id=story.id))
+    second_ids = publish_story(db, pub, FakeRenderer(), db.get_story(story.id), cfg(), sections, dry_run=False)
+    alive = {e["id"] for e in pub.entries}
+    assert not alive & set(first_ids)  # la versión anterior se borra
+    assert set(second_ids) <= alive and db.story_message_ids(story.id) == second_ids
+
+
+def test_close_stale_stories():
+    from infobot.pipeline import apply_to_story, close_stale_stories
+
+    db = DB(":memory:")
+    ended = apply_to_story(db, _item(title="Terminada", extra={"ends": "2000-01-01 10:00"}))
+    old = apply_to_story(db, _item(title="Vieja"))
+    alive = apply_to_story(db, _item(title="Viva", extra={"ends": "2099-01-01"}))
+    db.conn.execute("UPDATE stories SET updated_at='2000-01-01T00:00:00+00:00' WHERE id=?", (old.id,))
+    close_stale_stories(db, "Europe/Madrid")
+    assert [s.id for s in db.open_stories()] == [alive.id]
+
+
+def test_db_migrates_leak_to_none(tmp_path):
+    import sqlite3
+
+    path = tmp_path / "old.db"
+    DB(path).close()
+    con = sqlite3.connect(path)
+    con.execute("INSERT INTO items(kind, source_type, title, summary, details, key_facts_json, extra_json,"
+                " tweet_ids_json, images_json, created_at) VALUES ('promo','leak','t','s','','[]','{}','[]','[]','x')")
+    con.commit()
+    con.close()
+    db = DB(path)
+    assert db.conn.execute("SELECT source_type FROM items").fetchone()[0] == "none"

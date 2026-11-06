@@ -10,7 +10,7 @@ version: 2.1
 parameters:
   mode:
     type: enum
-    enum: [auto, run, daily, check]
+    enum: [auto, run, daily, check, rebuild]
     default: auto
 
 jobs:
@@ -73,7 +73,7 @@ jobs:
               uv run python -m infobot run
               if [ "$(date -u +%H)" -ge 20 ]; then uv run python -m infobot daily; fi
             else
-              uv run python -m infobot "$MODE"
+              if [ "$MODE" = "rebuild" ]; then uv run python -m infobot rebuild --yes; else uv run python -m infobot "$MODE"; fi
             fi
 
       - run:

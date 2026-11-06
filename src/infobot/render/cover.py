@@ -45,7 +45,7 @@ def cover_html(
     return _env.get_template("cover.html.j2").render(
         fonts=(ASSETS_DIR / "fonts").resolve().as_uri(),
         c1=c1, c2=c2, emoji=emoji, label=label, title=title, brand=brand, footer=footer,
-        source_label={"official": "✅ Oficial", "leak": "🕵️ Filtración"}.get(source_type or "", ""),
+        source_label={"official": "✅ Oficial", "prediction": "🔮 Predicción"}.get(source_type or "", ""),
         source_class=source_type or "",
         facts=facts, fact_cols=min(max(len(facts), 1), 2 if hero else 4),
         hero=hero.resolve().as_uri() if hero else None,

@@ -4,11 +4,12 @@
   ],
   "items": [
     {
+      "story_id": 0,
       "kind": "promo",
-      "source_type": "leak",
-      "title": "Sample Heroes llegaría el viernes con un DC de 91",
-      "summary": "Según la filtración, la promo de ejemplo 'Sample Heroes' saldría el próximo viernes a las 19:00 (hora de España) y el primer equipo incluiría un delantero centro de 91.",
-      "details": "• Promo: Sample Heroes (ejemplo)\n• Salida prevista: viernes a las 19:00 (18:00 hora de Reino Unido)\n• Equipo 1: incluiría un DC de media 91\n• La carta filtrada muestra 93 de ritmo, 94 de regate y 90 de tiro\n• Aún sin confirmar por EA",
+      "source_type": "none",
+      "title": "Sample Heroes",
+      "summary": "La promo de ejemplo 'Sample Heroes' llega el próximo viernes a las 19:00 y el primer equipo trae un delantero centro de 91.",
+      "details": "• Promo: Sample Heroes (ejemplo)\n• Salida: viernes a las 19:00 (18:00 hora de Reino Unido)\n• La carta del DC tiene 93 de ritmo, 94 de regate y 90 de tiro",
       "key_facts": [
         {
           "label": "Promo",
@@ -38,11 +39,20 @@
           "player": "Jugador de ejemplo",
           "rating": 91,
           "position": "DC",
-          "promo": "Sample Heroes"
+          "promo": "Sample Heroes",
+          "predicted": false
+        },
+        {
+          "player": "Otro jugador",
+          "rating": 88,
+          "position": "MC",
+          "promo": "Sample Heroes",
+          "predicted": true
         }
       ]
     },
     {
+      "story_id": 0,
       "kind": "sbc",
       "source_type": "official",
       "title": "Nuevo SBC: sobre de jugadores 83+ x10",
@@ -82,6 +92,7 @@
       ]
     },
     {
+      "story_id": 0,
       "kind": "objective",
       "source_type": "official",
       "title": "Objetivos 'Camino a la gloria'",
@@ -110,6 +121,7 @@
       ]
     },
     {
+      "story_id": 0,
       "kind": "evolution",
       "source_type": "official",
       "title": "Nueva evolución: Sample Speedster",
@@ -144,6 +156,7 @@
       ]
     },
     {
+      "story_id": 0,
       "kind": "event",
       "source_type": "official",
       "title": "Mantenimiento de servidores el jueves",

@@ -11,7 +11,7 @@ from zoneinfo import ZoneInfo
 from .models import Item
 
 MAX_CARDS = 15
-MAX_LEAKS = 10
+MAX_RECENT = 10
 MAX_LIST = 12
 MAX_CALENDAR = 40
 
@@ -25,7 +25,7 @@ def empty_state() -> dict[str, Any]:
         "evolutions": [],
         "events": [],
         "recent_cards": [],
-        "recent_leaks": [],
+        "recent_updates": [],
         # Solo contenido OFICIAL (disponible en el juego o anunciado por EA): alimenta el calendario
         "calendar": [],
     }
@@ -34,6 +34,7 @@ def empty_state() -> dict[str, Any]:
 def load_state(path: Path) -> dict[str, Any]:
     if path.exists():
         data = json.loads(path.read_text(encoding="utf-8"))
+        data.pop("recent_leaks", None)  # sustituido por recent_updates
         st = {**empty_state(), **data}
         if "calendar" not in data:  # migración: estados antiguos sin calendario propio
             st["calendar"] = _calendar_from_legacy(st)
@@ -82,12 +83,12 @@ def _parse_date(value: str | None) -> datetime | None:
 
 
 def _upsert(lst: list[dict], entry: dict, key: str, limit: int) -> list[dict]:
-    """Inserta al principio; si ya existe (mismo nombre) lo sustituye. Lo oficial no lo pisa una filtración."""
+    """Inserta al principio; si ya existe (mismo nombre) lo sustituye. Lo oficial no lo pisa nada que no lo sea."""
     name = (entry.get(key) or "").strip().lower()
     out = []
     for old in lst:
         if (old.get(key) or "").strip().lower() == name:
-            if old.get("source_type") == "official" and entry.get("source_type") == "leak":
+            if old.get("source_type") == "official" and entry.get("source_type") != "official":
                 return lst
             continue
         out.append(old)
@@ -109,7 +110,7 @@ def merge(state: dict[str, Any], item: Item, tz: str = "Europe/Madrid") -> dict[
     elif promo and promo.get("name"):
         current = st.get("active_promo") or {}
         same = (current.get("name") or "").lower() == promo["name"].lower()
-        if not (same and current.get("source_type") == "official" and src == "leak"):
+        if not (same and current.get("source_type") == "official" and src != "official"):
             st["active_promo"] = {**(current if same else {}), **promo, "source_type": src}
 
     for card in ex.get("cards", []):
@@ -130,9 +131,9 @@ def merge(state: dict[str, Any], item: Item, tz: str = "Europe/Madrid") -> dict[
     if src == "official":
         st["calendar"] = add_to_calendar(st.get("calendar", []), item, tz)
 
-    if src == "leak":
-        now = datetime.now(ZoneInfo(tz)).strftime("%Y-%m-%d %H:%M")
-        st["recent_leaks"] = _upsert(st["recent_leaks"], {"title": item.title, "date": now}, "title", MAX_LEAKS)
+    now = datetime.now(ZoneInfo(tz)).strftime("%Y-%m-%d %H:%M")
+    entry = {"title": item.title, "date": now, "source_type": src}
+    st["recent_updates"] = _upsert(st.get("recent_updates", []), entry, "title", MAX_RECENT)
 
     st["updated_at"] = datetime.now(ZoneInfo(tz)).strftime("%Y-%m-%d %H:%M")
     return st
